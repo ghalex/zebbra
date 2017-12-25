@@ -1,0 +1,19 @@
+{
+  "name": "zebbra",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ghalex/zebbra.git",
+  "author": "Alexandru Ghiura <ghalex@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "yarn build",
+    "build": "webpack --env production"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.4.1",
+    "typescript": "^2.6.2",
+    "webpack": "^3.5.4",
+    "webpack-node-externals": "^1.6.0",
+    "yargs": "^8.0.2"
+  }
+}
