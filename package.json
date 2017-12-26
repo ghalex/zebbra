@@ -7,13 +7,28 @@
   "license": "MIT",
   "scripts": {
     "prepare": "yarn build",
-    "build": "webpack --env production"
+    "build": "webpack --env production",
+    "start": "start-storybook -p 6005"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^3.4.1",
+    "babel-core": "^6.26.0",
     "typescript": "^2.6.2",
     "webpack": "^3.5.4",
     "webpack-node-externals": "^1.6.0",
     "yargs": "^8.0.2"
+  },
+  "dependencies": {
+    "@storybook/react": "^3.2.19",
+    "@types/classnames": "^2.2.3",
+    "@types/lodash": "^4.14.91",
+    "@types/react": "^16.0.31",
+    "@types/storybook__react": "^3.0.5",
+    "classnames": "^2.2.5",
+    "lodash": "^4.17.4",
+    "polished": "^1.9.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "styled-components": "^2.4.0"
   }
 }
