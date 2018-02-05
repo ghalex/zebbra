@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components'
-import { size, color } from 'helpers'
+import { size, color, textOnColor } from 'helpers'
+import is from 'styled-is'
 
 const rotate360 = keyframes`
   from { transform: rotate(0deg); }
@@ -34,6 +35,10 @@ export const StyledLoader = styled.div`
 
   font-size: ${p => size(p)};
   color: ${p => color(p)};
+
+  ${is('inverted')`
+    color: ${p => textOnColor(color(p))}
+  `}
 `
 
 export const StyledLoaderShadow = styled.div`

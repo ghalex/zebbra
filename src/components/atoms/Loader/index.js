@@ -15,9 +15,9 @@ class Loader extends React.Component {
     const className = cx(`loader`, this.props.className)
     const { color, size, ...props } = this.props
     return (
-      <StyledLoaderContainer size={size} {...props}>
+      <StyledLoaderContainer {...props} size={size}>
         <StyledLoaderShadow size={size} />
-        <StyledLoader color={color} size={size} className={className} />
+        <StyledLoader {...props} color={color} size={size} className={className} />
       </StyledLoaderContainer>
     )
   }

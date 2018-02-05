@@ -19,20 +19,45 @@ stories.add('simple usage', () => {
           <Button color='black'>Black</Button>
         </div>
         <div>
-          <Button isInverted>Normal</Button>
-          <Button color='primary' isInverted>Primary</Button>
-          <Button color='success' isInverted>Success</Button>
-          <Button color='danger' isInverted>Danger</Button>
-          <Button color='gray' isInverted>Grayscale</Button>
-          <Button color='black' isInverted>Black</Button>
+          <Button inverted>Normal</Button>
+          <Button color='primary' inverted>Primary</Button>
+          <Button color='success' inverted>Success</Button>
+          <Button color='danger' inverted>Danger</Button>
+          <Button color='gray' inverted>Grayscale</Button>
+          <Button color='black' inverted>Black</Button>
         </div>
         <div>
-          <Button isOutlined>Normal</Button>
-          <Button color='primary' isOutlined>Primary</Button>
-          <Button color='success' isOutlined>Success</Button>
-          <Button color='danger' isOutlined>Danger</Button>
-          <Button color='gray' isOutlined>Grayscale</Button>
-          <Button color='black' isOutlined>Black</Button>
+          <Button outlined>Normal</Button>
+          <Button color='primary' outlined>Primary</Button>
+          <Button color='success' outlined>Success</Button>
+          <Button color='danger' outlined>Danger</Button>
+          <Button color='gray' outlined>Grayscale</Button>
+          <Button color='black' outlined>Black</Button>
+        </div>
+        <div>
+          <Button loading>Normal</Button>
+          <Button color='primary' loading>Primary</Button>
+          <Button color='success' loading>Success</Button>
+          <Button color='danger' loading>Danger</Button>
+          <Button color='gray' loading>Grayscale</Button>
+          <Button color='black' loading>Black</Button>
+        </div>
+      </div>
+    </ThemeProvider>
+  )
+})
+
+stories.add('different sizes', () => {
+  return (
+    <ThemeProvider theme={main}>
+      <div>
+        <div>
+          <Button size='tiny'>Tiny</Button>
+          <Button size='small' color='primary'>Small</Button>
+          <Button size='normal' color='success'>Normal</Button>
+          <Button size='medium' color='danger'>Medium</Button>
+          <Button size='large' color='gray'>Large</Button>
+          <Button size='xlarge' color='black'>XLarge</Button>
         </div>
       </div>
     </ThemeProvider>

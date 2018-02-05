@@ -6,6 +6,7 @@ import { StyledButton } from './styles'
 class Button extends React.Component {
   static displayName = 'Button'
   static defaultProps = {
+    color: 'light'
   }
 
   render () {
@@ -15,9 +16,9 @@ class Button extends React.Component {
     return (
       <StyledButton {...props} className={className}>
         {children}
-        {props.isLoading && (
+        {props.loading && (
           <div className='loader-container'>
-            <Loader size={props.size} color={props.color} />
+            <Loader size={props.size} color={props.color} inverted />
           </div>
         )}
       </StyledButton>

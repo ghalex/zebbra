@@ -21,6 +21,7 @@ theme.colors = {
   success: '#00d1b2',
   danger: '#e91e63',
   grey: '#CCCCCC',
+  light: '#E0E1E2',
   black: 'black',
   white: 'white'
 }
@@ -30,7 +31,8 @@ theme.components = {
     height: '2.40em',
     padding: '0px 1.0em',
     radius: '3px',
-    boxShadow: '0 -2px 0 rgba(0,0,0,0.20) inset'
+    boxShadow: '0 -2px 0 rgba(0,0,0,0.20) inset',
+    border: '1px solid transparent'
   },
   input: {
     border: `2px solid #CCC`,
