@@ -11,12 +11,7 @@ module.exports = {
     // your custom plugins
   ],
   module: {
-    rules: [
-      { test: /\.tsx?$/, exclude: /node_modules/, loader: 'awesome-typescript-loader' }
-    ]
   },
   resolve: {
-    extensions: ['.json', '.js', '.jsx', '.ts', '.tsx'],
-    modules: ['node_modules', 'src']
   },
 };

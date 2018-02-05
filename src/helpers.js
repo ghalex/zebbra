@@ -1,7 +1,6 @@
-import { Theme, Sizes, Colors } from "zebbra"
-import { css } from 'styled'
+import { css } from 'styled-components'
 
-export const withSize = (p: {theme: Theme, size: Sizes } & any): any => {
+export const withSize = p => {
   if (!p.size) return
   if (!p.theme.sizes[p.size]) return
 
@@ -10,7 +9,7 @@ export const withSize = (p: {theme: Theme, size: Sizes } & any): any => {
   `
 }
 
-export const color = (p: {theme: Theme, color: Colors } & any): string => {
+export const color = p => {
   if (!p.color) return 'black'
   if (!p.theme.colors[p.color]) return p.color
 

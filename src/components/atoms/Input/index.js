@@ -1,9 +1,8 @@
 import * as React from 'react'
 import * as cx from 'classnames'
 import { StyledInput } from './styles'
-import { InputProps } from './types'
 
-class Input extends React.Component<InputProps, any> {
+class Input extends React.Component {
   static displayName = 'Input'
   static defaultProps = {
     type: 'text',
@@ -12,7 +11,7 @@ class Input extends React.Component<InputProps, any> {
     size: 'normal'
   }
 
-  handleKeyDown = (evt: React.KeyboardEvent<HTMLInputElement>) => {
+  handleKeyDown = evt => {
     const { onKeyDown, onEnter } = this.props
 
     if (evt.keyCode === 13 && onEnter) {

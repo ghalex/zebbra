@@ -37,8 +37,7 @@ module.exports = {
   devtool: 'source-map',
   module: {
     rules: [
-      { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test: /\.tsx?$/, exclude: /node_modules/, loader: 'awesome-typescript-loader' }
+      { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: 'babel-loader' }
     ]
   },
   resolve: {

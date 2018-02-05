@@ -1,8 +1,2 @@
-import bulma from './bulma'
-import defaultTheme from './default'
-
-export {
-  bulma
-}
-
-export default defaultTheme
+export { default as main } from './main'
+export { default as bulma } from './bulma'
