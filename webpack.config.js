@@ -20,7 +20,7 @@ if (env === 'production') {
 
 const paths = {
   libSrc: path.resolve(__dirname, 'src'),
-  libIndex: path.resolve(__dirname, 'src/index.tsx'),
+  libIndex: path.resolve(__dirname, 'src/index.js'),
   libOutputDir: path.resolve(__dirname, 'lib'),
   libModules: path.resolve(__dirname, 'node_modules')
 }

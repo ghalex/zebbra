@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { withSize } from 'styled-helpers'
+import { withSize } from 'helpers'
 
 export const StyledInput = styled.div`
   display: flex;
