@@ -1,7 +1,7 @@
 const theme = {}
 
 theme.fonts = {
-  primary: 'BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif',
+  primary: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
   monospace: 'monospace'
 }
 
@@ -31,7 +31,7 @@ theme.components = {
     borderRadius: '6px',
     boxShadow: 'none',
     height: '2.40em',
-    focusBorder: `2px solid ${theme.color.primary}`,
+    focusBorder: `2px solid ${theme.colors.primary}`,
     focusBoxShadow: `none`
   }
 }

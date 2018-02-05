@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
-import { main as theme, bulma } from 'themes'
+import { main, bulma } from 'themes'
 import { ThemeProvider } from 'styled-components'
 import Input from '.'
 
@@ -9,7 +9,7 @@ const stories = storiesOf('forms/Input', module)
 stories.add('simple usage', () => {
   return (
     <div>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={main}>
         <div>
           <label>Theme Default</label>
           <Input placeholder='Username' color='primary' />
