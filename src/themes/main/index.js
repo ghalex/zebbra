@@ -27,6 +27,11 @@ theme.colors = {
 }
 
 theme.components = {
+  box: {
+    radius: '6px',
+    border: '1px solid rgba(34,36,38, 0.15)',
+    boxShadow: '0 1px 3px rgba(10, 10, 10, 0.1)'
+  },
   button: {
     height: '2.40em',
     padding: '0px 1.0em',

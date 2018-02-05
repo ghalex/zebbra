@@ -4,6 +4,7 @@ import { lighten } from 'polished'
 
 const bulma = defaults({
   components: {
+    ...theme.components,
     input: {
       ...theme.components.input,
       border: '1px solid #dbdbdb',

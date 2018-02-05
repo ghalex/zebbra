@@ -1,23 +1,32 @@
 import styled, { css } from 'styled-components'
-import is, { isOr } from 'styled-is'
+import { isOr } from 'styled-is'
 import { lighten } from 'polished'
 import { size, color, hover, textOnColor } from 'helpers'
 
-const outlined = p => css`
-  color: ${color(p)};
-  border: 1px solid ${color(p)};
-  background-color: transparent;
-`
+const isOutlined = p => {
+  if (!p.outlined) return
+  return css`
+    color: ${color(p)};
+    border: 1px solid ${color(p)};
+    background-color: transparent;
+  `
+}
 
-const inverted = p => css`
-  color: ${p => color(p)};
-  background-color: ${p => textOnColor(color(p))};
-`
+const isInverted = p => {
+  if (!p.inverted) return
+  return css`
+    color: ${p => color(p)};
+    background-color: ${p => textOnColor(color(p))};
+  `
+}
 
-const loading = p => css`
-  color: transparent !important;
-  pointer-events: none;
-`
+const isLoading = p => {
+  if (!p.loading) return
+  return css`
+    color: transparent !important;
+    pointer-events: none;
+  `
+}
 
 export const StyledButton = styled.div`
   height: ${p => p.theme.components.button.height};
@@ -41,10 +50,10 @@ export const StyledButton = styled.div`
   background-color: ${p => color(p)};
   color: ${p => textOnColor(color(p))};
 
-  ${is('hasShadow')`box-shadow: ${(p:any) => p.theme.components.button.boxShadow};`}
-  ${is('outlined')`${outlined}`}
-  ${is('inverted')`${inverted}`}
-  ${is('loading')`${loading}`}
+  ${isOutlined}
+  ${isInverted}
+  ${isLoading}
+
   &:not(:last-child) {
     margin: 0 0.25em 0 0;
   }
