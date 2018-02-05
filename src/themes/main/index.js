@@ -26,6 +26,12 @@ theme.colors = {
 }
 
 theme.components = {
+  button: {
+    height: '2.40em',
+    padding: '0px 1.0em',
+    radius: '3px',
+    boxShadow: '0 -2px 0 rgba(0,0,0,0.20) inset'
+  },
   input: {
     border: `2px solid #CCC`,
     borderRadius: '6px',
@@ -33,6 +39,11 @@ theme.components = {
     height: '2.40em',
     focusBorder: `2px solid ${theme.colors.primary}`,
     focusBoxShadow: `none`
+  },
+  loader: {
+    size: '1.125em',
+    borderSize: '3px',
+    margin: '0'
   }
 }
 

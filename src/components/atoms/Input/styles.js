@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { withSize } from 'helpers'
+import { size } from 'helpers'
 
 export const StyledInput = styled.div`
   display: flex;
@@ -18,8 +18,7 @@ export const StyledInput = styled.div`
       border-radius: ${p => p.theme.components.input.borderRadius};
       box-shadow: ${p => p.theme.components.input.boxShadow};
       transition: all .3s;
-
-      ${withSize}
+      font-size: ${p => size(p)};
   }
 
   & > input:focus {

@@ -1,1 +1,1 @@
-export { default as Input } from './components/atoms/Input'
+export * from 'components/atoms'

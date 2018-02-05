@@ -4,7 +4,7 @@ import { main, bulma } from 'themes'
 import { ThemeProvider } from 'styled-components'
 import Input from '.'
 
-const stories = storiesOf('forms/Input', module)
+const stories = storiesOf('Input', module)
 
 stories.add('simple usage', () => {
   return (
