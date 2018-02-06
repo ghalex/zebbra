@@ -40,7 +40,11 @@ theme.components = {
     padding: '0px 1.0em',
     radius: '3px',
     boxShadow: '0 -2px 0 rgba(0,0,0,0.20) inset',
-    border: '1px solid transparent'
+    border: '1px solid',
+    borderColor: '#e8eaed',
+    color: 'black',
+    background: 'linear-gradient(#ffffff, #f6f7f8)',
+    hoverBackground: '#f6f7f8'
   },
   input: {
     border: `2px solid #CCC`,

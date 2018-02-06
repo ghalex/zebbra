@@ -8,7 +8,7 @@ import { StyledButton } from './styles'
 class Button extends React.Component {
   static displayName = 'Button'
   static defaultProps = {
-    color: 'light',
+    color: null,
     size: 'normal',
     loading: false,
     icon: null,
