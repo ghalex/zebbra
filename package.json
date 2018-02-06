@@ -9,7 +9,9 @@
     "build": "webpack --env production",
     "build-dev": "webpack --env development",
     "start": "start-storybook -p 6005",
-    "standard": "standard"
+    "standard": "standard",
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "standard": {
     "env": [
@@ -25,6 +27,7 @@
   "devDependencies": {
     "@storybook/addon-info": "^3.3.12",
     "@storybook/react": "^3.2.19",
+    "@storybook/storybook-deployer": "^2.2.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "7.0.0",
     "babel-plugin-module-resolver": "^3.0.0",
