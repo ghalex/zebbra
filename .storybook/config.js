@@ -1,6 +1,7 @@
 import React from 'react'
 import { configure, addDecorator } from '@storybook/react'
 import { setDefaults } from '@storybook/addon-info';
+import { setOptions } from '@storybook/addon-options';
 import { ThemeProvider } from 'styled-components'
 import { main } from 'themes'
 
@@ -28,6 +29,13 @@ setDefaults({
     }
   }
 });
+
+setOptions({
+  name: "Zebbra Storybook",
+  goFullScreen: false,
+  showStoriesPanel: true,
+  showAddonPanel: false
+})
 
 addDecorator((story) => (
   <ThemeProvider theme={main}>
