@@ -27,7 +27,7 @@ const isStacked = p => {
     &::after {
       content: '';
       position: absolute;
-      bottom: -3px;
+      bottom: -2px;
       left: 0;
       border-top: 1px solid rgba(34,36,38,.15);
       background: rgba(0,0,0,.03);
@@ -35,6 +35,7 @@ const isStacked = p => {
       height: 6px;
       visibility: visible;
       background: rgba(255, 255, 255, 0.39);
+      box-shadow: 0 1px 3px rgba(10,10,10,0.1) inset;
     }
   `
 }

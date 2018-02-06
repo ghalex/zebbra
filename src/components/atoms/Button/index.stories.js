@@ -1,16 +1,18 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { main } from 'themes'
-import { ThemeProvider } from 'styled-components'
+import { withInfo } from '@storybook/addon-info'
+import { Box } from 'components/atoms'
 import Button from '.'
-import Box from '../Box'
 
-const stories = storiesOf('Button', module)
+const stories = storiesOf('atoms/Button', module)
 
-stories.add('simple usage', () => {
-  return (
-    <ThemeProvider theme={main}>
-      <div>
+stories.add(
+  'simple usage',
+  withInfo({
+    propTablesExclude: [Box]
+  })(() => {
+    return (
+      <div className='story-box'>
         <Box color='success' inverted>
           <Button>Normal</Button>
           <Button color='primary'>Primary</Button>
@@ -44,23 +46,25 @@ stories.add('simple usage', () => {
           <Button color='black' loading>Black</Button>
         </Box>
       </div>
-    </ThemeProvider>
-  )
-})
+    )
+  })
+)
 
-stories.add('different sizes', () => {
-  return (
-    <ThemeProvider theme={main}>
-      <div>
-        <div>
+stories.add(
+  'with different sizes',
+  withInfo({
+    propTablesExclude: [Box]
+  })(() => {
+    return (
+      <div className='story-box'>
+        <Box color='success' inverted>
           <Button size='tiny'>Tiny</Button>
           <Button size='small' color='primary'>Small</Button>
           <Button size='normal' color='success'>Normal</Button>
           <Button size='medium' color='danger'>Medium</Button>
           <Button size='large' color='gray'>Large</Button>
           <Button size='xlarge' color='black'>XLarge</Button>
-        </div>
+        </Box>
       </div>
-    </ThemeProvider>
-  )
-})
+    )
+  }))

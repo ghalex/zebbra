@@ -1,10 +1,18 @@
 import styled, { keyframes } from 'styled-components'
 import { size, color, textOnColor } from 'helpers'
-import is from 'styled-is'
+import is, { isNot } from 'styled-is'
 
 const rotate360 = keyframes`
   from { transform: rotate(0deg); }
   to { transform: rotate(359deg); }
+`
+
+export const StyledLoader = styled.div`
+  display: inline-flex;
+  align-items: center;
+  
+  ${is('vertical')`flex-direction: column;`}
+  ${is('inverted')`color: ${p => textOnColor(color(p))}`}
 `
 
 export const StyledLoaderContainer = styled.div`
@@ -14,9 +22,14 @@ export const StyledLoaderContainer = styled.div`
   margin: ${p => p.theme.components.loader.margin};
   padding: ${p => p.theme.components.loader.borderSize};
   font-size: ${p => size(p)};
+
+  &:not(:last-child) {
+    ${is('vertical')`margin-bottom: 0.5em;`}
+    ${isNot('vertical')`margin-right: 0.5em;`}
+  }
 `
 
-export const StyledLoader = styled.div`
+export const StyledLoaderCircle = styled.div`
   position: absolute;
   top: 0;
   left: 0;

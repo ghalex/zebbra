@@ -1,3 +1,5 @@
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
 import { parseToHsl, darken, lighten } from 'polished'
 
 export const color = p => {
@@ -30,4 +32,8 @@ export const textOnColor = (color) => {
   }
 
   return 'rgba(255, 255, 255, 1)'
+}
+
+export const withTheme = (theme) => (Component) => {
+  return () => <ThemeProvider theme={theme}><Component /></ThemeProvider>
 }

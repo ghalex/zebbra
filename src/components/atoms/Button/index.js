@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Loader from 'components/atoms/Loader'
 import { StyledButton } from './styles'
@@ -6,7 +7,23 @@ import { StyledButton } from './styles'
 class Button extends React.Component {
   static displayName = 'Button'
   static defaultProps = {
-    color: 'light'
+    color: 'light',
+    size: 'normal',
+    loading: false
+  }
+  static propTypes = {
+    /**
+     * A button can have different colors.
+     * [ primary, secondary, success, danger, white, black, grey, #FF0000, ... ]
+     */
+    color: PropTypes.string,
+    /**
+     * A button can have different sizes.
+     * [ tiny, small, normal, medium, large, xlarge, huge ]
+     */
+    size: PropTypes.string,
+    /** A button can show a loading indicator. */
+    loading: PropTypes.bool
   }
 
   render () {
