@@ -11,8 +11,6 @@ class Input extends React.Component {
     size: 'normal'
   }
   static propTypes = {
-    type: PropTypes.string,
-    placeholder: PropTypes.string,
     /**
      * A button can have different sizes.
      * [ tiny, small, normal, medium, large, xlarge, huge ]
@@ -27,7 +25,9 @@ class Input extends React.Component {
      * Called on keydown with code 13.
      * onEnter(event: SyntheticEvent, data: object)
      */
-    onEnter: PropTypes.func
+    onEnter: PropTypes.func,
+    placeholder: PropTypes.string,
+    type: PropTypes.string
   }
 
   handleKeyDown = evt => {

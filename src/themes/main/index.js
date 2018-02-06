@@ -51,6 +51,10 @@ theme.components = {
     size: '1.125em',
     borderSize: '3px',
     margin: '0'
+  },
+  icon: {
+    width: '1.6em',
+    height: '1.6em'
   }
 }
 
