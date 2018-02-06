@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import Loader from 'components/atoms/Loader'
+import { Icon, Loader } from 'components/atoms'
 import { StyledButton } from './styles'
 
 class Button extends React.Component {
@@ -9,7 +9,8 @@ class Button extends React.Component {
   static defaultProps = {
     color: 'light',
     size: 'normal',
-    loading: false
+    loading: false,
+    icon: null
   }
   static propTypes = {
     /**
@@ -22,16 +23,23 @@ class Button extends React.Component {
      * [ tiny, small, normal, medium, large, xlarge, huge ]
      */
     size: PropTypes.string,
-    /** A button can show a loading indicator. */
-    loading: PropTypes.bool
+    /**
+     * A button can show a loading indicator.
+     */
+    loading: PropTypes.bool,
+    /**
+     * A button can have an icon
+     */
+    icon: PropTypes.string
   }
 
   render () {
-    const { children, ...props } = this.props
-    const className = cx('button', this.props.className)
+    const { icon, children, ...props } = this.props
+    const className = cx('button', {'only-icon': !this.props.children}, this.props.className)
 
     return (
       <StyledButton {...props} className={className}>
+        {icon && <Icon name={icon} />}
         {children}
         {props.loading && (
           <div className='loader-container'>

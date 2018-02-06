@@ -74,6 +74,13 @@ export const StyledButton = styled.div`
     font-size: ${p => size(p)};
   }
 
+  &.only-icon {
+    padding: 0px 0.6em;
+    & .icon {
+      margin: 0;
+    }
+  }
+
   & .loader-container {
     position: absolute;
     left: 50%;

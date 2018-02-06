@@ -63,3 +63,19 @@ stories.add('with different sizes', withInfo({
     </div>
   )
 }))
+
+stories.add('with icon', withInfo({
+  propTablesExclude: [Box]
+})(() => {
+  return (
+    <div className='story-box'>
+      <Box color='success' inverted>
+        <Button icon='cubes'>Cubes</Button>
+        <Button color='primary' icon='star'>Primary</Button>
+        <Button color='success' icon='rss'>Success</Button>
+        <Button color='danger' icon='shopping-basket' outlined>Success</Button>
+        <Button color='grey' icon='shield' />
+      </Box>
+    </div>
+  )
+}))

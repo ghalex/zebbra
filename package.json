@@ -11,7 +11,7 @@
     "start": "start-storybook -p 6005",
     "standard": "standard",
     "build-storybook": "build-storybook",
-    "deploy-storybook": "storybook-to-ghpages"
+    "deploy": "storybook-to-ghpages"
   },
   "standard": {
     "env": [

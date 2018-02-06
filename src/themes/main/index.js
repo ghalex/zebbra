@@ -6,8 +6,8 @@ theme.fonts = {
 }
 
 theme.sizes = {
-  tiny: '0.60rem',
-  small: '0.785rem',
+  tiny: '0.65rem',
+  small: '0.85rem',
   normal: '1rem',
   medium: '1.2em',
   large: '1.5rem',
