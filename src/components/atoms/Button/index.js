@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import lodash from 'lodash'
 import { Icon, Loader } from 'components/atoms'
 import { StyledButton } from './styles'
 
@@ -10,7 +11,8 @@ class Button extends React.Component {
     color: 'light',
     size: 'normal',
     loading: false,
-    icon: null
+    icon: null,
+    iconPosition: 'left'
   }
   static propTypes = {
     /**
@@ -30,17 +32,33 @@ class Button extends React.Component {
     /**
      * A button can have an icon
      */
-    icon: PropTypes.string
+    icon: PropTypes.string,
+    /**
+     * A button can have icon left or right
+     */
+    iconPosition: PropTypes.string
   }
 
   render () {
-    const { icon, children, ...props } = this.props
-    const className = cx('button', {'only-icon': !this.props.children}, this.props.className)
+    const { icon, children, iconPosition, ...props } = this.props
+    const className = cx(
+      'button',
+      {'icon-only': !this.props.children},
+      {'icon-reverse': iconPosition === 'right'},
+      this.props.className
+    )
+    let btnChildren = [
+      icon && <Icon key={0} name={icon} />,
+      children
+    ]
+
+    if (iconPosition === 'right') {
+      btnChildren = lodash.reverse(btnChildren)
+    }
 
     return (
       <StyledButton {...props} className={className}>
-        {icon && <Icon name={icon} />}
-        {children}
+        {btnChildren}
         {props.loading && (
           <div className='loader-container'>
             <Loader size={props.size} color={props.color} inverted />

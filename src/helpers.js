@@ -18,7 +18,7 @@ export const size = p => {
 
 export const hover = (color) => {
   if (parseToHsl(color).lightness > 0.2) {
-    return darken(0.1, color)
+    return darken(0.05, color)
   }
 
   return lighten(0.2, color)

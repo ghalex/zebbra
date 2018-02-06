@@ -11,8 +11,15 @@ class Icon extends React.Component {
   }
 
   static propTypes = {
-    /** Icon name */
+    /**
+     * Icon name
+     */
     name: PropTypes.string.isRequired,
+    /**
+     * A button can have different colors.
+     * [ primary, secondary, success, danger, white, black, grey, #FF0000, ... ]
+     */
+    color: PropTypes.string,
     /**
      * Icons can have different sizes.
      * [ tiny, small, normal, medium, large, xlarge, huge ]

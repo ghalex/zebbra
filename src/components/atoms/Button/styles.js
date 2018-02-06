@@ -74,7 +74,13 @@ export const StyledButton = styled.div`
     font-size: ${p => size(p)};
   }
 
-  &.only-icon {
+  &.icon-reverse {
+    & .icon {
+      margin: 0 0 0 5px;
+    }
+  }
+
+  &.icon-only {
     padding: 0px 0.6em;
     & .icon {
       margin: 0;

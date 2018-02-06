@@ -71,7 +71,7 @@ stories.add('with icon', withInfo({
     <div className='story-box'>
       <Box color='success' inverted>
         <Button icon='cubes'>Cubes</Button>
-        <Button color='primary' icon='star'>Primary</Button>
+        <Button color='primary' icon='star' iconPosition='right'>Primary</Button>
         <Button color='success' icon='rss'>Success</Button>
         <Button color='danger' icon='shopping-basket' outlined>Success</Button>
         <Button color='grey' icon='shield' />

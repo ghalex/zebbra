@@ -27,6 +27,9 @@ theme.colors = {
 }
 
 theme.components = {
+  group: {
+    radius: '3px'
+  },
   box: {
     radius: '6px',
     border: '1px solid rgba(34,36,38, 0.15)',
