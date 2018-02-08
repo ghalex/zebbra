@@ -1,14 +1,14 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
+import { withDocs } from 'storybook-readme'
 import { Box } from 'components/atoms'
 import Button from '.'
+import README from './README.md'
 
 const stories = storiesOf('atoms/Button', module)
 
-stories.add('simple usage', withInfo({
-  propTablesExclude: [Box]
-})(() => {
+stories.add('simple usage', withDocs(README, () => {
   return (
     <div className='story-box'>
       <Box color='success' inverted>

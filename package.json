@@ -27,8 +27,8 @@
   "devDependencies": {
     "@storybook/addon-info": "^3.3.12",
     "@storybook/addon-options": "^3.3.12",
-    "@storybook/react": "^3.2.19",
-    "@storybook/storybook-deployer": "^2.2.0",
+    "@storybook/react": "^3.3.12",
+    "@storybook/storybook-deployer": "^2.3.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "7.0.0",
     "babel-plugin-module-resolver": "^3.0.0",
@@ -39,6 +39,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "standard": "^10.0.3",
+    "storybook-readme": "^3.2.0",
     "storybook-styled-components": "^1.0.1",
     "webpack": "^3.5.4",
     "webpack-node-externals": "^1.6.0",
