@@ -5,20 +5,24 @@ theme.fonts = {
   monospace: 'monospace'
 }
 
+/** All sizes are in pixels */
 theme.sizes = {
-  tiny: '0.65rem',
-  small: '0.85rem',
-  normal: '1rem',
-  medium: '1.2em',
-  large: '1.5rem',
-  xlarge: '2.0rem',
-  huge: '3rem'
+  tiny: 10,
+  small: 13,
+  normal: 16,
+  medium: 20,
+  large: 24,
+  xlarge: 30,
+  huge: 36
 }
 
 theme.colors = {
   primary: '#1b8ceb',
+  primaryLight: '#65b3e3',
   secondary: '#f4511e',
+  secondaryLight: '#f4754e',
   success: '#00d1b2',
+  successLight: '#49e5ce',
   danger: '#e91e63',
   grey: '#CCCCCC',
   light: '#E0E1E2',
@@ -28,19 +32,19 @@ theme.colors = {
 
 theme.components = {
   group: {
-    radius: '3px'
+    borderRadius: 3
   },
   box: {
-    radius: '6px',
     border: '1px solid rgba(34,36,38, 0.15)',
+    borderRadius: 6,
     boxShadow: '0 1px 3px rgba(10, 10, 10, 0.1)'
   },
   button: {
     height: '2.40em',
     padding: '0px 1.0em',
-    radius: '3px',
     boxShadow: '0 -2px 0 rgba(0,0,0,0.20) inset',
     border: '1px solid',
+    borderRadius: 3,
     borderColor: '#e8eaed',
     color: 'black',
     background: 'linear-gradient(#ffffff, #f6f7f8)',
@@ -48,7 +52,7 @@ theme.components = {
   },
   input: {
     border: `2px solid #CCC`,
-    borderRadius: '6px',
+    borderRadius: 6,
     boxShadow: 'none',
     height: '2.40em',
     focusBorder: `2px solid ${theme.colors.primary}`,

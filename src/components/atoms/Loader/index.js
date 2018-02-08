@@ -11,6 +11,7 @@ import {
 class Loader extends React.Component {
   static displayName = 'Loader'
   static defaultProps = {
+    size: 'normal'
   }
   static propTypes = {
     /**

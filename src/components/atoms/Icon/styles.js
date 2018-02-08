@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { size, color, textOnColor } from 'helpers'
+import { size, color, textOnColor, px } from 'helpers'
 import is from 'styled-is'
 
 const isInverted = p => {
@@ -18,7 +18,7 @@ export const StyledIcon = styled.i`
   width: ${p => p.theme.components.icon.width};
   height: ${p => p.theme.components.icon.height};
   line-height: 1.5;
-  font-size: ${p => size(p)};
+  font-size: ${p => px(size(p))};
 
   ${is('color')`color: ${p => color(p)};`}
   ${isInverted}

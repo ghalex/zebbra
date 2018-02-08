@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { color, textOnColor, size } from 'helpers'
+import { color, textOnColor, size, px } from 'helpers'
 
 const isColor = p => {
   if (!p.color || p.inverted) return
@@ -43,9 +43,9 @@ const isStacked = p => {
 export const StyledBox = styled.div`
   position: relative;
   font-family: ${p => p.theme.fonts.primary};
-  font-size: ${p => size(p)};
+  font-size: ${p => px(size(p))};
   border: ${p => p.theme.components.box.border};
-  border-radius: ${p => p.theme.components.box.radius};
+  border-radius: ${p => px(p.theme.components.box.borderRadius)};
   box-shadow: ${p => p.theme.components.box.boxShadow};
   padding: ${p => p.padding};
   background-color: white;

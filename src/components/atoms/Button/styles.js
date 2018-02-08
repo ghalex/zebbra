@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { isOr } from 'styled-is'
 import { lighten } from 'polished'
-import { size, color, hover, textOnColor } from 'helpers'
+import { px, size, color, hover, textOnColor } from 'helpers'
 
 const isOutlined = p => {
   if (!p.outlined || !p.color) return
@@ -65,7 +65,7 @@ const isWithIcon = p => {
   return css`
     & .icon {
       margin: 0 5px 0 0;
-      font-size: ${p => size(p)};
+      font-size: ${p => px(size(p))};
     }
 
     &.icon-reverse {
@@ -88,7 +88,7 @@ export const StyledButton = styled.div`
   padding: ${p => p.theme.components.button.padding};
   border: ${p => p.theme.components.button.border};
   border-color: ${p => p.theme.components.button.borderColor};
-  border-radius: ${p => p.theme.components.button.radius};
+  border-radius: ${p => px(p.theme.components.button.borderRadius)};
   color: ${p => p.theme.components.button.color};
   background: ${p => p.theme.components.button.background};
   font-family: ${p => p.theme.fonts.primary};
@@ -103,7 +103,7 @@ export const StyledButton = styled.div`
   position: relative;
   user-select: none;
   text-decoration: none;
-  font-size: ${p => size(p)};
+  font-size: ${p => px(size(p))};
 
   &:hover {
     background: ${p => p.theme.components.button.hoverBackground};

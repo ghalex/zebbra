@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import { size, color, textOnColor } from 'helpers'
+import { size, color, textOnColor, px } from 'helpers'
 import is, { isNot } from 'styled-is'
 
 const rotate360 = keyframes`
@@ -21,7 +21,7 @@ export const StyledLoaderContainer = styled.div`
   height: ${p => p.theme.components.loader.size};
   margin: ${p => p.theme.components.loader.margin};
   padding: ${p => p.theme.components.loader.borderSize};
-  font-size: ${p => size(p)};
+  font-size: ${p => px(size(p))};
 
   &:not(:last-child) {
     ${is('vertical')`margin-bottom: 0.5em;`}
@@ -46,7 +46,7 @@ export const StyledLoaderCircle = styled.div`
   margin: ${p => p.theme.components.loader.margin};
   background-color: transparent;
 
-  font-size: ${p => size(p)};
+  font-size: ${p => px(size(p))};
   color: ${p => color(p)};
 
   ${is('inverted')`
@@ -67,5 +67,5 @@ export const StyledLoaderShadow = styled.div`
   margin: ${p => p.theme.components.loader.margin};
   border-color: rgba(0, 0, 0, 0.4);
 
-  font-size: ${p => size(p)};
+  font-size: ${p => px(size(p))};
 `
