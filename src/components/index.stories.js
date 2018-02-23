@@ -8,3 +8,11 @@ const stories = storiesOf('1. Introduction', module)
 stories.add('Welcome', withDocs(docs, () => {
   return <div />
 }))
+
+stories.add('Theming', withDocs(docs, () => {
+  return <div />
+}))
+
+stories.add('Release Notes', withDocs(docs, () => {
+  return <div />
+}))
