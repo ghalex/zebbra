@@ -4,7 +4,7 @@ import { withInfo } from '@storybook/addon-info'
 import { Box, Button } from 'components/atoms'
 import Group from '.'
 
-const stories = storiesOf('atoms/Group', module)
+const stories = storiesOf('2. Components/Group', module)
 
 stories.add('group buttons', withInfo({
   propTablesExclude: [Box, Button],

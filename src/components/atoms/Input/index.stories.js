@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components'
 import Input from '.'
 import Box from '../Box'
 
-const stories = storiesOf('atoms/Input', module)
+const stories = storiesOf('2. Components/Input', module)
 
 stories.add(
   'simple usage',

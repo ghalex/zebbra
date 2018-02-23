@@ -14,28 +14,12 @@ class Button extends React.Component {
     icon: null,
     iconPosition: 'left'
   }
+
   static propTypes = {
-    /**
-     * A button can have different colors.
-     * [ primary, secondary, success, danger, white, black, grey, #FF0000, ... ]
-     */
     color: PropTypes.string,
-    /**
-     * A button can have different sizes.
-     * [ tiny, small, normal, medium, large, xlarge, huge ]
-     */
     size: PropTypes.string,
-    /**
-     * A button can show a loading indicator.
-     */
     loading: PropTypes.bool,
-    /**
-     * A button can have an icon
-     */
     icon: PropTypes.string,
-    /**
-     * A button can have icon left or right
-     */
     iconPosition: PropTypes.string
   }
 

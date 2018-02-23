@@ -6,9 +6,19 @@ import { ThemeProvider } from 'styled-components'
 import { main } from 'themes'
 
 const req = require.context('../src', true, /\.stories\.js$/)
+const compare = (a, b) => {
+  if (a < b) {
+    return 1;
+  }
+  if (a > n) {
+    return -1;
+  }
+  // a must be equal to b
+  return 0;
+}
 
 function loadStories() {
-  req.keys().forEach((filename) => req(filename))
+  req.keys().sort(compare).forEach((filename) => req(filename))
 }
 
 // addon-info

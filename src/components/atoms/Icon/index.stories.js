@@ -4,7 +4,7 @@ import { withInfo } from '@storybook/addon-info'
 import { Box } from 'components/atoms'
 import Icon from '.'
 
-const stories = storiesOf('atoms/Icon', module)
+const stories = storiesOf('2. Components/Icon', module)
 
 stories.add('simple usage', withInfo({
   propTablesExclude: [Box],

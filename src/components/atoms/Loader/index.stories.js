@@ -4,7 +4,7 @@ import { withInfo } from '@storybook/addon-info'
 import Loader from '.'
 import Box from '../Box'
 
-const stories = storiesOf('atoms/Loader', module)
+const stories = storiesOf('2. Components/Loader', module)
 
 stories.add('simple usage', withInfo({ propTablesExclude: [Box] })(() => {
   return (

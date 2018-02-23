@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import Box from '.'
 
-const stories = storiesOf('atoms/Box', module)
+const stories = storiesOf('2. Components/Box', module)
 
 stories.add(
   'simple usage',

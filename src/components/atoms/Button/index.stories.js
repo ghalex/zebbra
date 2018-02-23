@@ -1,14 +1,14 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
 import { withDocs } from 'storybook-readme'
 import { Box } from 'components/atoms'
 import Button from '.'
-import README from './README.md'
 
-const stories = storiesOf('atoms/Button', module)
+import * as docs from './docs'
 
-stories.add('simple usage', withDocs(README, () => {
+const stories = storiesOf('2. Components/Button', module)
+
+stories.add('simple usage', withDocs(docs.main, () => {
   return (
     <div className='story-box'>
       <Box color='success' inverted>
@@ -47,9 +47,7 @@ stories.add('simple usage', withDocs(README, () => {
   )
 }))
 
-stories.add('with different sizes', withInfo({
-  propTablesExclude: [Box]
-})(() => {
+stories.add('with different sizes', withDocs(docs.withSize, () => {
   return (
     <div className='story-box'>
       <Box color='success' inverted>
@@ -64,9 +62,7 @@ stories.add('with different sizes', withInfo({
   )
 }))
 
-stories.add('with icon', withInfo({
-  propTablesExclude: [Box]
-})(() => {
+stories.add('with icon', withDocs(docs.withIcon, () => {
   return (
     <div className='story-box'>
       <Box color='success' inverted>

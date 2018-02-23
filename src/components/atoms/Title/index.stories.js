@@ -4,7 +4,7 @@ import { withInfo } from '@storybook/addon-info'
 import Title from '.'
 import { Box } from 'components/atoms'
 
-const stories = storiesOf('atoms/Title', module)
+const stories = storiesOf('2. Components/Title', module)
 
 stories.add('simple usage', withInfo({ propTablesExclude: [Box] })(() => {
   return (
