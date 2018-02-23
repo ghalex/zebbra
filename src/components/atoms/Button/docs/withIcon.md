@@ -2,6 +2,10 @@
 
 Classic **button** with different icons.
 
+### Demo:
+
+<!-- STORY -->
+
 ### Code:
 
 ```js
@@ -20,7 +24,3 @@ const Component = () => (
 
 export default Component
 ```
-
-### Demo:
-
-<!-- STORY -->

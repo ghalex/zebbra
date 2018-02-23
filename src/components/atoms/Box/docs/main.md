@@ -1,6 +1,6 @@
-# Button
+# Box
 
-Classic **button**, in different colors, sizes, and states.
+A **box** to contain other elements.
 
 ### Properties:
 
@@ -33,22 +33,16 @@ Classic **button**, in different colors, sizes, and states.
       </td>
     </tr>
     <tr>
-      <td>`loading`</td>
+      <td>`padding`</td>
+      <td class='type' align="center">string</td>
+      <td class='default-type' align="center">1em</td>
+      <td>**Ex:** 2px, 0.5rem.</td>
+    </tr>
+    <tr>
+      <td>`inverted`</td>
       <td class='type' align="center">bool</td>
       <td class='default-type' align="center">false</td>
-      <td>A button can show a loading indicator.</td>
-    </tr>
-    <tr>
-      <td>`icon`</td>
-      <td class='type' align="center">string</td>
-      <td class='default-type' align="center">null</td>
-      <td>A button can have an icon</td>
-    </tr>
-    <tr>
-      <td>`iconPosition`</td>
-      <td class='type' align="center">string</td>
-      <td class='default-type'  align="center">left</td>
-      <td>A button can have icon left or right</td>
+      <td>A box can have its colors inverted.</td>
     </tr>
   </tbody>
 </table>
@@ -61,14 +55,15 @@ Classic **button**, in different colors, sizes, and states.
 
 ```js
 import React from 'react'
-import { Box, Button } from 'zebbra'
+import { Box } from 'zebbra'
 
 const Component = () => (
-  <Box>
-    <Button color='primary'>Primary</Button>
-    <Button color='primary' outlined>Primary</Button>
-    <Button color='primary' loading>Primary</Button>
-  </Box>
+  <div>
+    <Box>Some text in box</Box>
+    <Box size='small' color='primary'>Small box with some text in box</Box>
+    <Box color='success' inverted>Some text in box</Box>
+    <Box color='success' stacked>This is stacked</Box>
+  </div>
 )
 
 export default Component

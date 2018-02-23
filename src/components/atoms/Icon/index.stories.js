@@ -1,21 +1,14 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
+import { withDocs } from 'storybook-readme'
 import { Box } from 'components/atoms'
 import Icon from '.'
 
+import * as docs from './docs'
+
 const stories = storiesOf('2. Components/Icon', module)
 
-stories.add('simple usage', withInfo({
-  propTablesExclude: [Box],
-  text: `
-    #### Icon class uses FontAwesome:
-    ~~~~
-    <link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' />
-    ~~~~
-    For a list of all icons check FontAwesome [webiste](https://fontawesome.com/v4.7.0/icons/).
-  `
-})(() => {
+stories.add('simple usage', withDocs(docs.main, () => {
   return (
     <div>
       <Box color='success' inverted>

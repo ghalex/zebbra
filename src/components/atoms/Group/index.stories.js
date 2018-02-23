@@ -1,17 +1,14 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
+import { withDocs } from 'storybook-readme'
 import { Box, Button } from 'components/atoms'
 import Group from '.'
 
+import * as docs from './docs'
+
 const stories = storiesOf('2. Components/Group', module)
 
-stories.add('group buttons', withInfo({
-  propTablesExclude: [Box, Button],
-  text: `
-    A group passes all props like \`color\`, \`size\` to children.
-  `
-})(() => {
+stories.add('group buttons', withDocs(docs.main, () => {
   return (
     <div>
       <Box color='primary' inverted>
@@ -43,5 +40,4 @@ stories.add('group buttons', withInfo({
       </Box>
     </div>
   )
-})
-)
+}))

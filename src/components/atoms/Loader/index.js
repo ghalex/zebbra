@@ -14,17 +14,8 @@ class Loader extends React.Component {
     size: 'normal'
   }
   static propTypes = {
-    /**
-     * A loader can have different colors.
-     * [ primary, secondary, success, danger, white, black, grey, #FF0000, ... ]
-     */
     color: PropTypes.string,
-    /**
-     * A loader can have different sizes.
-     * [ tiny, small, normal, medium, large, xlarge, huge ]
-     */
     size: PropTypes.string,
-    /** A loader can have its colors inverted  */
     inverted: PropTypes.bool
   }
 

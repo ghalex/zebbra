@@ -9,10 +9,8 @@ class Group extends React.Component {
   static defaultProps = {
     vertical: false
   }
+
   static propTypes = {
-    /**
-     * A group can display it's children vertical
-     */
     vertical: PropTypes.bool
   }
 

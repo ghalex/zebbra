@@ -1,12 +1,14 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
+import { withDocs } from 'storybook-readme'
 import Title from '.'
 import { Box } from 'components/atoms'
 
+import * as docs from './docs'
+
 const stories = storiesOf('2. Components/Title', module)
 
-stories.add('simple usage', withInfo({ propTablesExclude: [Box] })(() => {
+stories.add('simple usage', withDocs(docs.main, () => {
   return (
     <div>
       <Box color='danger' inverted>
@@ -26,10 +28,10 @@ stories.add('simple usage', withInfo({ propTablesExclude: [Box] })(() => {
   )
 }))
 
-stories.add('with different size', withInfo({ propTablesExclude: [Box] })(() => {
+stories.add('with different size', withDocs(docs.withSize, () => {
   return (
     <div>
-      <Box>
+      <Box color='success' inverted>
         <Title size='small'>Title Small</Title>
         <Title>Title Normal</Title>
         <Title size='large'>Title Large</Title>
@@ -39,7 +41,7 @@ stories.add('with different size', withInfo({ propTablesExclude: [Box] })(() => 
   )
 }))
 
-stories.add('with different colors usage', withInfo({ propTablesExclude: [Box] })(() => {
+stories.add('with different colors usage', withDocs(docs.withColor, () => {
   return (
     <div>
       <Box color='success' inverted>

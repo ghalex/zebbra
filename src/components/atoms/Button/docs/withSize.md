@@ -2,6 +2,10 @@
 
 Classic **button** with different sizes.
 
+### Demo:
+
+<!-- STORY -->
+
 ### Code:
 
 ```js
@@ -18,7 +22,3 @@ const Component = () => (
 
 export default Component
 ```
-
-### Demo:
-
-<!-- STORY -->

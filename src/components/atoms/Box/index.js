@@ -11,20 +11,11 @@ class Box extends React.Component {
     color: 'white',
     inverted: false
   }
+
   static propTypes = {
-    /**
-     * A box can have different colors.
-     * [ primary, secondary, success, danger, white, black, grey, #FF0000, ... ]
-     */
     color: PropTypes.string,
-    /**
-     * A box can have different sizes.
-     * [ tiny, small, normal, medium, large, xlarge, huge ]
-     */
     size: PropTypes.string,
-    /** Ex: 2px, 0.5rem */
     padding: PropTypes.string,
-    /** A box can have its colors inverted  */
     inverted: PropTypes.bool
   }
 

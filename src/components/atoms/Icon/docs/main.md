@@ -1,6 +1,11 @@
-# Button
+# Icon
 
-Classic **button**, in different colors, sizes, and states.
+Zebbra uses **FontAwesome** icons.
+
+~~~~
+<link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' />
+~~~~
+For a list of all icons check **FontAwesome** [webiste](https://fontawesome.com/v4.7.0/icons/).
 
 ### Properties:
 
@@ -11,6 +16,14 @@ Classic **button**, in different colors, sizes, and states.
       <th align="center">Type</th>
       <th align="center">Default</th>
       <th>Description</th>
+    </tr>
+    <tr>
+      <td>`name`</td>
+      <td class='type' align="center">string</td>
+      <td class='default-type' align="center"></td>
+      <td>
+        FontAwesome icon name.
+      </td>
     </tr>
     <tr>
       <td>`color`</td>
@@ -32,26 +45,9 @@ Classic **button**, in different colors, sizes, and states.
         `tiny`, `small`, `normal`, `medium`, `large`, `xlarge`, `huge`
       </td>
     </tr>
-    <tr>
-      <td>`loading`</td>
-      <td class='type' align="center">bool</td>
-      <td class='default-type' align="center">false</td>
-      <td>A button can show a loading indicator.</td>
-    </tr>
-    <tr>
-      <td>`icon`</td>
-      <td class='type' align="center">string</td>
-      <td class='default-type' align="center">null</td>
-      <td>A button can have an icon</td>
-    </tr>
-    <tr>
-      <td>`iconPosition`</td>
-      <td class='type' align="center">string</td>
-      <td class='default-type'  align="center">left</td>
-      <td>A button can have icon left or right</td>
-    </tr>
   </tbody>
 </table>
+
 
 ### Demo:
 
@@ -61,14 +57,15 @@ Classic **button**, in different colors, sizes, and states.
 
 ```js
 import React from 'react'
-import { Box, Button } from 'zebbra'
+import { Icon } from 'zebbra'
 
 const Component = () => (
-  <Box>
-    <Button color='primary'>Primary</Button>
-    <Button color='primary' outlined>Primary</Button>
-    <Button color='primary' loading>Primary</Button>
-  </Box>
+  <div>
+    <Icon name='star' color='primary' />
+    <Icon name='github' color='success' />
+    <Icon name='bug' color='black' inverted />
+    <Icon name='gift' color='gray' size='large' />
+  </div>
 )
 
 export default Component

@@ -1,6 +1,6 @@
-# Button
+# Loader
 
-Classic **button**, in different colors, sizes, and states.
+A **loader** alerts a user to wait for an activity to complete.
 
 ### Properties:
 
@@ -33,25 +33,28 @@ Classic **button**, in different colors, sizes, and states.
       </td>
     </tr>
     <tr>
-      <td>`loading`</td>
+      <td>`children`</td>
+      <td class='type' align="center">node</td>
+      <td class='default-type' align="center"></td>
+      <td>Primary content. **Ex.**: Loading...</td>
+    </tr>
+    <tr>
+      <td>`inverted`</td>
       <td class='type' align="center">bool</td>
       <td class='default-type' align="center">false</td>
-      <td>A button can show a loading indicator.</td>
+      <td>A loader can have its colors inverted</td>
     </tr>
     <tr>
-      <td>`icon`</td>
-      <td class='type' align="center">string</td>
-      <td class='default-type' align="center">null</td>
-      <td>A button can have an icon</td>
-    </tr>
-    <tr>
-      <td>`iconPosition`</td>
-      <td class='type' align="center">string</td>
-      <td class='default-type'  align="center">left</td>
-      <td>A button can have icon left or right</td>
+      <td>`vertical`</td>
+      <td class='type' align="center">bool</td>
+      <td class='default-type' align="center">false</td>
+      <td>
+        A loader can display it's children **vertical**.
+      </td>
     </tr>
   </tbody>
 </table>
+
 
 ### Demo:
 
@@ -61,14 +64,15 @@ Classic **button**, in different colors, sizes, and states.
 
 ```js
 import React from 'react'
-import { Box, Button } from 'zebbra'
+import { Loader } from 'zebbra'
 
 const Component = () => (
-  <Box>
-    <Button color='primary'>Primary</Button>
-    <Button color='primary' outlined>Primary</Button>
-    <Button color='primary' loading>Primary</Button>
-  </Box>
+  <div>
+    <Loader />
+    <Loader color='danger' size='large' />
+    <Loader color='#FFF000' />
+    <Loader color='#FFF000' inverted vertical>Loading...</Loader>
+  </div>
 )
 
 export default Component

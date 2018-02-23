@@ -1,12 +1,14 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
+import { withDocs } from 'storybook-readme'
 import Loader from '.'
 import Box from '../Box'
 
+import * as docs from './docs'
+
 const stories = storiesOf('2. Components/Loader', module)
 
-stories.add('simple usage', withInfo({ propTablesExclude: [Box] })(() => {
+stories.add('simple usage', withDocs(docs.main, () => {
   return (
     <div>
       <Box>
