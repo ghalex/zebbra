@@ -16,7 +16,7 @@ npm install zebbra
 yarn add zebbra
 ```
 
-# Demo
+# Demo & Documentation
 [DEMO Page](https://ghalex.github.io/zebbra/)
 
 For code example check `.stories.js` files from each component.
