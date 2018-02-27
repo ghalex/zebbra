@@ -49,20 +49,20 @@ Zebbra has full theming support using [styled-components](https://www.styled-com
 To illustrate this, let's create our own theme.To do that all we have to do is extend our main theme.
 
 ```js
-import theme from '../main'
+import { themes } from 'zebbra'
 import { defaults } from 'lodash'
 import { lighten } from 'polished'
 
 const bulma = defaults({
   components: {
-    ...theme.components,
+    ...themes.main.components,
     input: {
-      ...theme.components.input,
+      ...themes.main.components.input,
       border: '1px solid #dbdbdb',
       borderRadius: 6,
       boxShadow: 'inset 0 1px 2px rgba(100, 100, 100, 0.12)',
-      focusBorder: `1px solid ${theme.colors.primary}`,
-      focusBoxShadow: `0 0 0 0.125em ${lighten(0.4, theme.colors.primary)}`
+      focusBorder: `1px solid ${themes.main.colors.primary}`,
+      focusBoxShadow: `0 0 0 0.125em ${lighten(0.4, themes.main.colors.primary)}`
     }
   }
 }, theme)
