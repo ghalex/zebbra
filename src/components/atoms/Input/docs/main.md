@@ -17,7 +17,7 @@ An **Input** is a field used to get a response from a user.
       <td class='type' align="center">string</td>
       <td class='default-type' align="center">normal</td>
       <td>
-        A button can have different sizes. <br />
+        A input can have different sizes. <br />
         **Enum**:
         `tiny`, `small`, `normal`, `medium`, `large`, `xlarge`, `huge`
       </td>

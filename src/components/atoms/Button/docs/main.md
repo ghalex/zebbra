@@ -33,6 +33,18 @@ Classic **button**, in different colors, sizes, and states.
       </td>
     </tr>
     <tr>
+      <td>`outlined`</td>
+      <td class='type' align="center">bool</td>
+      <td class='default-type' align="center">false</td>
+      <td>A button can be shown as outlined.</td>
+    </tr>
+    <tr>
+      <td>`inverted`</td>
+      <td class='type' align="center">bool</td>
+      <td class='default-type' align="center">false</td>
+      <td>A button can his colors inverted.</td>
+    </tr>
+    <tr>
       <td>`loading`</td>
       <td class='type' align="center">bool</td>
       <td class='default-type' align="center">false</td>

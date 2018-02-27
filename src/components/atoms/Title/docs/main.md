@@ -27,7 +27,7 @@ A component to use for **titles**  and **subtitles**.
       <td class='type' align="center">string</td>
       <td class='default-type' align="center">null</td>
       <td>
-        A button can have different colors. <br />
+        A title can have different colors. <br />
         **Enum**:
         `primary`, `secondary`, `success`, `danger`, `white`, `black`, `grey`, `#FF0000`, ...
       </td>
@@ -37,7 +37,7 @@ A component to use for **titles**  and **subtitles**.
       <td class='type' align="center">string</td>
       <td class='default-type' align="center">normal</td>
       <td>
-        A button can have different sizes. <br />
+        A title can have different sizes. <br />
         **Enum**:
         `tiny`, `small`, `normal`, `medium`, `large`, `xlarge`, `huge`
       </td>

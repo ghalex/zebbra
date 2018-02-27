@@ -30,7 +30,7 @@ For a list of all icons check **FontAwesome** [webiste](https://fontawesome.com/
       <td class='type' align="center">string</td>
       <td class='default-type' align="center">null</td>
       <td>
-        A button can have different colors. <br />
+        A icon can have different colors. <br />
         **Enum**:
         `primary`, `secondary`, `success`, `danger`, `white`, `black`, `grey`, `#FF0000`, ...
       </td>
@@ -40,7 +40,7 @@ For a list of all icons check **FontAwesome** [webiste](https://fontawesome.com/
       <td class='type' align="center">string</td>
       <td class='default-type' align="center">normal</td>
       <td>
-        A button can have different sizes. <br />
+        A icon can have different sizes. <br />
         **Enum**:
         `tiny`, `small`, `normal`, `medium`, `large`, `xlarge`, `huge`
       </td>

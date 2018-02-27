@@ -1,4 +1,4 @@
-<img style="width: 200px;" src="https://raw.githubusercontent.com/ghalex/zebbra/master/logo.png" alt="Zebbra logo">
+![Logo](https://raw.githubusercontent.com/ghalex/zebbra/master/logo.png)
 
 # Zebbra
 
@@ -32,6 +32,7 @@ For code example check `.stories.js` files from each component.
 - [x] Input
 - [x] Loader
 - [x] Title
+- [x] YesNo
 
 # Build
 ```
@@ -41,7 +42,38 @@ npm run build
 yarn build
 ```
 
-## License
+# Theming
+
+Zebbra has full theming support using [styled-components](https://www.styled-components.com/).
+
+To illustrate this, let's create our own theme.To do that all we have to do is extend our main theme.
+
+```js
+import theme from '../main'
+import { defaults } from 'lodash'
+import { lighten } from 'polished'
+
+const bulma = defaults({
+  components: {
+    ...theme.components,
+    input: {
+      ...theme.components.input,
+      border: '1px solid #dbdbdb',
+      borderRadius: 6,
+      boxShadow: 'inset 0 1px 2px rgba(100, 100, 100, 0.12)',
+      focusBorder: `1px solid ${theme.colors.primary}`,
+      focusBoxShadow: `0 0 0 0.125em ${lighten(0.4, theme.colors.primary)}`
+    }
+  }
+}, theme)
+
+export default bulma
+```
+<div class='hide'>
+<!-- STORY -->
+</div>
+
+# License
 
 Copyright (c) 2018 [Zebbra contributors](https://github.com/ghalex/zebbra/graphs/contributors)
 
