@@ -1,4 +1,4 @@
-<img style="width: 200px;" src="https://raw.githubusercontent.com/ghalex/zebbra/master/logo.png" alt="Feathers logo">
+<img style="width: 200px;" src="https://raw.githubusercontent.com/ghalex/zebbra/master/logo.png" alt="Zebbra logo">
 
 # Zebbra
 
