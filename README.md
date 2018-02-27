@@ -1,3 +1,5 @@
+<img style="width: 100%; max-width: 400px;" src="https://raw.githubusercontent.com/ghalex/zebbra/master/logo.png" alt="Feathers logo">
+
 # Zebbra
 
 [![npm](https://img.shields.io/npm/dm/zebbra.svg)](https://www.npmjs.com/package/zebbra)
@@ -17,18 +19,19 @@ yarn add zebbra
 ```
 
 # Demo & Documentation
-[DEMO Page](https://ghalex.github.io/zebbra/)
+[Demo + Documentation](https://ghalex.github.io/zebbra/)
 
 For code example check `.stories.js` files from each component.
 
 # Components List
 
 - [x] Box
+- [x] Button
 - [x] Group
 - [x] Icon
-- [x] Button
-- [x] Box
+- [x] Input
 - [x] Loader
+- [x] Title
 
 # Build
 ```
@@ -37,3 +40,8 @@ npm run build
 ```
 yarn build
 ```
+
+## License
+
+Copyright (c) 2018 [Zebbra contributors](https://github.com/ghalex/zebbra/graphs/contributors)
+Licensed under the [MIT license](LICENSE).
