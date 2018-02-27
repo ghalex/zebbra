@@ -28,9 +28,9 @@ yarn add zebbra
 
 # Theming
 
-Zebbra has full theming support using [styled-components](https://www.styled-components.com/). This component provides a theme to all React components underneath 
+Zebbra has full theming support using [styled-components](https://www.styled-components.com/).
 
-To illustrate this, let's create our owen theme.To do that all you have to do is extend our main theme.
+To illustrate this, let's create our own theme.To do that all you have to do is extend our main theme.
 
 ```js
 import theme from '../main'
