@@ -7,16 +7,9 @@ const env = require('yargs').argv.env
 
 let libraryName = 'zebbra'
 let plugins = [
-  new webpack.DefinePlugin({'process.env': {NODE_ENV: JSON.stringify(process.env.NODE_ENV)}}),
-  new webpack.NamedModulesPlugin()
+  new webpack.NamedModulesPlugin(),
+  new webpack.DefinePlugin({'process.env': {ENV: env, NODE_ENV: env}})
 ]
-
-if (env === 'production') {
-  plugins = [
-    ...plugins,
-    new webpack.optimize.UglifyJsPlugin({ minimize: true })
-  ]
-}
 
 const paths = {
   libSrc: path.resolve(__dirname, 'src'),
@@ -34,6 +27,7 @@ module.exports = {
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
+  mode: env,
   devtool: 'source-map',
   module: {
     rules: [
@@ -45,5 +39,8 @@ module.exports = {
     modules: [paths.libModules, paths.libSrc]
   },
   externals: [nodeExternals()],
-  plugins: plugins
+  plugins: plugins,
+  optimization: {
+    minimize: env === 'production'
+  }
 }
