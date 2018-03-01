@@ -11,7 +11,7 @@ const isInverted = p => {
 }
 
 export const StyledIcon = styled.i`
-  display: inline-flex;
+  display: inline-flex !important;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
