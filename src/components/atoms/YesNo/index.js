@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { Icon, Button, Group } from 'components/atoms'
+import { Icon, Button, Group } from 'components'
 import { StyledYesNo } from './styles'
 
 class YesNo extends React.Component {

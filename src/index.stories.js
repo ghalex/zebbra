@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withDocs } from 'storybook-readme'
-import docs from '../../README.md'
+import docs from '../README.md'
 
 const stories = storiesOf('1. Introduction', module)
 

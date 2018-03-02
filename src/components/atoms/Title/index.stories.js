@@ -1,8 +1,8 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withDocs } from 'storybook-readme'
+import { Box } from 'components'
 import Title from '.'
-import { Box } from 'components/atoms'
 
 import * as docs from './docs'
 

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withDocs } from 'storybook-readme'
-import { Box, Button } from 'components/atoms'
+import { Box, Button } from 'components'
 import Group from '.'
 
 import * as docs from './docs'
