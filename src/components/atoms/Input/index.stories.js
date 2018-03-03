@@ -3,10 +3,9 @@ import { storiesOf } from '@storybook/react'
 import { withDocs } from 'storybook-readme'
 import { bulma } from 'themes'
 import { ThemeProvider } from 'styled-components'
-import Input from '.'
-import Box from '../Box'
-
+import { Box } from 'components'
 import * as docs from './docs'
+import Input from './index'
 
 const stories = storiesOf('2. Components/Input', module)
 

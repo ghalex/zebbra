@@ -2,9 +2,8 @@ import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withDocs } from 'storybook-readme'
 import { Box, Button } from 'components'
-import Group from '.'
-
 import * as docs from './docs'
+import Group from './index'
 
 const stories = storiesOf('2. Components/Group', module)
 

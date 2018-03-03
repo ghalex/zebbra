@@ -31,6 +31,7 @@ For code example check `.stories.js` files from each component.
 - [x] Icon
 - [x] Input
 - [x] Checkbox
+- [x] Textarea
 - [x] Loader
 - [x] Text
 - [x] Title
