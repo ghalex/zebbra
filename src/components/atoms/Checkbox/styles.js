@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { darken } from 'polished'
 import { px, size, color } from 'helpers'
 
-const colorDark = p => darken(0.2, color(p))
+const colorDark = p => p.color ? darken(0.2, color(p)) : ''
 
 export const Checkbox = styled.div`
   display: flex;
@@ -13,16 +13,16 @@ export const Checkbox = styled.div`
   
 
   & > div {
-    border: 1px solid;
+    border: ${p => p.theme.components.checkbox.border};
     border-color: ${p => color(p)};
-    border-radius: 3px;
+    border-radius: ${p => px(p.theme.components.checkbox.borderRadius)};
+    box-shadow: ${p => p.theme.components.checkbox.boxShadow};
     margin-right: 0.5em;
     font-size: ${p => px(size(p))};
     height: 1.165em;
     width: 1.165em;
     display: inline-flex;
     align-items: center;
-    box-shadow: inset 0 1px 2px rgba(100, 100, 100, 0.12);
   }
 
   & .icon {

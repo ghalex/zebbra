@@ -8,7 +8,6 @@ class Checkbox extends React.Component {
 
   static displayName = 'Checkbox'
   static defaultProps = {
-    color: 'gray',
     size: 'normal'
   }
 

@@ -58,6 +58,11 @@ theme.components = {
     focusBorder: `2px solid ${theme.colors.primary}`,
     focusBoxShadow: `none`
   },
+  checkbox: {
+    border: '1px solid gray',
+    borderRadius: 3,
+    boxShadow: 'inset 0 1px 2px rgba(0, 0, 0, 0.12)'
+  },
   loader: {
     size: '1.125em',
     borderSize: '3px',
