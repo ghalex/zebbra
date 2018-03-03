@@ -14,7 +14,7 @@ stories.add('simple usage', withDocs(docs.main, () => {
         <Button>Normal</Button>
         <Button color='primary'>Primary</Button>
         <Button color='success'>Success</Button>
-        <Button color='danger'>Danger</Button>
+        <Button color='danger' disabled>Danger</Button>
         <Button color='gray'>Grayscale</Button>
         <Button color='black'>Black</Button>
       </Box>

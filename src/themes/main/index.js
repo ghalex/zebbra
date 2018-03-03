@@ -26,7 +26,7 @@ theme.colors = {
   danger: '#e91e63',
   grey: '#CCCCCC',
   light: '#E0E1E2',
-  black: 'black',
+  black: '#363636',
   white: 'white'
 }
 
@@ -49,6 +49,11 @@ theme.components = {
     color: 'black',
     background: 'linear-gradient(#ffffff, #f6f7f8)',
     hoverBackground: '#f6f7f8'
+  },
+  tag: {
+    border: '1px solid gray',
+    borderRadius: 3,
+    height: '2em'
   },
   input: {
     border: `2px solid #CCC`,

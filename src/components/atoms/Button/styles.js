@@ -83,6 +83,14 @@ const isWithIcon = p => {
   `
 }
 
+const isDisabled = p => {
+  if (!p.disabled) return
+  return css`
+    pointer-events: none;
+    opacity: 0.3;
+  `
+}
+
 export const StyledButton = styled.div`
   height: ${p => p.theme.components.button.height};
   padding: ${p => p.theme.components.button.padding};
@@ -114,6 +122,7 @@ export const StyledButton = styled.div`
   ${isInverted}
   ${isLoading}
   ${isWithIcon}
+  ${isDisabled}
 
   &:not(:last-child) {
     margin: 0 0.25em 0 0;
