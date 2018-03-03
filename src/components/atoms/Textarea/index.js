@@ -7,7 +7,9 @@ class Textarea extends React.Component {
 
   static displayName = 'Textarea'
   static defaultProps = {
-    rows: 5
+    rows: 5,
+    size: 'normal',
+    color: null
   }
 
   render () {

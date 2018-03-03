@@ -11,10 +11,12 @@ stories.add('simple usage', withDocs(docs.main, () => {
   console.log(Checkbox)
   return (
     <div>
-      <Box color='success' childPadding='0 0 4px 0' inverted>
+      <Box childPadding='0 0 4px 0' color='success' inverted>
         <Checkbox checked>Click <a href='#'>me</a> now</Checkbox>
         <Checkbox checked color='primary'>I like this checkbox</Checkbox>
         <Checkbox checked color='success'>This <b>is</b> success</Checkbox>
+      </Box>
+      <Box childPadding='0 0 4px 0' color='success' inverted>
         <Text padding='10px 0 10px 0'>With deifferent sizes:</Text>
         <Checkbox checked size='small'>Do this at <a href='#'>Zebbra</a></Checkbox>
         <Checkbox checked size='large'>Do this at <a href='#'>Zebbra</a></Checkbox>

@@ -32,30 +32,6 @@ The multiline textarea and its variations
         `tiny`, `small`, `normal`, `medium`, `large`, `xlarge`, `huge`
       </td>
     </tr>
-    <tr>
-      <td>`padding`</td>
-      <td class='type' align="center">string</td>
-      <td class='default-type' align="center">0</td>
-      <td>Add padding to text.</td>
-    </tr>
-    <tr>
-      <td>`thin`</td>
-      <td class='type' align="center">bool</td>
-      <td class='default-type' align="center">false</td>
-      <td>A title can have its font as thin</td>
-    </tr>
-    <tr>
-      <td>`strong`</td>
-      <td class='type' align="center">bool</td>
-      <td class='default-type' align="center">false</td>
-      <td>A title can have its font as strong</td>
-    </tr>
-    <tr>
-      <td>`textAlign`</td>
-      <td class='type' align="center">string</td>
-      <td class='default-type' align="center">left</td>
-      <td>Align text in title.</td>
-    </tr>
   </tbody>
 </table>
 
@@ -68,24 +44,24 @@ The multiline textarea and its variations
 
 ```js
 import React from 'react'
-import { Title, Box } from 'zebbra'
+import { Textarea, Text, Box } from 'zebbra'
+import { ThemeProvider } from 'styled-components'
+import { bulma } from 'themes'
 
 const Component = () => (
   <div>
-    <Box color='danger' inverted>
-      <Text>This is a normal text.</Text>
-      <Text thin>This is a thin text.</Text>
-      <Text strong>This is a strong text.</Text>
+    <Box>
+      <Textarea placeholder='Hello Textarea!' size='small' />
     </Box>
-    <Box color='success' inverted>
-      <Text color='primary'>Text with primary color</Text>
-      <Text color='success'>Text with success color</Text>
-      <Text color='danger'>Text with danger color</Text>
+    <Box>
+      <Textarea placeholder='Hello Textarea!' color='primary' />
     </Box>
-    <Box color='success' inverted>
-      <Text size='small'>Text with small size</Text>
-      <Text size='large'>Text with large size</Text>
-    </Box>
+    <ThemeProvider theme={bulma}>
+      <Box>
+        <Text padding='5px 0'>Theme <b>Bulma</b>:</Text>
+        <Textarea placeholder='Hello Textarea!' />
+      </Box>
+    </ThemeProvider>
   </div>
 )
 

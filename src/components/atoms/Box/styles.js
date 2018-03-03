@@ -59,6 +59,7 @@ export const StyledBox = styled.div`
   box-shadow: ${p => p.theme.components.box.boxShadow};
   padding: ${p => p.padding};
   background-color: white;
+  text-align: left;
 
   &:not(:last-child) {
     margin-bottom: 0.6rem;

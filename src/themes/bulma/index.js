@@ -10,7 +10,15 @@ const bulma = defaults({
       border: '1px solid #dbdbdb',
       borderRadius: 6,
       boxShadow: 'inset 0 1px 2px rgba(100, 100, 100, 0.12)',
-      focusBorder: `1px solid ${theme.colors.primary}`,
+      focusBorder: `1px solid ${theme.colors.primaryLight}`,
+      focusBoxShadow: `0 0 0 0.125em ${lighten(0.4, theme.colors.primary)}`
+    },
+    textarea: {
+      ...theme.components.textarea,
+      border: '1px solid #dbdbdb',
+      borderRadius: 6,
+      boxShadow: 'inset 0 1px 2px rgba(100, 100, 100, 0.12)',
+      focusBorder: `1px solid ${theme.colors.primaryLight}`,
       focusBoxShadow: `0 0 0 0.125em ${lighten(0.4, theme.colors.primary)}`
     }
   }

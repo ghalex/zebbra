@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { withDocs } from 'storybook-readme'
 import { bulma } from 'themes'
 import { ThemeProvider } from 'styled-components'
-import { Box } from 'components'
+import { Box, Text } from 'components'
 import * as docs from './docs'
 import Input from './index'
 
@@ -13,12 +13,12 @@ stories.add('simple usage', withDocs(docs.main, () => {
   return (
     <div>
       <Box color='primary' inverted>
-        <label>Default theme:</label>
+        <Text padding='5px 0'>Theme <b>Main</b>:</Text>
         <Input placeholder='Username' color='primary' onEnter={(evt, data) => console.log('data:', data)} />
       </Box>
       <ThemeProvider theme={bulma}>
         <Box color='success' inverted>
-          <label>Custom theme:</label>
+          <Text padding='5px 0'>Theme <b>Bulma</b>:</Text>
           <Input placeholder='Username' color='danger' size='normal' />
         </Box>
       </ThemeProvider>

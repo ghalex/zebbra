@@ -25,12 +25,10 @@ export const HGroup = Group.extend`
 
   & > *:first-child:not(:last-child) {
     border-radius: ${radius} 0 0 ${radius};
-    margin-left: 0 !important;
   }
 
   & > *:last-child:not(:first-child) {
     border-radius: 0 ${radius} ${radius} 0;
-    margin-right: 0 !important;
   }
 
   &:not(:last-child) {
@@ -38,22 +36,14 @@ export const HGroup = Group.extend`
   }
 `
 
-export const test = styled.div.attrs({
-  color: 'red'
-})`
-  margin-right: 5px;
-`
-
 export const VGroup = Group.extend`
   flex-direction: column;
 
   & > *:first-child:not(:last-child) {
     border-radius: ${radius} ${radius} 0 0;
-    margin-left: 0 !important;
   }
 
   & > *:last-child:not(:first-child) {
     border-radius: 0 0 ${radius} ${radius};
-    margin-right: 0 !important;
   }
 `

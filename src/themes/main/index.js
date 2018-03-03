@@ -52,10 +52,17 @@ theme.components = {
   },
   input: {
     border: `2px solid #CCC`,
-    borderRadius: 6,
+    borderRadius: 0,
     boxShadow: 'none',
     height: '2.40em',
-    focusBorder: `2px solid ${theme.colors.primary}`,
+    focusBorder: `2px solid ${theme.colors.primaryLight}`,
+    focusBoxShadow: `none`
+  },
+  textarea: {
+    border: `2px solid #CCC`,
+    borderRadius: 0,
+    boxShadow: 'none',
+    focusBorder: `2px solid ${theme.colors.primaryLight}`,
     focusBoxShadow: `none`
   },
   checkbox: {

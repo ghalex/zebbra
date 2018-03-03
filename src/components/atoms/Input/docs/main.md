@@ -53,11 +53,21 @@ An **Input** is a field used to get a response from a user.
 ```js
 import React from 'react'
 import { Input } from 'zebbra'
+import { ThemeProvider } from 'styled-components'
+import { bulma } from 'themes'
 
 const Component = () => (
   <div>
-    <Input placeholder='Username' onEnter={(evt, data) => console.log('data:', data)} />
-    <Input placeholder='Username' size='large' />
+    <Box color='primary' inverted>
+      <Text padding='5px 0'>Theme <b>Main</b>:</Text>
+      <Input placeholder='Username' color='primary' onEnter={(evt, data) => console.log('data:', data)} />
+    </Box>
+    <ThemeProvider theme={bulma}>
+      <Box color='success' inverted>
+        <Text padding='5px 0'>Theme <b>Bulma</b>:</Text>
+        <Input placeholder='Username' color='danger' size='normal' />
+      </Box>
+    </ThemeProvider>
   </div>
 )
 
