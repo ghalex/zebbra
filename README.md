@@ -30,7 +30,9 @@ For code example check `.stories.js` files from each component.
 - [x] Group
 - [x] Icon
 - [x] Input
+- [x] Checkbox
 - [x] Loader
+- [x] Text
 - [x] Title
 - [x] YesNo
 

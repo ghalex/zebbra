@@ -10,7 +10,7 @@ const compare = (a, b) => {
   if (a < b) {
     return 1;
   }
-  if (a > n) {
+  if (a > b) {
     return -1;
   }
   // a must be equal to b

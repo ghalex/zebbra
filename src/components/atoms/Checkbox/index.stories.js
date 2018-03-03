@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withDocs } from 'storybook-readme'
-import { Box } from 'components'
+import { Text, Box } from 'components'
 import * as docs from './docs'
 import Checkbox from './index'
 
@@ -11,9 +11,13 @@ stories.add('simple usage', withDocs(docs.main, () => {
   console.log(Checkbox)
   return (
     <div>
-      <Box color='success' inverted>
-        <Checkbox checked>Do this at <a href='#'>Coderbox</a></Checkbox>
+      <Box color='success' childPadding='0 0 4px 0' inverted>
+        <Checkbox checked>Click <a href='#'>me</a> now</Checkbox>
+        <Checkbox checked color='primary'>I like this checkbox</Checkbox>
+        <Checkbox checked color='success'>This <b>is</b> success</Checkbox>
+        <Text padding='10px 0 10px 0'>With deifferent sizes:</Text>
         <Checkbox checked size='small'>Do this at <a href='#'>Coderbox</a></Checkbox>
+        <Checkbox checked size='large'>Do this at <a href='#'>Coderbox</a></Checkbox>
       </Box>
     </div>
   )

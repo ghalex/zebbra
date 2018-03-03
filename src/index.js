@@ -8,6 +8,7 @@ export { default as Group } from 'components/atoms/Group'
 export { default as Icon } from 'components/atoms/Icon'
 export { default as Input } from 'components/atoms/Input'
 export { default as Loader } from 'components/atoms/Loader'
+export { default as Text } from 'components/atoms/Text'
 export { default as Title } from 'components/atoms/Title'
 export { default as YesNo } from 'components/atoms/YesNo'
 

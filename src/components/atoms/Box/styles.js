@@ -40,6 +40,16 @@ const isStacked = p => {
   `
 }
 
+const childPadding = p => {
+  if (!p.childPadding) return
+
+  return css`
+    > * {
+      padding: ${p.childPadding}
+    }
+  `
+}
+
 export const StyledBox = styled.div`
   position: relative;
   font-family: ${p => p.theme.fonts.primary};
@@ -57,4 +67,5 @@ export const StyledBox = styled.div`
   ${isStacked}
   ${isInverted}
   ${isColor}
+  ${childPadding}
 `
