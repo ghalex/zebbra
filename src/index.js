@@ -1,2 +1,4 @@
+import * as themes from 'themes'
+
 export * from 'components'
-export * as themes from 'themes'
+export { themes }

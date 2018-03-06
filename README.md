@@ -69,7 +69,7 @@ const bulma = defaults({
       focusBoxShadow: `0 0 0 0.125em ${lighten(0.4, themes.main.colors.primary)}`
     }
   }
-}, theme)
+}, themes.main)
 
 export default bulma
 ```
