@@ -6,9 +6,10 @@ const radius = p => px(p.theme.components.group.borderRadius)
 const Group = styled.div`
   display: inline-flex;
   box-sizing: border-box;
+  width: 100%;
 
   & > * {
-    margin: 0 -1px 0 0 !important;
+    margin: 0 0px 0 0 !important;
   }
 
   & > *:not(:first-child):not(:last-child) {

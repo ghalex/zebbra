@@ -3,7 +3,7 @@ import { size, px } from 'helpers'
 
 export const StyledInput = styled.div`
   display: flex;
-  margin-bottom: 1rem;
+  width: 100%;
 
   & > input {
       width: 100%;
@@ -19,10 +19,15 @@ export const StyledInput = styled.div`
       box-shadow: ${p => p.theme.components.input.boxShadow};
       transition: all .3s;
       font-size: ${p => px(size(p))};
+      box-sizing: border-box;
   }
 
   & > input:focus {
     border: ${p => p.theme.components.input.focusBorder};
     box-shadow: ${p => p.theme.components.input.focusBoxShadow};
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 0.75rem;
   }
 `

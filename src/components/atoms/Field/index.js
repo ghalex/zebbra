@@ -1,6 +1,5 @@
 import React from 'react'
 import cx from 'classnames'
-import { Title } from 'components'
 import { StyledField } from './styles'
 
 class Field extends React.Component {
@@ -19,12 +18,14 @@ class Field extends React.Component {
     return (
       <StyledField {...props} className={className}>
         {label && (
-          <Title size='normal'>
+          <label>
             {label}
             {required && <span>*</span>}
-          </Title>
+          </label>
         )}
-        {children}
+        <div>
+          {children}
+        </div>
       </StyledField>
     )
   }

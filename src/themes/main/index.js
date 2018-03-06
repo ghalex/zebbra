@@ -32,11 +32,11 @@ theme.colors = {
 
 theme.components = {
   group: {
-    borderRadius: 3
+    borderRadius: 0
   },
   box: {
     border: '1px solid rgba(34,36,38, 0.15)',
-    borderRadius: 6,
+    borderRadius: 0,
     boxShadow: '0 1px 3px rgba(10, 10, 10, 0.1)'
   },
   button: {
@@ -44,7 +44,7 @@ theme.components = {
     padding: '0px 1.0em',
     boxShadow: '0 -2px 0 rgba(0,0,0,0.20) inset',
     border: '1px solid',
-    borderRadius: 3,
+    borderRadius: 0,
     borderColor: '#e8eaed',
     color: 'black',
     background: 'linear-gradient(#ffffff, #f6f7f8)',
@@ -52,7 +52,7 @@ theme.components = {
   },
   tag: {
     border: '1px solid gray',
-    borderRadius: 3,
+    borderRadius: 0,
     height: '2em'
   },
   input: {

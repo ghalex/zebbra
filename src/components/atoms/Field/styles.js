@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
-export const Field = styled.div`
+export const StyledField = styled.div`
   display: flex;
   flex-direction: column;
   align-items: ${p => p.align};
 
-  & > .title {
+  & > label {
     margin-bottom: 0.5em !important;
     font-weight: 500;
 
@@ -14,7 +14,11 @@ export const Field = styled.div`
     }
   }
 
+  & > div {
+    position: relative;
+  }
+
   &:not(:last-child) {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1.0rem;
   }
 `
