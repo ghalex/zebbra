@@ -1,6 +1,7 @@
 export { default as Box } from './atoms/Box'
 export { default as Button } from './atoms/Button'
 export { default as Checkbox } from './atoms/Checkbox'
+export { default as Field } from './atoms/Field'
 export { default as Group } from './atoms/Group'
 export { default as Icon } from './atoms/Icon'
 export { default as Input } from './atoms/Input'
