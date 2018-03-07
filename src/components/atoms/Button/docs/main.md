@@ -51,6 +51,12 @@ Classic **button**, in different colors, sizes, and states.
       <td>A button can show a loading indicator.</td>
     </tr>
     <tr>
+      <td>`fluid`</td>
+      <td class='type' align="center">bool</td>
+      <td class='default-type' align="center">false</td>
+      <td>A button can take the width of its container.</td>
+    </tr>
+    <tr>
       <td>`icon`</td>
       <td class='type' align="center">string</td>
       <td class='default-type' align="center">null</td>

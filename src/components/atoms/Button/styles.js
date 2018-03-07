@@ -3,6 +3,13 @@ import { isOr } from 'styled-is'
 import { lighten } from 'polished'
 import { px, size, color, hover, textOnColor } from 'helpers'
 
+const isFluid = p => {
+  if (!p.fluid) return
+  return css`
+    width: 100%;
+  `
+}
+
 const isOutlined = p => {
   if (!p.outlined || !p.color) return
   return css`
@@ -117,6 +124,7 @@ export const StyledButton = styled.div`
     background: ${p => p.theme.components.button.hoverBackground};
   }
 
+  ${isFluid}
   ${isColor}
   ${isOutlined}
   ${isInverted}

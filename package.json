@@ -1,11 +1,12 @@
 {
   "name": "zebbra",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "main": "lib/zebbra.js",
   "repository": "https://github.com/ghalex/zebbra.git",
   "author": "Alexandru Ghiura <ghalex@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "prepare": "yarn build",
     "build": "webpack --env production",
     "build-dev": "webpack --env development",
     "start": "start-storybook -p 6005",
