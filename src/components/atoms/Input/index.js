@@ -39,7 +39,7 @@ class Input extends React.Component {
   }
 
   render () {
-    const { size, type, readonly, placeholder, onChange, onKeyDown, ...props } = this.props
+    const { size, type, readonly, placeholder, onEnter, onChange, onKeyDown, ...props } = this.props
     const className = cx(`input`, this.props.className)
 
     return (
