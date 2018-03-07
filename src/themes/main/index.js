@@ -60,7 +60,7 @@ theme.components = {
     borderRadius: 0,
     boxShadow: 'none',
     height: '2.40em',
-    focusBorder: `2px solid ${theme.colors.primaryLight}`,
+    focusBorder: `2px solid`,
     focusBoxShadow: `none`
   },
   textarea: {

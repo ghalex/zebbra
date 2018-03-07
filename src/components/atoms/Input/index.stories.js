@@ -14,12 +14,13 @@ stories.add('simple usage', withDocs(docs.main, () => {
     <div>
       <Box color='primary' inverted>
         <Text padding='5px 0'>Theme <b>Main</b>:</Text>
-        <Input placeholder='Username' color='primary' onEnter={(evt, data) => console.log('data:', data)} />
+        <Input placeholder='Username' onEnter={(evt, data) => console.log('data:', data)} />
+        <Input placeholder='Username' color='danger' />
       </Box>
       <ThemeProvider theme={bulma}>
         <Box color='success' inverted>
           <Text padding='5px 0'>Theme <b>Bulma</b>:</Text>
-          <Input placeholder='Username' color='danger' size='normal' />
+          <Input placeholder='Username' size='normal' />
         </Box>
       </ThemeProvider>
     </div>
