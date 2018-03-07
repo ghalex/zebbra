@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { size, color, textOnColor, px } from 'helpers'
+import { rgba } from 'polished'
 import is from 'styled-is'
 
 const isInverted = p => {
@@ -7,6 +8,21 @@ const isInverted = p => {
   return css`
     background-color: ${p => color(p)};
     color: ${p => textOnColor(color(p))};
+  `
+}
+
+const isCircular = p => {
+  if (!p.circular) return
+  return css`
+    border-radius: 999px;
+  `
+}
+
+const hasShadow = p => {
+  if (!p.shadow) return
+  return css`
+    box-shadow: 0 0 0 0.18em ${rgba(color(p), 0.3)};
+    margin: 0.185em;
   `
 }
 
@@ -22,4 +38,6 @@ export const StyledIcon = styled.i`
 
   ${is('color')`color: ${p => color(p)};`}
   ${isInverted}
+  ${isCircular}
+  ${hasShadow}
 `

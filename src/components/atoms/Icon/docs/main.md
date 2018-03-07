@@ -45,6 +45,22 @@ For a list of all icons check **FontAwesome** [webiste](https://fontawesome.com/
         `tiny`, `small`, `normal`, `medium`, `large`, `xlarge`, `huge`
       </td>
     </tr>
+    <tr>
+      <td>`circular`</td>
+      <td class='type' align="center">bool</td>
+      <td class='default-type' align="center">false</td>
+      <td>
+        Icon can formatted to appear circular.
+      </td>
+    </tr>
+    <tr>
+      <td>`shadow`</td>
+      <td class='type' align="center">bool</td>
+      <td class='default-type' align="center">false</td>
+      <td>
+        An icon can have shadow.
+      </td>
+    </tr>
   </tbody>
 </table>
 

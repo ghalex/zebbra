@@ -16,14 +16,14 @@ stories.add('simple usage', withDocs(docs.main, () => {
         <Icon name='star' color='success' />
         <Icon name='star' color='black' />
         <Icon name='star' color='gray' />
-        <Icon name='star' color='danger' />
+        <Icon name='star' color='danger' shadow />
       </Box>
       <Box color='primary' inverted>
         <Icon name='star' color='black' inverted />
         <Icon name='star' color='gray' inverted />
         <Icon name='github' color='primary'inverted />
-        <Icon name='gift' color='success' inverted />
-        <Icon name='bug' color='danger' inverted />
+        <Icon name='gift' color='success' inverted shadow />
+        <Icon name='bug' color='danger' inverted circle shadow size='huge' />
       </Box>
       <Box color='danger' inverted>
         <Icon name='star' color='black' />
