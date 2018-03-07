@@ -1,6 +1,6 @@
 {
   "name": "zebbra",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "main": "lib/zebbra.js",
   "repository": "https://github.com/ghalex/zebbra.git",
   "author": "Alexandru Ghiura <ghalex@gmail.com>",
