@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { color, textOnColor, isSize } from '@coderbox/utils'
+import { color, textOnColor, isSize } from '@zebbra/utils'
 import { rgba } from 'polished'
 
 const isInverted = p => {

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { px, size, isColor } from '@coderbox/utils'
+import { px, size, isColor } from '@zebbra/utils'
 
 const isDelete = p => {
   if (!p.delete) return

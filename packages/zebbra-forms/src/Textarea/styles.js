@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { px, size, color } from '@coderbox/utils'
+import { px, size, color } from '@zebbra/utils'
 
 const isColor = p => {
   if (!p.color) return

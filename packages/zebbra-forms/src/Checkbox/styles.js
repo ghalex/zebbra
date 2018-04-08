@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { darken } from 'polished'
-import { px, size, color } from '@coderbox/utils'
+import { px, size, color } from '@zebbra/utils'
 
 const colorDark = p => p.color ? darken(0.2, color(p)) : ''
 

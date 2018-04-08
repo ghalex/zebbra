@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { color, px, isSize } from '@coderbox/utils'
+import { color, px, isSize } from '@zebbra/utils'
 import { rgba } from 'polished'
 
 export const Input = styled.div`

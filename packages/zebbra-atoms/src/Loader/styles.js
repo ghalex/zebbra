@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components'
-import { size, color, textOnColor, px } from '@coderbox/utils'
+import { size, color, textOnColor, px } from '@zebbra/utils'
 
 const rotate360 = keyframes`
   from { transform: rotate(0deg); }

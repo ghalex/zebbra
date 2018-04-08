@@ -27,13 +27,13 @@ module.exports = {
     },
     {
       name: '2. Atoms',
-      content: 'packages/coderbox-atoms/src/index.md',
-      components: 'packages/coderbox-atoms/src/[A-Z]*/index.js'
+      content: 'packages/zebbra-atoms/readme.md',
+      components: 'packages/zebbra-atoms/src/[A-Z]*/index.js'
     },
     {
       name: '3. Forms',
-      content: 'packages/coderbox-forms/src/index.md',
-      components: 'packages/coderbox-forms/src/[A-Z]*/index.js'
+      content: 'packages/zebbra-forms/readme.md',
+      components: 'packages/zebbra-forms/src/[A-Z]*/index.js'
     }
   ],
   webpackConfig: {

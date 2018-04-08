@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { isSize, textOnColor, color, px } from '@coderbox/utils'
+import { isSize, textOnColor, color, px } from '@zebbra/utils'
 
 const isStacked = p => {
   if (!p.stacked) return

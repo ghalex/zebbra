@@ -9,7 +9,7 @@ import {
   isLoading,
   isSize,
   px
-} from '@coderbox/utils'
+} from '@zebbra/utils'
 
 const isWithIcon = p => {
   return css`

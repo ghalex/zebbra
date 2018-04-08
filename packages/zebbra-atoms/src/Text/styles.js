@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { size, color, px } from '@coderbox/utils'
+import { size, color, px } from '@zebbra/utils'
 
 export const StyledText = styled.p`
   font-family: ${p => p.theme.fonts.primary};
