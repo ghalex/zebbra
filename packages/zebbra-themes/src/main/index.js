@@ -59,7 +59,8 @@ theme.components = {
     height: '2em'
   },
   input: {
-    border: `2px solid #CCC`,
+    border: `2px solid`,
+    borderColor: '#CCC',
     borderRadius: 3,
     boxShadow: 'none',
     height: '2.40em',

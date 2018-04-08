@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import { Icon } from '@zebbra/atoms'
 import * as s from './styles'
 
 /**
@@ -12,6 +13,7 @@ class Input extends React.Component {
     type: 'text',
     placeholder: '',
     size: 'normal',
+    icon: null,
     onEnter: null,
     onChange: null
   }
@@ -31,7 +33,9 @@ class Input extends React.Component {
      */
     type: PropTypes.string,
     /** A input can have a placeholder. */
-    placeholder: PropTypes.string
+    placeholder: PropTypes.string,
+    /** A input can have an icon */
+    icon: PropTypes.string
   }
 
   handleKeyDown = evt => {
@@ -55,11 +59,12 @@ class Input extends React.Component {
   }
 
   render () {
-    const { size, color, onEnter, onChange, onKeyDown, ...props } = this.props
+    const { icon, size, color, onEnter, onChange, onKeyDown, ...props } = this.props
     const className = cx(`input`, this.props.className)
 
     return (
-      <s.Input size={size} color={color} className={className}>
+      <s.Input size={size} color={color} hasIcon={!!icon} className={className}>
+        {icon && <Icon color={color} name={icon} />}
         <input
           {...props}
           onChange={this.handleChange}
