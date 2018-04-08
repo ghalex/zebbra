@@ -1,0 +1,29 @@
+{
+  "name": "@zebbra/utils",
+  "version": "1.0.0",
+  "description": "Utilities used by Zebbra components.",
+  "main": "lib/index.js",
+  "scripts": {
+    "del": "del",
+    "prebuild": "npm run clean",
+    "prepare": "npm build",
+    "clean": "del lib",
+    "build": "babel src --out-dir lib",
+    "outdated": "npm outdated"
+  },
+  "keywords": [
+    "styled-components",
+    "utils"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghalex/zebbra/tree/master/packages/zebbra-hocs"
+  },
+  "author": "Ghiura Alexandru",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "polished": "^1.3.0",
+    "styled-components": "^3.2.5"
+  }
+}

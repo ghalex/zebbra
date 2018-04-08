@@ -1,0 +1,33 @@
+{
+  "name": "@zebbra/hocs",
+  "version": "1.0.0",
+  "description": "A collection of Higher-Order Components for React",
+  "main": "lib/index.js",
+  "scripts": {
+    "del": "del",
+    "prebuild": "npm run clean",
+    "prepare": "npm build",
+    "clean": "del lib",
+    "build": "babel src --out-dir lib",
+    "outdated": "npm outdated"
+  },
+  "keywords": [
+    "react",
+    "hocs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghalex/zebbra/tree/master/packages/zebbra-hocs"
+  },
+  "author": "Ghiura Alexandru",
+  "license": "ISC",
+  "dependencies": {
+    "jwt-decode": "^2.2.0",
+    "lodash": "^4.17.5",
+    "recompose": "^0.26.0",
+    "styled-components": "^3.2.5"
+  },
+  "peerDependencies": {
+    "react": "^16.x"
+  }
+}

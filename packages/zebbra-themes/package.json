@@ -1,0 +1,28 @@
+{
+  "name": "@zebbra/themes",
+  "version": "1.0.0",
+  "description": "Themes to be used with Zebbra components.",
+  "main": "lib/index.js",
+  "scripts": {
+    "del": "del",
+    "prebuild": "npm run clean",
+    "prepare": "npm build",
+    "clean": "del lib",
+    "build": "babel src --out-dir lib",
+    "outdated": "npm outdated"
+  },
+  "keywords": [
+    "styled-components",
+    "themes"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghalex/zebbra/tree/master/packages/zebbra-themes"
+  },
+  "author": "Ghiura Alexandru",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "polished": "^1.3.0"
+  }
+}

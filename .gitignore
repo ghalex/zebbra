@@ -1,5 +1,4 @@
-node_modules/**/*
-lib/**/*
-*hot-update*
-*npm-debug*
-.DS_Store
+node_modules
+lib
+lerna-debug.log
+*.DS_Store
