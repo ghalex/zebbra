@@ -1,6 +1,6 @@
 {
   "name": "@zebbra/atoms",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A collection of React components for building user interfaces.",
   "main": "lib/index.js",
   "scripts": {
@@ -16,12 +16,13 @@
     "url": "git+https://github.com/ghalex/zebbra/tree/master/packages/zebbra-atoms"
   },
   "keywords": [
-    "react"
+    "react",
+    "components"
   ],
   "author": "Ghiura Alexandru <ghalex@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "@zebbra/utils": "^1.0.1",
+    "@zebbra/utils": "^1.0.2",
     "classnames": "^2.2.5",
     "lodash": "^4.17.5",
     "polished": "^1.9.2",
