@@ -1,6 +1,6 @@
 {
   "name": "@zebbra/themes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Themes to be used with Zebbra components.",
   "main": "lib/index.js",
   "scripts": {
@@ -24,5 +24,8 @@
   "dependencies": {
     "lodash": "^4.17.4",
     "polished": "^1.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
