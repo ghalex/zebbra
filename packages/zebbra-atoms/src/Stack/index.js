@@ -15,6 +15,9 @@ class Stack extends React.Component {
     items: PropTypes.func
   }
 
+  static Item = s.StackItem
+  static Toolbar = s.StackToolbar
+
   next = () => {
     let index = this.state.index + 1
     let max = this.props.items().length - 1
@@ -49,5 +52,4 @@ class Stack extends React.Component {
   }
 }
 
-Stack.Item = s.StackItem
 export default Stack

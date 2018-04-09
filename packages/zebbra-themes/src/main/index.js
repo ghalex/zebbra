@@ -10,7 +10,7 @@ theme.fonts = {
 /** All sizes are in pixels */
 theme.sizes = {
   tiny: 10,
-  small: 13,
+  small: 14,
   normal: 16,
   medium: 20,
   large: 24,
@@ -53,25 +53,31 @@ theme.components = {
     hoverBackground: '#f6f7f8',
     focusBoxShadow: `0 0 0 0.15em ${rgba(theme.colors.focus, 0.25)}`
   },
+  menu: {
+    border: '1px solid rgba(34,36,38, 0.15)',
+    borderRadius: 3,
+    boxShadow: '0 1px 3px rgba(10, 10, 10, 0.1)',
+    hover: '#f2f2f2'
+  },
   tag: {
     border: '1px solid #888',
     borderRadius: 3,
     height: '2em'
   },
   input: {
-    border: `2px solid`,
+    border: `1px solid`,
     borderColor: '#CCC',
     borderRadius: 3,
-    boxShadow: 'none',
+    boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.12)',
     height: '2.40em',
-    focusBorder: `2px solid ${theme.colors.focus}`,
+    focusBorder: `1px solid ${theme.colors.focus}`,
     focusBoxShadow: `0 0 0 0.15em ${rgba(theme.colors.focus, 0.25)}`
   },
   textarea: {
-    border: `2px solid #CCC`,
+    border: `1px solid #CCC`,
     borderRadius: 3,
-    boxShadow: 'none',
-    focusBorder: `2px solid ${theme.colors.primary}`,
+    boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.12)',
+    focusBorder: `1px solid ${theme.colors.primary}`,
     focusBoxShadow: `0 0 0 0.15em ${rgba(theme.colors.focus, 0.25)}`
   },
   checkbox: {
