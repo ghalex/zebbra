@@ -48,13 +48,13 @@ const hasSpace = p => {
 
 export const Box = styled.div.attrs({
   static: 'true',
-  box: p => ({...p.theme.components.box})
+  options: p => p.theme.components.box(p)
 })`
   position: relative;
   font-family: ${p => p.theme.fonts.primary};
-  border: ${p => p.box.border};
-  border-radius: ${p => px(p.box.borderRadius)};
-  box-shadow: ${p => p.box.boxShadow};
+  border: ${p => p.options.border};
+  border-radius: ${p => px(p.options.borderRadius)};
+  box-shadow: ${p => p.options.boxShadow};
   padding: ${p => p.padding};
   background-color: white;
   text-align: left;

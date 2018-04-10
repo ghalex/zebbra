@@ -38,9 +38,9 @@ const isIcon = ({ icon }) => {
   `
 }
 
-export const Tag = styled.div.attrs({
-  tag: p => ({...p.theme.components.tag})
-})`
+const options = p => p.theme.components.tag(p) || {}
+
+export const Tag = styled.div`
   position: relative;
   font-family: ${p => p.theme.fonts.primary};
   font-size: ${p => px(size(p) * 0.75)};
@@ -49,9 +49,9 @@ export const Tag = styled.div.attrs({
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  height: ${p => p.tag.height};
-  border: ${p => p.tag.border};
-  border-radius: ${p => px(p.tag.borderRadius)};
+  height: ${p => options(p).height};
+  border: ${p => options(p).border};
+  border-radius: ${p => px(options(p).borderRadius)};
   line-height: 1.5;
   vertical-align: middle;
   pointer-events: ${p => p.isDelete ? 'auto' : 'none'};

@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components'
 import { px, isSize } from '@zebbra/utils'
 
-const menu = p => p.theme.components.menu || {}
+const options = p => p.theme.components.menu(p) || {}
 
 export const Menu = styled.div`
   position: relative;
   font-family: ${p => p.theme.fonts.primary};
-  border: ${p => menu(p).border};
-  border-radius: ${p => px(menu(p).borderRadius)};
-  box-shadow: ${p => menu(p).boxShadow};
+  border: ${p => options(p).border};
+  border-radius: ${p => px(options(p).borderRadius)};
+  box-shadow: ${p => options(p).boxShadow};
   padding: 0;
   background-color: white;
   text-align: left;
@@ -34,12 +34,12 @@ export const MenuItem = styled.div`
 
   ${p => !p.static && css`
     &:hover {
-      background: ${p => menu(p).hover};
+      background: ${p => options(p).hover};
     }
   `}
 
   ${p => p.active && css`
-    background: ${p => menu(p).hover};
+    background: ${p => options(p).hover};
   `}
 
   ${isSize}

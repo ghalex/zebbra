@@ -31,15 +31,15 @@ const isWithIcon = p => {
   `
 }
 
-export const Button = styled.div.attrs({
-  button: p => ({ ...p.theme.components.button })
-})`
-  height: ${p => p.button.height};
-  padding: ${p => p.button.padding};
-  border: ${p => p.button.border};
-  border-radius: ${p => px(p.button.borderRadius)};
-  color: ${p => p.button.color};
-  background: ${p => p.button.background};
+const options = p => p.theme.components.button(p) || {}
+
+export const Button = styled.div`
+  height: ${p => options(p).height};
+  padding: ${p => options(p).padding};
+  border: ${p => options(p).border};
+  border-radius: ${p => px(options(p).borderRadius)};
+  color: ${p => options(p).color};
+  background: ${p => options(p).background};
   font-family: ${p => p.theme.fonts.primary};
   font-weight: 400;
   display: inline-flex;
@@ -53,7 +53,7 @@ export const Button = styled.div.attrs({
   user-select: none;
   text-decoration: none;
 
-  ${p => !p.static && css`&:hover { background: ${p.button.hoverBackground}; }`}
+  ${p => !p.static && css`&:hover { background: ${options(p).hoverBackground}; }`}
 
   ${isSize}
   ${isFluid}
@@ -70,7 +70,7 @@ export const Button = styled.div.attrs({
   }
 
   &:focus {
-    box-shadow: ${p => p.button.focusBoxShadow};
+    box-shadow: ${p => options(p).focusBoxShadow};
   }
   
 `

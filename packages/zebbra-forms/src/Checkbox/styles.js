@@ -3,6 +3,7 @@ import { darken } from 'polished'
 import { px, size, color } from '@zebbra/utils'
 
 const colorDark = p => p.color ? darken(0.2, color(p)) : ''
+const options = p => p.theme.components.checkbox(p) || {}
 
 export const Checkbox = styled.div`
   display: flex;
@@ -12,10 +13,10 @@ export const Checkbox = styled.div`
   background: transparent;
 
   & > div {
-    border: ${p => p.theme.components.checkbox.border};
+    border: ${p => options(p).border};
     border-color: ${p => color(p)};
-    border-radius: ${p => px(p.theme.components.checkbox.borderRadius)};
-    box-shadow: ${p => p.theme.components.checkbox.boxShadow};
+    border-radius: ${p => px(options(p).borderRadius)};
+    box-shadow: ${p => options(p).boxShadow};
     margin-right: 0.5em;
     font-size: ${p => px(size(p))};
     height: 1.165em;

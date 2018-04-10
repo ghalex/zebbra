@@ -23,6 +23,7 @@
   "author": "Ghiura Alexandru",
   "license": "ISC",
   "dependencies": {
+    "@zebbra/utils": "^1.0.2",
     "lodash": "^4.17.4",
     "polished": "^1.3.0"
   },

@@ -30,8 +30,8 @@ export const Icon = styled.i`
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  width: ${p => p.theme.components.icon.width};
-  height: ${p => p.theme.components.icon.height};
+  width: ${p => p.theme.components.icon(p).width};
+  height: ${p => p.theme.components.icon(p).height};
   line-height: 1.5;
 
   ${p => p.color && css`color: ${p => color(p)};`}

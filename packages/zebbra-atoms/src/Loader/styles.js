@@ -6,6 +6,8 @@ const rotate360 = keyframes`
   to { transform: rotate(359deg); }
 `
 
+const options = p => p.theme.components.loader(p) || {}
+
 export const Loader = styled.div`
   display: inline-flex;
   align-items: center;
@@ -16,10 +18,10 @@ export const Loader = styled.div`
 
 export const LoaderContainer = styled.div`
   position: relative;
-  width: ${p => p.theme.components.loader.size};
-  height: ${p => p.theme.components.loader.size};
-  margin: ${p => p.theme.components.loader.margin};
-  padding: ${p => p.theme.components.loader.borderSize};
+  width: ${p => options(p).size};
+  height: ${p => options(p).size};
+  margin: ${p => options(p).margin};
+  padding: ${p => options(p).borderSize};
   font-size: ${p => px(size(p))};
 
   &:not(:last-child) {
@@ -34,15 +36,15 @@ export const LoaderCircle = styled.div`
   left: 0;
   animation: ${rotate360} 450ms infinite linear;
   border-radius: 999px;
-  border: ${p => p.theme.components.loader.borderSize} solid;
+  border: ${p => options(p).borderSize} solid;
   border-top-color: transparent;
   border-left-color: transparent;
   border-bottom-color: transparent;
   content: " ";
   display: block;
-  width: ${p => p.theme.components.loader.size};
-  height: ${p => p.theme.components.loader.size};
-  margin: ${p => p.theme.components.loader.margin};
+  width: ${p => options(p).size};
+  height: ${p => options(p).size};
+  margin: ${p => options(p).margin};
   background-color: transparent;
 
   font-size: ${p => px(size(p))};
@@ -58,10 +60,10 @@ export const LoaderShadow = styled.div`
   border-radius: 999px;
   content: " ";
   display: block;
-  border: ${p => p.theme.components.loader.borderSize} solid;
-  width: ${p => p.theme.components.loader.size};
-  height: ${p => p.theme.components.loader.size};
-  margin: ${p => p.theme.components.loader.margin};
+  border: ${p => options(p).borderSize} solid;
+  width: ${p => options(p).size};
+  height: ${p => options(p).size};
+  margin: ${p => options(p).margin};
   border-color: rgba(0, 0, 0, 0.4);
 
   font-size: ${p => px(size(p))};
