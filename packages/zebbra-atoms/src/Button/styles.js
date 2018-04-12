@@ -45,7 +45,7 @@ export const Button = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: ${p => p.static ? 'cursor' : 'pointer'};
   outline: none;
   box-sizing: border-box;
   line-height: 1.5;

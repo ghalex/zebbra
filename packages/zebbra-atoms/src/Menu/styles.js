@@ -12,13 +12,14 @@ export const Menu = styled.div`
   padding: 0;
   background-color: white;
   text-align: left;
+  transition: all .3s;
 `
 
 export const MenuItem = styled.div`
   display: flex;
   padding: 0.8em 1.2em;
   position: relative;
-  cursor: pointer;
+  cursor: ${p => p.static ? 'cursor' : 'pointer'};
   align-items: center;
   justify-content: space-between;
 

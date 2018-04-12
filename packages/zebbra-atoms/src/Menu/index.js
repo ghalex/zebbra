@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { compact } from 'lodash'
+import { compact, omit } from 'lodash'
 import * as s from './styles'
 
 class Menu extends React.Component {
@@ -13,6 +13,12 @@ class Menu extends React.Component {
   }
   static propTypes = {
     size: PropTypes.string,
+    /**
+     * Called on item click
+     *
+     * @param {number} index - item index
+     * @param {object} props - item props
+     */
     onItemClick: PropTypes.func
   }
 
@@ -39,7 +45,7 @@ class Menu extends React.Component {
             let itemProps = {
               size,
               active: i === index,
-              onClick: () => !item.props.static && this.handleItemClick(i, item.props.data)
+              onClick: () => !item.props.static && this.handleItemClick(i, omit({ ...item.props }, 'children'))
             }
 
             return React.cloneElement(item, itemProps)
