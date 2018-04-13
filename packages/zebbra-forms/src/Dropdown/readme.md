@@ -33,10 +33,11 @@ const selectedLabels = (items) => {
     </Group>
   )}
   menu={(onItemClick) => (
-    <Menu height={170} onItemClick={onItemClick}>
+    <Menu onItemClick={onItemClick}>
       <Menu.Header>
         <Input icon='search' type='text' value={state.search} onChange={(e, value) => setState({search: value})} />
       </Menu.Header>
+      <Menu height={170}>
       {
         state.items.filter(filter).map((data, i) => {
           return (
@@ -46,6 +47,7 @@ const selectedLabels = (items) => {
           )
         })
       }
+      </Menu>
     </Menu>
   )}
 />

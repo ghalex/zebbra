@@ -64,7 +64,8 @@ theme.components = {
     margin: '0'
   }),
   menu: p => ({
-    border: '1px solid rgba(34,36,38, 0.15)',
+    border: '1px solid',
+    borderColor: 'rgba(34,36,38, 0.15)',
     borderRadius: 3,
     boxShadow: '0 1px 3px rgba(10, 10, 10, 0.1)',
     hover: '#f2f2f2'

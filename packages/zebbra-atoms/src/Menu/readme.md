@@ -1,11 +1,21 @@
 Simple usage:
 
 ```jsx
-<Menu size='small'>
+<Menu onItemClick={item => console.log(item)}>
   <Menu.Header><b>This is header</b></Menu.Header>
-  <Menu.Item>Item no.1</Menu.Item>
-  <Menu.Item>Item no.2</Menu.Item>
-  <Menu.Item>Item no.3</Menu.Item>
+  <Menu.Divider />
+  <Menu>
+    <Menu.Item><Icon name='star' />Item no.1</Menu.Item>
+    <Menu.Item><Icon name='bug' />Item no.2</Menu.Item>
+    <Menu.Item><Icon name='search' />Item no.3</Menu.Item>
+  </Menu>
+  <Menu.Header color='success'><b>Second Header</b></Menu.Header>
+  <Menu height={120}>
+    <Menu.Item>Item no.1</Menu.Item>
+    <Menu.Item>Item no.2</Menu.Item>
+    <Menu.Item>Item no.3</Menu.Item>
+    <Menu.Item>Item no.4</Menu.Item>
+  </Menu>
 </Menu>
 ```
 
@@ -28,17 +38,9 @@ const filter = (item) => {
   return item.name.toLowerCase().search(state.search.toLowerCase()) > -1
 };
 
-<Menu
-  onItemClick={item => console.log(item)}
-  height={160}
-  header={
-    <Menu.Header>
-      <Input size='small' icon='search' type='text' value={state.search} onChange={(e, value) => setState({search: value})} />
-    </Menu.Header>
-  }>
-
-  {(selected) => (
-    state.items.filter(filter).map((data, i) => {
+<Menu onItemClick={item => console.log(item)}>
+  {(selected) => {
+    const items = state.items.filter(filter).map((data, i) => {
       let active = selected && selected.data.id === data.id
       return (
         <Menu.Item key={i} data={data} color={active ? 'primary' : null}>
@@ -47,6 +49,16 @@ const filter = (item) => {
         </Menu.Item>
       )
     })
-  )}
+
+    return [
+      <Menu.Header>
+        <Input size='small' icon='search' type='text' value={state.search} onChange={(e, value) => setState({search: value})} />
+      </Menu.Header>,
+      <Menu.Divider />,
+      <Menu height={180}>
+        {items}
+      </Menu>
+    ]
+  }}
 </Menu>
 ```

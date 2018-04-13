@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 export const Container = styled.div`
-  display: flex;
+  display: ${p => p.inline ? 'inline-flex' : 'flex'};
   flex-direction: column;
   align-items: flex-start;
 
@@ -16,7 +16,7 @@ export const MenuContainer = styled.div`
   position: relative;
   width: 100%;
 
-  & .menu {
+  & > .menu {
     position: absolute;
     transition: all .3s;
     top: 0;

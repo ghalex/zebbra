@@ -8,7 +8,8 @@ class Dropdown extends React.Component {
   static displayName = 'Dropdown'
   static defaultProps = {
     closeOnBlur: true,
-    closeOnChange: false
+    closeOnChange: false,
+    inline: false
   }
   static propTypes = {
     closeOnBlur: PropTypes.bool,
