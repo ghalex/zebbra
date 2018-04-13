@@ -49,7 +49,7 @@ class Dropdown extends React.Component {
     const { item, open } = this.state
 
     const dropdownTrigger = trigger(item, this.handleTrigger)
-    const dropdownMenu = menu(open, this.handleItemClick)
+    const dropdownMenu = menu(this.handleItemClick)
 
     return (
       <s.Container {...props} className={className}>

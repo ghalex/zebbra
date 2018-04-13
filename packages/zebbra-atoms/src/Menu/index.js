@@ -23,6 +23,7 @@ class Menu extends React.Component {
   }
 
   static Item = s.MenuItem
+  static Header = s.MenuHeader
 
   handleItemClick = (index, data) => {
     this.setState({ index, data })
@@ -33,24 +34,33 @@ class Menu extends React.Component {
   }
 
   render () {
-    const className = cx(`menu`, this.props.className)
-    const { children, size, ...props } = this.props
-    const { index } = this.state
+    let className = cx(`menu`, this.props.className)
+    let { children, size, ...props } = this.props
+    let { index } = this.state
+    let items = compact(children)
+    let header = null
+
+    if (items[0].type.displayName === 'styles__MenuHeader') {
+      header = items.shift()
+    }
 
     return (
       <s.Menu {...props} className={className}>
-        {React.Children.map(
-          compact(children),
-          (item, i) => {
-            let itemProps = {
-              size,
-              active: i === index,
-              onClick: () => !item.props.static && this.handleItemClick(i, omit({ ...item.props }, 'children'))
-            }
+        {header}
+        <s.MenuItemContainer>
+          {React.Children.map(
+            items,
+            (item, i) => {
+              let itemProps = {
+                size,
+                active: i === index,
+                onClick: () => !item.props.static && this.handleItemClick(i, omit({ ...item.props }, 'children'))
+              }
 
-            return React.cloneElement(item, itemProps)
-          }
-        )}
+              return React.cloneElement(item, itemProps)
+            }
+          )}
+        </s.MenuItemContainer>
       </s.Menu>
     )
   }

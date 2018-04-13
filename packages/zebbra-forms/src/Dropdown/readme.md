@@ -9,14 +9,16 @@ Simple usage:
       <Button color='primary' onClick={onTrigger}>{item ? item.value : 'Please Select'}</Button>
     </Group>
   )}
-  menu={(open, onItemClick) => (
+  menu={(onItemClick) => (
     <Menu onItemClick={onItemClick}>
-      <Menu.Item static>
+      <Menu.Header>
         <Input icon='search' type='text' />
-      </Menu.Item>
-      <Menu.Item icon='star' value='Red'>Star</Menu.Item>
+      </Menu.Header>
+      <Menu.Item icon='home' value='Home'>Home</Menu.Item>
+      <Menu.Item icon='star' value='Star'>Star</Menu.Item>
       <Menu.Item icon='reddit' value='Profile'>Profile</Menu.Item>
       <Menu.Item icon='cog' value='Settings'>Setting</Menu.Item>
+      <Menu.Item icon='cog' value='LogOut'>Log out</Menu.Item>
     </Menu>
   )}
 />
