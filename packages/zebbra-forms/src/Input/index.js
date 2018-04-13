@@ -64,7 +64,7 @@ class Input extends React.Component {
 
     return (
       <s.Input size={size} color={color} hasIcon={!!icon} className={className}>
-        {icon && <Icon color={color} name={icon} />}
+        {icon && <Icon size={size} color={color} name={icon} />}
         <input
           {...props}
           onChange={this.handleChange}

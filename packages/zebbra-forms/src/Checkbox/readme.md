@@ -5,7 +5,7 @@ A **Checkbox** can have different colors and can have a content as label:
   <Checkbox checked>Click <a href='#'>me</a> now</Checkbox>
   <Checkbox color='primary'>I like this checkbox</Checkbox>
   <Checkbox checked color='success'>This <b>is</b> success</Checkbox>
-  <Checkbox color='danger'>
+  <Checkbox color='danger' inverted>
     <div>This text is <a href='#'>multiline</a></div>
     <div>and some other text.</div>
   </Checkbox>
@@ -15,8 +15,8 @@ A **Checkbox** can have different colors and can have a content as label:
 You can set different size:
 
 ```jsx
-<Box color='success' inverted>
-  <Checkbox checked size='small'>A small <a href='#'>checkbox</a></Checkbox>
+<Box color='success' space='8px 0' inverted>
+  <Checkbox checked size='normal'>A normal <a href='#'>checkbox</a></Checkbox>
   <Checkbox checked size='large'>A big <a href='#'>checkbox</a></Checkbox>
 </Box>
 ```

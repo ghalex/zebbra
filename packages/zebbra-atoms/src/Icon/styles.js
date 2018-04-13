@@ -32,7 +32,7 @@ export const Icon = styled.i`
   box-sizing: border-box;
   width: ${p => p.theme.components.icon(p).width};
   height: ${p => p.theme.components.icon(p).height};
-  line-height: 1.5;
+  line-height: 1;
 
   ${p => p.color && css`color: ${p => color(p)};`}
   ${isInverted}

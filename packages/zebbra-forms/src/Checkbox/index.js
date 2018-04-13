@@ -29,7 +29,14 @@ class Checkbox extends React.Component {
      **/
     size: PropTypes.string,
     /** Is true if checkbox is checked. */
-    checked: PropTypes.bool
+    checked: PropTypes.bool,
+    /**
+     * Called on change
+     *
+     * @param {object} evt
+     * @param {bool} checked
+     */
+    onChange: PropTypes.func
   }
 
   handleClick = (evt) => {
@@ -50,8 +57,10 @@ class Checkbox extends React.Component {
     const className = cx(`checkbox`, props.className)
 
     return (
-      <s.Checkbox {...props} className={className}>
-        <div onClick={this.handleClick}>{checked && <Icon size={props.size} name='check' />}</div>
+      <s.Checkbox {...props} checked={checked} className={className}>
+        <div onClick={this.handleClick}>
+          {checked && <Icon size={props.size} name='check' color={props.color} inverted={checked} />}
+        </div>
         <label>{children}</label>
       </s.Checkbox>
     )

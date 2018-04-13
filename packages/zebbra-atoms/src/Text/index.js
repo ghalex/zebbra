@@ -10,6 +10,7 @@ class Text extends React.Component {
     thin: false,
     strong: false,
     padding: '0',
+    inline: false,
     textAlign: 'left'
   }
   static propTypes = {

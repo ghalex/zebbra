@@ -6,7 +6,7 @@ export const StyledText = styled.p`
   font-weight: 400;
   line-height: 1.12;
   margin: 0;
-  display: block;
+  display: ${p => p.inline ? 'inline-block' : 'block'};
   box-sizing: border-box;
   text-decoration: none;
   font-size: ${p => px(size(p))};

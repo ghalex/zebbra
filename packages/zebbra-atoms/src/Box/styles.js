@@ -42,7 +42,7 @@ const isInverted = p => {
 const hasSpace = p => {
   if (!p.space) return
   return css`
-    > *:not(:first-child):not(:last-child) { margin: ${p.space} }
+    > *:not(:first-child) { margin: ${p.space} }
   `
 }
 

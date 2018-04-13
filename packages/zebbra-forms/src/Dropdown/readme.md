@@ -1,24 +1,51 @@
-Simple usage:
+Dropdown with multiple selection:
 
 ```jsx
+initialState = {
+  search: '',
+  items: [
+    {id: 1, name: 'javascript', selected: false},
+    {id: 2, name: 'css', selected: false},
+    {id: 3, name: 'html', selected: true},
+    {id: 4, name: 'php', selected: true},
+    {id: 5, name: '.net', selected: false}
+  ]
+};
+
+const filter = (item) => {
+  return item.name.toLowerCase().search(state.search.toLowerCase()) > -1
+};
+
+const selectedLabels = (items) => {
+  let value = items.filter(i => i.selected).map(i => i.name).join(', ')
+  if (value.length > 18) {
+    return value.substr(0, 18) + '...'
+  }
+
+  return value
+}
+
 <Dropdown
-  closeOnChange
   trigger={(item, onTrigger) => (
     <Group>
-      <Button color='#1170c1' icon={item && item.icon ? item.icon : 'circle-thin'} static />
-      <Button color='primary' onClick={onTrigger}>{item ? item.value : 'Please Select'}</Button>
+      <Button color='#1170c1' icon='hashtag' static />
+      <Button color='primary' onClick={onTrigger}>{selectedLabels(state.items) || 'Please select'}</Button>
     </Group>
   )}
   menu={(onItemClick) => (
-    <Menu onItemClick={onItemClick}>
+    <Menu height={170} onItemClick={onItemClick}>
       <Menu.Header>
-        <Input icon='search' type='text' />
+        <Input icon='search' type='text' value={state.search} onChange={(e, value) => setState({search: value})} />
       </Menu.Header>
-      <Menu.Item icon='home' value='Home'>Home</Menu.Item>
-      <Menu.Item icon='star' value='Star'>Star</Menu.Item>
-      <Menu.Item icon='reddit' value='Profile'>Profile</Menu.Item>
-      <Menu.Item icon='cog' value='Settings'>Setting</Menu.Item>
-      <Menu.Item icon='cog' value='LogOut'>Log out</Menu.Item>
+      {
+        state.items.filter(filter).map((data, i) => {
+          return (
+            <Menu.Item key={i}>
+              <Checkbox color='primary' checked={data.selected} onChange={(evt, chk) => data.selected = chk}>{data.name}</Checkbox>
+            </Menu.Item>
+          )
+        })
+      }
     </Menu>
   )}
 />

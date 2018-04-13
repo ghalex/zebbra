@@ -1,22 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { compact, omit } from 'lodash'
+import { compact, isFunction } from 'lodash'
 import * as s from './styles'
 
 class Menu extends React.Component {
-  state = { index: -1, data: null }
+  state = { selected: null }
   static displayName = 'Menu'
   static defaultProps = {
     size: 'normal',
-    onItemClick: null
+    onItemClick: null,
+    height: 0
   }
   static propTypes = {
     size: PropTypes.string,
     /**
      * Called on item click
      *
-     * @param {number} index - item index
      * @param {object} props - item props
      */
     onItemClick: PropTypes.func
@@ -25,20 +25,19 @@ class Menu extends React.Component {
   static Item = s.MenuItem
   static Header = s.MenuHeader
 
-  handleItemClick = (index, data) => {
-    this.setState({ index, data })
+  handleItemClick = (data) => {
+    this.setState({ selected: data })
 
     if (this.props.onItemClick) {
-      this.props.onItemClick(index, data)
+      this.props.onItemClick(data)
     }
   }
 
   render () {
     let className = cx(`menu`, this.props.className)
-    let { children, size, ...props } = this.props
-    let { index } = this.state
-    let items = compact(children)
-    let header = null
+    let { selected } = this.state
+    let { header, children, size, ...props } = this.props
+    let items = isFunction(children) ? compact(children(selected)) : compact(children)
 
     if (items[0].type.displayName === 'styles__MenuHeader') {
       header = items.shift()
@@ -46,15 +45,15 @@ class Menu extends React.Component {
 
     return (
       <s.Menu {...props} className={className}>
-        {header}
-        <s.MenuItemContainer>
+        {header && React.cloneElement(header, { size })}
+        <s.MenuItemContainer height={props.height} hasHeader={!!header}>
           {React.Children.map(
             items,
             (item, i) => {
               let itemProps = {
                 size,
-                active: i === index,
-                onClick: () => !item.props.static && this.handleItemClick(i, omit({ ...item.props }, 'children'))
+                ...item.props,
+                onClick: () => !item.props.static && this.handleItemClick(item.props)
               }
 
               return React.cloneElement(item, itemProps)

@@ -51,7 +51,7 @@ export const Input = styled.div.attrs({
 
   ${p => p.hasIcon && css`
     & > input {
-      padding-left: 1.85em;
+      padding-left: 2em;
     }
   `}
 `
