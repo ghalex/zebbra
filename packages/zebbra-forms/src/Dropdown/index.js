@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import { Icon, Button } from '@zebbra/atoms'
+import { isFunction } from 'lodash'
 import * as s from './styles'
 
 class Dropdown extends React.Component {
@@ -9,11 +11,15 @@ class Dropdown extends React.Component {
   static defaultProps = {
     closeOnBlur: true,
     closeOnChange: false,
-    inline: false
+    inline: false,
+    fluid: false,
+    label: 'Please select'
   }
   static propTypes = {
     closeOnBlur: PropTypes.bool,
-    closeOnChange: PropTypes.bool
+    closeOnChange: PropTypes.bool,
+    label: PropTypes.string,
+    fluid: PropTypes.bool
   }
 
   componentDidMount () {
@@ -33,7 +39,7 @@ class Dropdown extends React.Component {
     }
   }
 
-  handleItemClick = (index, data) => {
+  handleItemClick = (data) => {
     this.setState({ item: data })
     if (this.props.closeOnChange) {
       this.close()
@@ -44,13 +50,39 @@ class Dropdown extends React.Component {
     this.toggle()
   }
 
+  renderTrigger = (item, onTrigger) => {
+    let { label, fluid } = this.props
+
+    if (item) {
+      if (item.label) {
+        label = item.label
+      } else {
+        label = item.children
+      }
+    }
+
+    return (
+      <s.Trigger fluid={fluid} onClick={onTrigger}>
+        <Button fluid={fluid}>
+          {label}
+          <Icon color='grey' name='caret-down' />
+        </Button>
+      </s.Trigger>
+    )
+  }
+
   render () {
-    const className = cx(`dropdown`, this.props.className)
-    const { menu, trigger, ...props } = this.props
-    const { item, open } = this.state
+    let className = cx(`dropdown`, this.props.className)
+    let { children, trigger, fluid, ...props } = this.props
+    let { item, open } = this.state
+
+    if (!trigger) {
+      trigger = this.renderTrigger
+    }
 
     const dropdownTrigger = trigger(item, this.handleTrigger)
-    const dropdownMenu = menu(this.handleItemClick)
+    const dropdownMenuProps = {onItemClick: this.handleItemClick, fluid: fluid}
+    const dropdownMenu = isFunction(children) ? children(this.handleItemClick) : React.cloneElement(children, dropdownMenuProps)
 
     return (
       <s.Container {...props} className={className}>

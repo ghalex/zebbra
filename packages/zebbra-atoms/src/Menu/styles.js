@@ -43,7 +43,7 @@ export const Menu = styled.div`
   transition: all .3s;
   max-height: ${p => p.height > 0 ? px(p.height) : 'initial'};
   overflow-y: auto;
-
+  ${p => p.fluid && css`width: 100%;`}
   & .menu {
     box-shadow: none;
     border: none;
@@ -52,10 +52,6 @@ export const Menu = styled.div`
 
   ${scrollbar}
 `
-
-// border-top-left-radius: ${p => px(options(p).borderRadius)};
-// border-top-right-radius: ${p => px(options(p).borderRadius)};
-// border-bottom: none;
 
 export const MenuHeader = styled.div.attrs({
   className: 'menu-header'
@@ -105,4 +101,7 @@ export const MenuDivider = styled.div`
   border-color: ${p => options(p).borderColor};
   height: 0;
   margin: .${p => p.margin || 0};
+`
+
+export const MenuItems = styled.div`
 `

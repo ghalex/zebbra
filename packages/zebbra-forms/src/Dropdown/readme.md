@@ -1,3 +1,16 @@
+Simple usage of dropdown:
+
+```jsx
+<Dropdown closeOnChange fluid>
+  <Menu>
+    <Menu.Item>Item no.1</Menu.Item>
+    <Menu.Item>Item no.2</Menu.Item>
+    <Menu.Item>Item no.3</Menu.Item>
+    <Menu.Item>Item no.4</Menu.Item>
+  </Menu>
+</Dropdown>
+```
+
 Dropdown with multiple selection:
 
 ```jsx
@@ -31,24 +44,22 @@ const selectedLabels = (items) => {
       <Button color='#1170c1' icon='hashtag' static />
       <Button color='primary' onClick={onTrigger}>{selectedLabels(state.items) || 'Please select'}</Button>
     </Group>
-  )}
-  menu={(onItemClick) => (
-    <Menu onItemClick={onItemClick}>
-      <Menu.Header>
-        <Input icon='search' type='text' value={state.search} onChange={(e, value) => setState({search: value})} />
-      </Menu.Header>
-      <Menu height={170}>
-      {
-        state.items.filter(filter).map((data, i) => {
-          return (
-            <Menu.Item key={i}>
-              <Checkbox color='primary' checked={data.selected} onChange={(evt, chk) => data.selected = chk}>{data.name}</Checkbox>
-            </Menu.Item>
-          )
-        })
-      }
-      </Menu>
+  )}>
+  <Menu>
+    <Menu.Header>
+      <Input icon='search' type='text' value={state.search} onChange={(e, value) => setState({search: value})} />
+    </Menu.Header>
+    <Menu height={170}>
+    {
+      state.items.filter(filter).map((data, i) => {
+        return (
+          <Menu.Item key={i}>
+            <Checkbox color='primary' checked={data.selected} onChange={(evt, chk) => data.selected = chk}>{data.name}</Checkbox>
+          </Menu.Item>
+        )
+      })
+    }
     </Menu>
-  )}
-/>
+  </Menu>
+</Dropdown>
 ```

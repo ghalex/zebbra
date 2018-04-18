@@ -70,6 +70,7 @@ theme.components = {
     boxShadow: '0 1px 3px rgba(10, 10, 10, 0.1)',
     hover: '#f2f2f2'
   }),
+  dropdown: p => ({}),
   tag: p => ({
     border: '1px solid #888',
     borderRadius: 3,

@@ -6,10 +6,25 @@ export const Container = styled.div`
   align-items: flex-start;
 
   > *:first-child {
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.2rem;
   }
 `
+
+export const Trigger = styled.div`
+  ${p => p.fluid && css`width: 100%;`}
+
+  & .button {
+    padding-right: 0;
+    justify-content: space-between;
+  }
+
+  & .icon {
+    margin-left: 0.5em;
+  }
+`
+
 export const TriggerContainer = styled.div`
+  width: 100%;
 `
 
 export const MenuContainer = styled.div`

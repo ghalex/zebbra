@@ -10,10 +10,12 @@ class Menu extends React.Component {
   static defaultProps = {
     size: 'normal',
     height: 0,
+    fluid: false,
     onItemClick: null
   }
   static propTypes = {
     size: PropTypes.string,
+    fluid: PropTypes.bool,
     /**
      * Called on item click
      *
@@ -34,7 +36,7 @@ class Menu extends React.Component {
     let className = cx(`menu`, this.props.className)
     let { selected } = this.state
     let { children, size, ...props } = this.props
-    let items = isFunction(children) ? compact(children(selected)) : compact(children)
+    let items = isFunction(children) ? compact(children(selected).props.children) : compact(children)
 
     return (
       <s.Menu {...props} className={className}>
@@ -70,5 +72,7 @@ Menu.Header.displayName = 'MenuHeader'
 
 Menu.Divider = s.MenuDivider
 Menu.Divider.displayName = 'MenuDivider'
+
+Menu.Items = s.MenuItems
 
 export default Menu

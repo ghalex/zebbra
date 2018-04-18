@@ -50,15 +50,17 @@ const filter = (item) => {
       )
     })
 
-    return [
-      <Menu.Header>
-        <Input size='small' icon='search' type='text' value={state.search} onChange={(e, value) => setState({search: value})} />
-      </Menu.Header>,
-      <Menu.Divider />,
-      <Menu height={180}>
-        {items}
+    return (
+      <Menu>
+        <Menu.Header>
+          <Input size='small' icon='search' type='text' value={state.search} onChange={(e, value) => setState({search: value})} />
+        </Menu.Header>
+        <Menu.Divider />
+        <Menu height={180}>
+          {items}
+        </Menu>
       </Menu>
-    ]
+    )
   }}
 </Menu>
 ```
