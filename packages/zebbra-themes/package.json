@@ -1,6 +1,6 @@
 {
   "name": "@zebbra/themes",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Themes to be used with Zebbra components.",
   "main": "lib/index.js",
   "scripts": {
