@@ -86,7 +86,7 @@ class Dropdown extends React.Component {
 
     return (
       <s.Container {...props} className={className}>
-        <s.TriggerContainer onClick={(e) => e.stopPropagation()}>
+        <s.TriggerContainer fluid={fluid} onClick={(e) => e.stopPropagation()}>
           {dropdownTrigger}
         </s.TriggerContainer>
         <s.MenuContainer open={open} onClick={(e) => e.stopPropagation()}>

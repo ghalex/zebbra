@@ -24,7 +24,7 @@ export const Trigger = styled.div`
 `
 
 export const TriggerContainer = styled.div`
-  width: 100%;
+  ${p => p.fluid && css`width: 100%;`}
 `
 
 export const MenuContainer = styled.div`
