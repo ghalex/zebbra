@@ -97,6 +97,11 @@ theme.components = {
     border: '1px solid gray',
     borderRadius: 3,
     boxShadow: 'inset 0 1px 2px rgba(0, 0, 0, 0.12)'
+  }),
+  switch: p => ({
+    width: '2.5em',
+    thumbSize: '1.15em',
+    thumbPadding: 4
   })
 }
 
