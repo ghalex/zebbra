@@ -25,7 +25,7 @@
   "dependencies": {
     "lodash": "^4.17.4",
     "polished": "^1.3.0",
-    "styled-components": "^3.2.5"
+    "styled-components": "^3.2.6"
   },
   "publishConfig": {
     "access": "public"
