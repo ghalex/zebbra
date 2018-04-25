@@ -49,18 +49,17 @@ class Checkbox extends React.Component {
     let { onChange } = this.props
     let { checked } = this.state
 
-    checked = !checked
-    this.setState({ checked })
+    this.setState({ checked: !checked })
 
     if (onChange) {
-      onChange(evt, checked)
+      onChange(evt, !checked)
     }
   }
 
   render () {
     const { children, ...props } = this.props
     const { checked } = this.state
-    const className = cx(`checkbox`, props.className)
+    const className = cx(`checkbox`, {checked: checked}, props.className)
 
     return (
       <s.Checkbox {...props} checked={checked} className={className}>
