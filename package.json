@@ -1,4 +1,6 @@
 {
+  "name": "zebbra",
+  "version": "1.0.0",
   "scripts": {
     "boot": "lerna bootstrap",
     "build": "lerna run build",
@@ -9,8 +11,8 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.2",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.1",
     "babel-plugin-lodash": "^3.3.2",
     "babel-plugin-module-resolver": "^3.1.1",
@@ -20,13 +22,12 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "del-cli": "^1.1.0",
-    "lerna": "^2.9.1",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1",
-    "react-styleguidist": "^7.0.5",
+    "lerna": "^2.11.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-styleguidist": "^7.0.8",
     "standard": "^11.0.1",
-    "styled-components": "^3.2.5",
-    "webpack": "^3.5.4"
+    "styled-components": "^3.2.6"
   },
   "dependencies": {}
 }

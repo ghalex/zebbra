@@ -24,7 +24,7 @@
   "license": "ISC",
   "dependencies": {
     "@zebbra/utils": "^1.0.6",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.10",
     "polished": "^1.3.0"
   },
   "publishConfig": {
