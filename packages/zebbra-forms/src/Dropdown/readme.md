@@ -1,12 +1,12 @@
 Simple usage of dropdown:
 
 ```jsx
-<Dropdown closeOnChange fluid>
+<Dropdown closeOnChange fluid onChange={i => console.log(i)}>
   <Menu>
-    <Menu.Item>Item no.1</Menu.Item>
-    <Menu.Item>Item no.2</Menu.Item>
-    <Menu.Item>Item no.3</Menu.Item>
-    <Menu.Item>Item no.4</Menu.Item>
+    <Menu.Item value='1'>Item no.1</Menu.Item>
+    <Menu.Item value='2'>Item no.2</Menu.Item>
+    <Menu.Item value='3'>Item no.3</Menu.Item>
+    <Menu.Item value='4'>Item no.4</Menu.Item>
   </Menu>
 </Dropdown>
 ```

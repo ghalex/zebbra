@@ -44,6 +44,10 @@ class Dropdown extends React.Component {
     if (this.props.closeOnChange) {
       this.close()
     }
+
+    if (this.props.onChange) {
+      this.props.onChange(data)
+    }
   }
 
   handleTrigger = () => {
