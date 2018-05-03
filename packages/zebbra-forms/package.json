@@ -1,6 +1,6 @@
 {
   "name": "@zebbra/forms",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "A collection of React components used to build forms.",
   "main": "lib/index.js",
   "scripts": {
@@ -22,7 +22,7 @@
   "author": "Ghiura Alexandru <ghalex@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "@zebbra/atoms": "^1.0.12",
+    "@zebbra/atoms": "^1.0.13",
     "@zebbra/utils": "^1.0.11",
     "classnames": "^2.2.5",
     "lodash": "^4.17.10",
