@@ -74,6 +74,7 @@ export const MenuItem = styled.div.attrs({
   padding: 0.8em 1.2em;
   position: relative;
   cursor: ${p => p.static ? 'cursor' : 'pointer'};
+  white-space: nowrap;
 
   & > .tag {
     float: right;

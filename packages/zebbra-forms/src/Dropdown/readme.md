@@ -11,6 +11,23 @@ Simple usage of dropdown:
 </Dropdown>
 ```
 
+Pointing right
+
+```jsx
+<Dropdown
+  inline
+  direction='right'
+  closeOnChange
+  trigger={(item, onTrigger) => <Button icon='cog' onClick={onTrigger} /> }>
+  <Menu>
+    <Menu.Item value='1'>A very long menu</Menu.Item>
+    <Menu.Item value='2'>Another menu</Menu.Item>
+    <Menu.Divider />
+    <Menu.Item value='4'>Settings</Menu.Item>
+  </Menu>
+</Dropdown>
+```
+
 Dropdown with multiple selection:
 
 ```jsx

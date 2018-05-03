@@ -13,11 +13,13 @@ class Dropdown extends React.Component {
     closeOnChange: false,
     inline: false,
     fluid: false,
+    direction: 'left',
     label: 'Please select'
   }
   static propTypes = {
     closeOnBlur: PropTypes.bool,
     closeOnChange: PropTypes.bool,
+    direction: PropTypes.oneOf(['left', 'right']),
     label: PropTypes.string,
     fluid: PropTypes.bool
   }
@@ -77,7 +79,7 @@ class Dropdown extends React.Component {
 
   render () {
     let className = cx(`dropdown`, this.props.className)
-    let { children, trigger, fluid, ...props } = this.props
+    let { children, trigger, direction, fluid, ...props } = this.props
     let { item, open } = this.state
 
     if (!trigger) {
@@ -89,11 +91,11 @@ class Dropdown extends React.Component {
     const dropdownMenu = isFunction(children) ? children(this.handleItemClick) : React.cloneElement(children, dropdownMenuProps)
 
     return (
-      <s.Container {...props} className={className}>
+      <s.Container {...props} fluid={fluid} className={className}>
         <s.TriggerContainer fluid={fluid} onClick={(e) => e.stopPropagation()}>
           {dropdownTrigger}
         </s.TriggerContainer>
-        <s.MenuContainer open={open} onClick={(e) => e.stopPropagation()}>
+        <s.MenuContainer open={open} fluid={fluid} direction={direction} onClick={(e) => e.stopPropagation()}>
           {dropdownMenu}
         </s.MenuContainer>
       </s.Container>
