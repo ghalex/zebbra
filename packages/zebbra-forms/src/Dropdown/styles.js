@@ -5,7 +5,6 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  ${p => p.fluid && css`width: 100%;`}
 `
 
 export const Trigger = styled.div`

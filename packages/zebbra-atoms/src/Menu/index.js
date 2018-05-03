@@ -6,6 +6,7 @@ import * as s from './styles'
 
 class Menu extends React.Component {
   state = { selected: null }
+
   static displayName = 'Menu'
   static defaultProps = {
     size: 'normal',

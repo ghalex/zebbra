@@ -7,6 +7,7 @@ import * as s from './styles'
 
 class Dropdown extends React.Component {
   state = { item: null, open: false }
+
   static displayName = 'Dropdown'
   static defaultProps = {
     closeOnBlur: true,
