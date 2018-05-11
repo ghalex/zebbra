@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { Icon, Button } from '@zebbra/atoms'
+import { Icon, Button, Menu } from '@zebbra/atoms'
 import { isFunction } from 'lodash'
 import * as s from './styles'
 
@@ -78,18 +78,28 @@ class Dropdown extends React.Component {
     )
   }
 
+  renderMenu = (items, props) => {
+    return <Menu {...props} items={items} />
+  }
+
   render () {
     let className = cx(`dropdown`, this.props.className)
-    let { children, trigger, direction, fluid, ...props } = this.props
+    let { children, trigger, direction, fluid, items, ...props } = this.props
     let { item, open } = this.state
 
     if (!trigger) {
       trigger = this.renderTrigger
     }
 
-    const dropdownTrigger = trigger(item, this.handleTrigger)
-    const dropdownMenuProps = {onItemClick: this.handleItemClick, fluid: fluid}
-    const dropdownMenu = isFunction(children) ? children(this.handleItemClick) : React.cloneElement(children, dropdownMenuProps)
+    let dropdownTrigger = trigger(item, this.handleTrigger)
+    let dropdownMenuProps = {onItemClick: this.handleItemClick, fluid: fluid}
+    let dropdownMenu = null
+
+    if (children) {
+      dropdownMenu = isFunction(children) ? children(this.handleItemClick) : React.cloneElement(children, dropdownMenuProps)
+    } else {
+      dropdownMenu = this.renderMenu(items, dropdownMenuProps)
+    }
 
     return (
       <s.Container {...props} fluid={fluid} className={className}>

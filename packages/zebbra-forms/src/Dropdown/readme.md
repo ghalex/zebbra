@@ -1,31 +1,32 @@
 Simple usage of dropdown:
 
 ```jsx
-<Dropdown closeOnChange fluid onChange={i => console.log(i)}>
-  <Menu>
-    <Menu.Item value='1'>Item no.1</Menu.Item>
-    <Menu.Item value='2'>Item no.2</Menu.Item>
-    <Menu.Item value='3'>Item no.3</Menu.Item>
-    <Menu.Item value='4'>Item no.4</Menu.Item>
-  </Menu>
-</Dropdown>
+<Dropdown
+  closeOnChange
+  fluid
+  items={['Item no.1', 'Item no.2', 'Item no.3']}
+  onChange={i => console.log(i)} />
 ```
 
 Pointing right
 
 ```jsx
+initialState = {
+  items: [
+    {value: 1, text: 'A very long menu'},
+    {value: 2, text: 'Another menu'},
+    {type: 'divider'},
+    {value: 3, text: 'Settings'}
+  ]
+};
+
 <Dropdown
   inline
   direction='right'
   closeOnChange
-  trigger={(item, onTrigger) => <Button icon='cog' onClick={onTrigger} /> }>
-  <Menu>
-    <Menu.Item value='1'>A very long menu</Menu.Item>
-    <Menu.Item value='2'>Another menu</Menu.Item>
-    <Menu.Divider />
-    <Menu.Item value='4'>Settings</Menu.Item>
-  </Menu>
-</Dropdown>
+  items={state.items}
+  onChange={i => console.log(i)}
+  trigger={(item, onTrigger) => <Button icon='cog' onClick={onTrigger} /> } />
 ```
 
 Dropdown with multiple selection:
