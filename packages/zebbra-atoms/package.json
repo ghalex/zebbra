@@ -1,6 +1,6 @@
 {
   "name": "@zebbra/atoms",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "A collection of React components for building user interfaces.",
   "main": "lib/index.js",
   "scripts": {
