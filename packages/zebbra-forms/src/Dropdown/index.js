@@ -44,7 +44,7 @@ class Dropdown extends React.Component {
   }
 
   handleItemClick = (data) => {
-    this.setState({ value: data })
+    this.setState({ item: data })
     if (this.props.closeOnChange) {
       this.close()
     }
