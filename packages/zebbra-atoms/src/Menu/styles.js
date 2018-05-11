@@ -43,6 +43,8 @@ export const Menu = styled.div`
   transition: all .3s;
   max-height: ${p => p.height > 0 ? px(p.height) : 'initial'};
   overflow-y: auto;
+  box-sizing: border-box;
+
   ${p => p.fluid && css`width: 100%;`}
   & .menu {
     box-shadow: none;

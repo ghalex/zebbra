@@ -1,7 +1,7 @@
 Simple usage of dropdown:
 
 ```jsx
-<Dropdown closeOnChange fluid onChange={i => console.log(i)}>
+<Dropdown closeOnChange fluid onChange={({ value }) => console.log(value)}>
   <Menu>
     <Menu.Item value='1'>Item no.1</Menu.Item>
     <Menu.Item value='2'>Item no.2</Menu.Item>

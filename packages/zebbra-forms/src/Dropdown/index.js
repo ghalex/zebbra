@@ -6,20 +6,22 @@ import { isFunction } from 'lodash'
 import * as s from './styles'
 
 class Dropdown extends React.Component {
-  state = { item: null, open: false }
+  state = { value: this.props.value, open: false }
   static displayName = 'Dropdown'
   static defaultProps = {
     closeOnBlur: true,
     closeOnChange: false,
     inline: false,
     fluid: false,
-    label: 'Please select'
+    label: 'Please select',
+    value: null
   }
   static propTypes = {
     closeOnBlur: PropTypes.bool,
     closeOnChange: PropTypes.bool,
     label: PropTypes.string,
-    fluid: PropTypes.bool
+    fluid: PropTypes.bool,
+    value: PropTypes.any
   }
 
   componentDidMount () {
@@ -40,7 +42,7 @@ class Dropdown extends React.Component {
   }
 
   handleItemClick = (data) => {
-    this.setState({ item: data })
+    this.setState({ value: data })
     if (this.props.closeOnChange) {
       this.close()
     }
@@ -54,14 +56,14 @@ class Dropdown extends React.Component {
     this.toggle()
   }
 
-  renderTrigger = (item, onTrigger) => {
+  renderTrigger = (value, onTrigger) => {
     let { label, fluid } = this.props
 
-    if (item) {
-      if (item.label) {
-        label = item.label
+    if (value) {
+      if (value.label) {
+        label = value.label
       } else {
-        label = item.children
+        label = value.children
       }
     }
 
@@ -78,13 +80,13 @@ class Dropdown extends React.Component {
   render () {
     let className = cx(`dropdown`, this.props.className)
     let { children, trigger, fluid, ...props } = this.props
-    let { item, open } = this.state
+    let { value, open } = this.state
 
     if (!trigger) {
       trigger = this.renderTrigger
     }
 
-    const dropdownTrigger = trigger(item, this.handleTrigger)
+    const dropdownTrigger = trigger(value, this.handleTrigger)
     const dropdownMenuProps = {onItemClick: this.handleItemClick, fluid: fluid}
     const dropdownMenu = isFunction(children) ? children(this.handleItemClick) : React.cloneElement(children, dropdownMenuProps)
 
