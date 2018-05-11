@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { compact, isFunction } from 'lodash'
+import { compact, isFunction, isString } from 'lodash'
 import * as s from './styles'
 
 class Menu extends React.Component {
   state = { selected: null }
+
   static displayName = 'Menu'
   static defaultProps = {
     size: 'normal',
@@ -35,13 +36,29 @@ class Menu extends React.Component {
   render () {
     let className = cx(`menu`, this.props.className)
     let { selected } = this.state
-    let { children, size, ...props } = this.props
-    let items = isFunction(children) ? compact(children(selected).props.children) : compact(children)
+    let { children, size, items, ...props } = this.props
+    let menuItems = null
+
+    if (children) {
+      menuItems = isFunction(children) ? compact(children(selected).props.children) : compact(children)
+    } else {
+      menuItems = items.map(data => {
+        if (isString(data)) {
+          return <s.MenuItem>{data}</s.MenuItem>
+        }
+
+        if (data.type === 'divider') {
+          return <s.MenuDivider />
+        }
+
+        return <s.MenuItem value={data.value}>{data.label}</s.MenuItem>
+      })
+    }
 
     return (
       <s.Menu {...props} className={className}>
         {React.Children.map(
-          items,
+          menuItems,
           (item, i) => {
             let itemProps = {
               size,

@@ -19,16 +19,16 @@
     "babel-plugin-styled-components": "^1.1.7",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "del-cli": "^1.1.0",
     "lerna": "^2.11.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-styleguidist": "^7.0.8",
+    "react-styleguidist": "^7.0.11",
     "standard": "^11.0.1",
     "styled-components": "^3.2.6",
-    "webpack": "^4.6.0"
+    "webpack": "^4.8.1"
   },
   "dependencies": {}
 }
