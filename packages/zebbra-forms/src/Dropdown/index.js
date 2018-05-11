@@ -6,7 +6,7 @@ import { isFunction } from 'lodash'
 import * as s from './styles'
 
 class Dropdown extends React.Component {
-  state = { item: null, open: false }
+  state = { item: this.props.value, open: false }
 
   static displayName = 'Dropdown'
   static defaultProps = {
@@ -58,7 +58,7 @@ class Dropdown extends React.Component {
   }
 
   renderTrigger = (item, onTrigger) => {
-    let { label, fluid } = this.props
+    let { label, fluid, size } = this.props
 
     if (item) {
       if (item.label) {
@@ -69,8 +69,8 @@ class Dropdown extends React.Component {
     }
 
     return (
-      <s.Trigger fluid={fluid} onClick={onTrigger}>
-        <Button fluid={fluid}>
+      <s.Trigger fluid={fluid} onClick={onTrigger} className='trigger'>
+        <Button fluid={fluid} size={size}>
           {label}
           <Icon color='grey' name='caret-down' />
         </Button>
@@ -79,12 +79,12 @@ class Dropdown extends React.Component {
   }
 
   renderMenu = (items, props) => {
-    return <Menu {...props} items={items} />
+    return <Menu {...props} items={items} height={200} />
   }
 
   render () {
     let className = cx(`dropdown`, this.props.className)
-    let { children, trigger, direction, fluid, items, ...props } = this.props
+    let { children, trigger, direction, fluid, items, size, ...props } = this.props
     let { item, open } = this.state
 
     if (!trigger) {
@@ -92,7 +92,7 @@ class Dropdown extends React.Component {
     }
 
     let dropdownTrigger = trigger(item, this.handleTrigger)
-    let dropdownMenuProps = {onItemClick: this.handleItemClick, fluid: fluid}
+    let dropdownMenuProps = {onItemClick: this.handleItemClick, fluid: fluid, size: size}
     let dropdownMenu = null
 
     if (children) {
@@ -103,7 +103,7 @@ class Dropdown extends React.Component {
 
     return (
       <s.Container {...props} fluid={fluid} className={className}>
-        <s.TriggerContainer fluid={fluid} onClick={(e) => e.stopPropagation()}>
+        <s.TriggerContainer fluid={fluid} onClick={(e) => e.stopPropagation()} className='trigger-container'>
           {dropdownTrigger}
         </s.TriggerContainer>
         <s.MenuContainer open={open} fluid={fluid} direction={direction} onClick={(e) => e.stopPropagation()}>

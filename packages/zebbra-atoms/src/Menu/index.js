@@ -51,7 +51,7 @@ class Menu extends React.Component {
           return <s.MenuDivider />
         }
 
-        return <s.MenuItem value={data.value}>{data.text}</s.MenuItem>
+        return <s.MenuItem value={data.value}>{data.label}</s.MenuItem>
       })
     }
 

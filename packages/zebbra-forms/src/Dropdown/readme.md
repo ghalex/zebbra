@@ -13,10 +13,10 @@ Pointing right
 ```jsx
 initialState = {
   items: [
-    {value: 1, text: 'A very long menu'},
-    {value: 2, text: 'Another menu'},
+    {value: 1, label: 'A very long menu'},
+    {value: 2, label: 'Another menu'},
     {type: 'divider'},
-    {value: 3, text: 'Settings'}
+    {value: 3, label: 'Settings'}
   ]
 };
 
