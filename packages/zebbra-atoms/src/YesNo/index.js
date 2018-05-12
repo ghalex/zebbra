@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { Icon, Button, Group } from '../index'
+import { Button, Group } from '../index'
 import { StyledYesNo } from './styles'
 
 /**
