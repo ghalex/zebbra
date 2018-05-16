@@ -50,7 +50,7 @@ class Button extends React.Component {
 
   render () {
     const { icon, children, iconPosition, href, ...props } = this.props
-    const Component = href ? s.Button.withComponent(s) : s.Button
+    const Component = href ? s.Button.withComponent('a') : s.Button
     const className = cx(
       'button',
       {'icon-only': !this.props.children},
