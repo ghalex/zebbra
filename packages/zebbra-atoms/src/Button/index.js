@@ -43,11 +43,14 @@ class Button extends React.Component {
     /** A button can have an icon */
     icon: PropTypes.string,
     /** A button can show icon left or right */
-    iconPosition: PropTypes.string
+    iconPosition: PropTypes.string,
+    /** A button can be render as A tag */
+    href: PropTypes.string
   }
 
   render () {
-    const { icon, children, iconPosition, ...props } = this.props
+    const { icon, children, iconPosition, href, ...props } = this.props
+    const Component = href ? s.Button.withComponent(s) : s.Button
     const className = cx(
       'button',
       {'icon-only': !this.props.children},
@@ -64,14 +67,14 @@ class Button extends React.Component {
     }
 
     return (
-      <s.Button {...props} className={className}>
+      <Component {...props} className={className}>
         {btnChildren}
         {props.loading && (
           <div className='loader-container'>
             <Loader size={props.size} color={props.color} inverted={!props.inverted && !props.outlined} />
           </div>
         )}
-      </s.Button>
+      </Component>
     )
   }
 }

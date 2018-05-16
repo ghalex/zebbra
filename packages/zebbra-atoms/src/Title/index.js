@@ -11,7 +11,8 @@ class Title extends React.Component {
     thin: false,
     strong: false,
     textAlign: 'left',
-    margin: undefined
+    margin: undefined,
+    noMargin: false
   }
   static propTypes = {
     /** Render title as `h2`, `h3`, `h4` */

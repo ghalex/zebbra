@@ -4,14 +4,16 @@ import cx from 'classnames'
 import * as s from './styles'
 
 class Stack extends React.Component {
-  state = { index: 0 }
+  state = { index: this.props.index }
 
   static displayName = 'Stack'
   static defaultProps = {
+    index: 0,
     items: () => []
   }
 
   static propTypes = {
+    index: PropTypes.number,
     items: PropTypes.func
   }
 
@@ -32,6 +34,12 @@ class Stack extends React.Component {
 
     if (index < 0) index = max
     this.setState({ index: index < 0 ? 0 : index })
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.index !== this.props.index) {
+      this.setState({ index: nextProps.index })
+    }
   }
 
   render () {

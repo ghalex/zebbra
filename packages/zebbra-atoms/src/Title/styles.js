@@ -2,6 +2,10 @@ import styled, { css } from 'styled-components'
 import { size, color, px } from '@zebbra/utils'
 
 const hasMargin = p => {
+  if (p.noMaring) {
+    return css`margin: 0;`
+  }
+
   if (p.margin) {
     return css`margin: ${p.margin};`
   }
