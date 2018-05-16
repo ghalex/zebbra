@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { Icon, Button, Group } from '../index'
+import { Button, Group } from '../index'
 import { StyledYesNo } from './styles'
 
 /**
@@ -63,8 +63,8 @@ class YesNo extends React.Component {
       <StyledYesNo {...props} className={className}>
         <Group>
           {!left && MainButton}
-          {isOpen && <Button className='btnYes' isIcon onClick={this.handleYes} {...props}><Icon name='check' /></Button>}
-          {isOpen && <Button className='btnNo' isIcon onClick={this.handleNo} {...props}><Icon name='times' /></Button>}
+          {isOpen && <Button icon='check' className='btnYes' isIcon onClick={this.handleYes} {...props} />}
+          {isOpen && <Button icon='times' className='btnNo' isIcon onClick={this.handleNo} {...props} />}
           {left && MainButton}
         </Group>
       </StyledYesNo>

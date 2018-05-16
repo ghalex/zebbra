@@ -6,13 +6,15 @@ const hasMargin = p => {
     return css`margin: 0;`
   }
 
-  if (p.margin) {
+  if (p.margin !== undefined) {
     return css`margin: ${p.margin};`
   }
 
   return css`
     margin: 0 0 1.0rem 0;
-    ${p => p.subtitle && css`margin-top: -18px`};
+    &:not(:first-child) {
+      ${p => p.subtitle && css`margin-top: -18px`};
+    }
   `
 }
 
@@ -23,12 +25,12 @@ export const StyledTitle = styled.div`
   display: block;
   box-sizing: border-box;
   text-decoration: none;
-  font-size: ${p => px(size(p) * 2)};
+  font-size: ${p => px(size(p) * 1.5)};
   color: ${p => color(p)};
   text-align: ${p => p.textAlign};
 
   ${p => p.thin && css`font-weight: 200`};
   ${p => p.strong && css`font-weight: 800`};
-  ${p => p.subtitle && css`font-size: ${px(size(p) * 1.5)}`};
+  ${p => p.subtitle && css`font-size: ${px(size(p))}`};
   ${hasMargin}
 `

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { Icon, Button, Menu } from '@zebbra/atoms'
-import { isFunction } from 'lodash'
+import { isFunction, isString } from 'lodash'
 import * as s from './styles'
 
 class Dropdown extends React.Component {
@@ -14,15 +14,16 @@ class Dropdown extends React.Component {
     closeOnChange: false,
     inline: false,
     fluid: false,
-    direction: 'left',
-    label: 'Please select'
+    label: 'Please select',
+    direction: 'left'
   }
   static propTypes = {
     closeOnBlur: PropTypes.bool,
     closeOnChange: PropTypes.bool,
     direction: PropTypes.oneOf(['left', 'right']),
     label: PropTypes.string,
-    fluid: PropTypes.bool
+    fluid: PropTypes.bool,
+    value: PropTypes.any
   }
 
   componentDidMount () {
@@ -61,10 +62,14 @@ class Dropdown extends React.Component {
     let { label, fluid, size } = this.props
 
     if (item) {
-      if (item.label) {
-        label = item.label
+      if (isString(item)) {
+        label = item
       } else {
-        label = item.children
+        if (item.label) {
+          label = item.label
+        } else {
+          label = item.children
+        }
       }
     }
 

@@ -25,13 +25,13 @@ const months = [
 /**
  * A **DatePick** is used to select a date.
  */
-class DatePick extends React.Component {
+class DatePicker extends React.Component {
   state = {
     month: moment(this.props.value).month(),
     year: moment(this.props.value).year()
   }
 
-  static displayName = 'DatePick'
+  static displayName = 'DatePicker'
   static defaultProps = {
     startYear: 2000,
     hideIcon: false,
@@ -86,4 +86,4 @@ class DatePick extends React.Component {
   }
 }
 
-export default DatePick
+export default DatePicker
