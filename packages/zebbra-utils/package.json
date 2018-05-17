@@ -1,6 +1,6 @@
 {
   "name": "@zebbra/utils",
-  "version": "1.0.11",
+  "version": "1.0.24",
   "description": "Utilities used by Zebbra components.",
   "main": "lib/index.js",
   "scripts": {
