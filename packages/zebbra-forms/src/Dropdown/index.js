@@ -59,7 +59,7 @@ class Dropdown extends React.Component {
   }
 
   renderTrigger = (item, onTrigger) => {
-    let { label, fluid, size } = this.props
+    let { label, fluid, size, color } = this.props
 
     if (item) {
       if (isString(item)) {
@@ -75,7 +75,7 @@ class Dropdown extends React.Component {
 
     return (
       <s.Trigger fluid={fluid} onClick={onTrigger} className='trigger'>
-        <Button fluid={fluid} size={size}>
+        <Button fluid={fluid} size={size} color={color}>
           {label}
           <Icon color='grey' name='caret-down' />
         </Button>
