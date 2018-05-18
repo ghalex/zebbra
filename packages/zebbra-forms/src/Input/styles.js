@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components'
-import { color, px, isSize } from '@zebbra/utils'
-import { rgba } from 'polished'
+import { color, px, isSize, isColor } from '@zebbra/utils'
 
 export const Input = styled.div.attrs({
   options: p => p.theme.components.input(p)
@@ -18,17 +17,18 @@ export const Input = styled.div.attrs({
       padding: 0 0.55rem;
       outline: 0 none;
       border: ${p => p.options.border};
-      border-color: ${p => p.color ? color(p) : p.options.borderColor};
       border-radius: ${p => px(p.options.borderRadius)};
       box-shadow: ${p => p.options.boxShadow};
       transition: all .3s;
-      background: ${p => p.color ? rgba(color(p), 0.3) : p.options.background};
+      border-color: ${p => p.options.borderColor};
+      background: ${p => p.options.background};
       box-sizing: border-box;
 
       &::-webkit-input-placeholder {
         color: ${p => p.color ? color(p) : 'gray'};
       }
 
+      ${isColor}
       ${isSize}
   }
 
@@ -36,6 +36,12 @@ export const Input = styled.div.attrs({
     border: ${p => p.options.focusBorder};
     box-shadow: ${p => p.options.focusBoxShadow};
   }
+
+  & > input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    ${isColor}
+    opacity: 0.8;
+  }
+
 
   &:not(:last-child) {
     margin-bottom: 0.75rem;
@@ -47,6 +53,7 @@ export const Input = styled.div.attrs({
     left: 5px;
     transform: translateY(-50%);
     ${p => !p.color && css`color: ${p.options.borderColor}`}
+    ${isColor}
   }
 
   ${p => p.hasIcon && css`
