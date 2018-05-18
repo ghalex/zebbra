@@ -54,9 +54,7 @@ class Dropdown extends React.Component {
     }
   }
 
-  handleTrigger = () => {
-    this.toggle()
-  }
+  handleTrigger = () => this.toggle()
 
   renderTrigger = (item, onTrigger) => {
     let { label, fluid, size, color } = this.props
