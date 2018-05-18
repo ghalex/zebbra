@@ -32,10 +32,10 @@ class Tag extends React.Component {
 
   render () {
     const className = cx(`tag`, this.props.className)
-    const {icon, isDelete, children, ...props} = this.props
+    const {icon, children, ...props} = this.props
 
     return (
-      <s.Tag {...props} icon={icon} isDelete={isDelete} className={className}>
+      <s.Tag {...props} icon={icon} className={className}>
         {icon && <Icon key={0} name={icon} />}
         {children}
       </s.Tag>

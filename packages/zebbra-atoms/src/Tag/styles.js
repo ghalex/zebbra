@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { px, size, isColor } from '@zebbra/utils'
+import { px, size, isColor, isHover } from '@zebbra/utils'
 
 const isDelete = p => {
   if (!p.delete) return
@@ -54,13 +54,14 @@ export const Tag = styled.div`
   border-radius: ${p => px(options(p).borderRadius)};
   line-height: 1.5;
   vertical-align: middle;
-  pointer-events: ${p => p.isDelete ? 'auto' : 'none'};
+  pointer-events: ${p => p.delete ? 'auto' : 'none'};
 
   &:not(:last-child) {
     margin: 0 0.25em 0 0;
   }
 
   ${isColor}
+  ${isHover}
   ${isIcon}
   ${isDelete}
 `
