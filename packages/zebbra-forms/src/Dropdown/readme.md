@@ -1,11 +1,16 @@
 Simple usage of dropdown:
 
 ```jsx
+initialState = {
+  selected: null
+};
+
 <Dropdown
   closeOnChange
   fluid
   items={['Item no.1', 'Item no.2', 'Item no.3']}
-  onChange={i => console.log(i)} />
+  value={state.selected}
+  onChange={item => setState({selected: item})} />
 ```
 
 Pointing right
@@ -40,15 +45,16 @@ initialState = {
     {id: 3, name: 'html', selected: true},
     {id: 4, name: 'php', selected: true},
     {id: 5, name: '.net', selected: false}
-  ]
+  ],
+  selectedItems: [{id: 3, name: 'html', selected: true}, {id: 4, name: 'php', selected: true}]
 };
 
 const filter = (item) => {
   return item.name.toLowerCase().search(state.search.toLowerCase()) > -1
 };
 
-const selectedLabels = (items) => {
-  let value = items.filter(i => i.selected).map(i => i.name).join(', ')
+const toLabels = (items) => {
+  let value = items.map(i => i.name).join(', ')
   if (value.length > 18) {
     return value.substr(0, 18) + '...'
   }
@@ -56,11 +62,25 @@ const selectedLabels = (items) => {
   return value
 }
 
+const toggle = (item, value) => {
+  let selected = state.selectedItems
+
+  if (value) {
+    item.selected = true
+    selected.push(item)
+  } else {
+    item.selected = false
+    selected = selected.filter(i => i.name !== item.name)
+  }
+
+  setState({selectedItems: selected})
+}
+
 <Dropdown
   trigger={(item, onTrigger) => (
     <Group>
       <Button color='#1170c1' icon='hashtag' static />
-      <Button color='primary' onClick={onTrigger}>{selectedLabels(state.items) || 'Please select'}</Button>
+      <Button color='primary' onClick={onTrigger}>{toLabels(state.selectedItems) || 'Please select'}</Button>
     </Group>
   )}>
   <Menu>
@@ -72,7 +92,7 @@ const selectedLabels = (items) => {
       state.items.filter(filter).map((data, i) => {
         return (
           <Menu.Item key={i}>
-            <Checkbox color='primary' checked={data.selected} onChange={(evt, chk) => data.selected = chk}>{data.name}</Checkbox>
+            <Checkbox color='primary' checked={data.selected} onChange={(evt, chk) => toggle(data, chk)}>{data.name}</Checkbox>
           </Menu.Item>
         )
       })

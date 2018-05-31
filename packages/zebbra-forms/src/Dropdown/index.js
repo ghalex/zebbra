@@ -6,7 +6,7 @@ import { isFunction, isString } from 'lodash'
 import * as s from './styles'
 
 class Dropdown extends React.Component {
-  state = { item: this.props.value, open: false }
+  state = { open: false }
 
   static displayName = 'Dropdown'
   static defaultProps = {
@@ -44,7 +44,6 @@ class Dropdown extends React.Component {
   }
 
   handleItemClick = (data) => {
-    this.setState({ item: data })
     if (this.props.closeOnChange) {
       this.close()
     }
@@ -87,14 +86,14 @@ class Dropdown extends React.Component {
 
   render () {
     let className = cx(`dropdown`, this.props.className)
-    let { children, trigger, direction, fluid, items, size, ...props } = this.props
-    let { item, open } = this.state
+    let { value, children, trigger, direction, fluid, items, size, ...props } = this.props
+    let { open } = this.state
 
     if (!trigger) {
       trigger = this.renderTrigger
     }
 
-    let dropdownTrigger = trigger(item, this.handleTrigger)
+    let dropdownTrigger = trigger(value, this.handleTrigger)
     let dropdownMenuProps = {onItemClick: this.handleItemClick, fluid: fluid, size: size}
     let dropdownMenu = null
 

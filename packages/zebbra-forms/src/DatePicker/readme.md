@@ -1,8 +1,8 @@
-You can use **DatePick** to let user select a date.
+You can use **DatePicker** to let user select a date.
 
 ```jsx
 <Box>
-  <DatePick onChange={v => console.log(v.toDate())} />
+  <DatePicker onChange={v => console.log(v.toDate())} />
 </Box>
 ```
 
