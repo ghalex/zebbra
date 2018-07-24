@@ -40,6 +40,12 @@ class Switch extends React.Component {
     onChange: PropTypes.func
   }
 
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.checked !== this.state.checked) {
+      this.setState({ checked: nextProps.checked })
+    }
+  }
+
   handleClick = (evt) => {
     let { onChange } = this.props
     let { checked } = this.state
