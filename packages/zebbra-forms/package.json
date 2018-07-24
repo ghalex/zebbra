@@ -1,6 +1,6 @@
 {
   "name": "@zebbra/forms",
-  "version": "1.0.29",
+  "version": "1.0.30",
   "description": "A collection of React components used to build forms.",
   "main": "lib/index.js",
   "scripts": {
