@@ -17,12 +17,15 @@ export const Checkbox = styled.div`
     border-color: ${p => color(p)};
     border-radius: ${p => px(options(p).borderRadius)};
     box-shadow: ${p => options(p).boxShadow};
-    margin-right: 0.5em;
     font-size: ${p => px(size(p) * 0.825)};
     height: 1.165em;
     width: 1.165em;
     display: inline-flex;
     align-items: center;
+
+    ${p => p.hasChildren && css`
+      margin-right: 0.5em;
+    `}
 
     ${p => p.checked && css`
       background-color: ${p => color(p)};

@@ -62,11 +62,11 @@ class Checkbox extends React.Component {
     const className = cx(`checkbox`, {checked: checked}, props.className)
 
     return (
-      <s.Checkbox {...props} checked={checked} className={className}>
+      <s.Checkbox {...props} checked={checked} hasChildren={!!children} className={className}>
         <div onClick={this.handleClick}>
           {checked && <Icon size={props.size} name='check' color={props.color} inverted={checked} />}
         </div>
-        <label>{children}</label>
+        {children && <label>{children}</label>}
       </s.Checkbox>
     )
   }
