@@ -8,8 +8,7 @@
     "prebuild": "npm run clean",
     "prepare": "npm build",
     "clean": "del lib",
-    "build": "babel src --out-dir lib",
-    "outdated": "npm outdated"
+    "build": "babel src --out-dir lib"
   },
   "keywords": [
     "styled-components",
@@ -25,7 +24,8 @@
   "dependencies": {
     "@zebbra/utils": "^1.0.24",
     "lodash": "^4.17.10",
-    "polished": "^1.3.0"
+    "polished": "^1.3.0",
+    "recompose": "^0.28.2"
   },
   "publishConfig": {
     "access": "public"

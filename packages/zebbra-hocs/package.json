@@ -8,8 +8,7 @@
     "prebuild": "npm run clean",
     "prepare": "npm build",
     "clean": "del lib",
-    "build": "babel src --out-dir lib",
-    "outdated": "npm outdated"
+    "build": "babel src --out-dir lib"
   },
   "keywords": [
     "react",
@@ -25,7 +24,7 @@
   "dependencies": {
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.10",
-    "recompose": "^0.27.0"
+    "recompose": "^0.28.2"
   },
   "peerDependencies": {
     "react": "^16.x",
