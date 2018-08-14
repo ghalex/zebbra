@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { px, size, color } from '@zebbra/utils'
+import { px, size, color, getTheme } from '@zebbra/utils'
 
 const isColor = p => {
   if (!p.color) return
@@ -8,10 +8,10 @@ const isColor = p => {
   `
 }
 
-const options = p => p.theme.components.textarea(p) || {}
+const options = p => getTheme(p).components.textarea(p) || {}
 
 export const StyledTextarea = styled.textarea`
-  font-family: ${(p) => p.theme.fonts.primary};
+  font-family: ${(p) => getTheme(p).fonts.primary};
   font-size: ${p => px(size(p))};
   border: ${p => options(p).border};
   border-radius: ${p => px(options(p).borderRadius)};

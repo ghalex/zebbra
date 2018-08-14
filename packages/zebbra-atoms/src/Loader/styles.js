@@ -1,12 +1,12 @@
 import styled, { css, keyframes } from 'styled-components'
-import { size, color, textOnColor, px } from '@zebbra/utils'
+import { size, color, textOnColor, px, getTheme } from '@zebbra/utils'
 
 const rotate360 = keyframes`
   from { transform: rotate(0deg); }
   to { transform: rotate(359deg); }
 `
 
-const options = p => p.theme.components.loader(p) || {}
+const options = p => getTheme(p).components.loader(p) || {}
 
 export const Loader = styled.div`
   display: inline-flex;

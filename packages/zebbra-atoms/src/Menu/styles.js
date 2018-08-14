@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
-import { px, isSize, isColor, isHover } from '@zebbra/utils'
+import { px, isSize, isColor, isHover, getTheme } from '@zebbra/utils'
 
-const options = p => p.theme.components.menu(p) || {}
+const options = p => getTheme(p).components.menu(p) || {}
 const scrollbar = css`
   & ::-webkit-scrollbar {
     -webkit-appearance: none;
@@ -32,7 +32,7 @@ const scrollbar = css`
 
 export const Menu = styled.div`
   position: relative;
-  font-family: ${p => p.theme.fonts.primary};
+  font-family: ${p => getTheme(p).fonts.primary};
   box-shadow: ${p => options(p).boxShadow};
   border: ${p => options(p).border};
   border-color: ${p => options(p).borderColor};

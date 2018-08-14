@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { isSize, textOnColor, color, px } from '@zebbra/utils'
+import { isSize, textOnColor, color, px, getTheme } from '@zebbra/utils'
 
 const isStacked = p => {
   if (!p.stacked) return
@@ -48,10 +48,10 @@ const hasSpace = p => {
 
 export const Box = styled.div.attrs({
   static: 'true',
-  options: p => p.theme.components.box(p)
+  options: p => getTheme(p).components.box(p)
 })`
   position: relative;
-  font-family: ${p => p.theme.fonts.primary};
+  font-family: ${p => getTheme(p).fonts.primary};
   border: ${p => p.options.border};
   border-radius: ${p => px(p.options.borderRadius)};
   box-shadow: ${p => p.options.boxShadow};

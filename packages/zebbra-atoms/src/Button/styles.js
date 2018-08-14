@@ -8,6 +8,7 @@ import {
   isDisabled,
   isLoading,
   isSize,
+  getTheme,
   px
 } from '@zebbra/utils'
 
@@ -31,7 +32,7 @@ const isWithIcon = p => {
   `
 }
 
-const options = p => p.theme.components.button(p) || {}
+const options = p => getTheme(p).components.button(p) || {}
 
 export const Button = styled.div`
   height: ${p => options(p).height};
@@ -40,7 +41,7 @@ export const Button = styled.div`
   border-radius: ${p => px(options(p).borderRadius)};
   color: ${p => options(p).color};
   background: ${p => options(p).background};
-  font-family: ${p => p.theme.fonts.primary};
+  font-family: ${p => getTheme(p).fonts.primary};
   font-weight: 400;
   display: inline-flex;
   align-items: center;

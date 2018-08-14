@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
-import { color, px, isSize, isColor } from '@zebbra/utils'
+import { color, px, isSize, isColor, getTheme } from '@zebbra/utils'
 
 export const Input = styled.div.attrs({
-  options: p => p.theme.components.input(p)
+  options: p => getTheme(p).components.input(p)
 })`
   display: flex;
   width: 100%;
@@ -11,7 +11,7 @@ export const Input = styled.div.attrs({
   & > input {
       width: 100%;
       height: ${p => p.options.height};
-      font-family: ${p => p.theme.fonts.primary};
+      font-family: ${p => getTheme(p).fonts.primary};
       font-weight: 400;
       margin: 0;
       padding: 0 0.55rem;

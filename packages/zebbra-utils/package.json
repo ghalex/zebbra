@@ -6,7 +6,7 @@
   "scripts": {
     "del": "del",
     "prebuild": "npm run clean",
-    "prepare": "npm build",
+    "prepare": "npm run build",
     "clean": "del lib",
     "build": "babel src --out-dir lib"
   },
@@ -22,6 +22,7 @@
   "author": "Ghiura Alexandru",
   "license": "ISC",
   "dependencies": {
+    "@zebbra/themes": "^1.0.24",
     "lodash": "^4.17.10",
     "polished": "^1.3.0",
     "recompose": "^0.28.2"

@@ -4,7 +4,6 @@ const { styles, theme } = require('./styleguide.styles')
 
 module.exports = {
   title: `Zebbra ${version}`,
-  showUsage: false,
   styles,
   theme,
   template: {

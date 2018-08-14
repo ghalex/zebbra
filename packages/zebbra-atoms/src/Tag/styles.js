@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { px, size, isColor, isHover } from '@zebbra/utils'
+import { px, size, isColor, isHover, getTheme } from '@zebbra/utils'
 
 const isDelete = p => {
   if (!p.delete) return
@@ -38,11 +38,11 @@ const isIcon = ({ icon }) => {
   `
 }
 
-const options = p => p.theme.components.tag(p) || {}
+const options = p => getTheme(p).components.tag(p) || {}
 
 export const Tag = styled.div`
   position: relative;
-  font-family: ${p => p.theme.fonts.primary};
+  font-family: ${p => getTheme(p).fonts.primary};
   font-size: ${p => px(size(p) * 0.75)};
   font-weight: normal;
   padding: 0 0.75rem;

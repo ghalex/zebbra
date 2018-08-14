@@ -1,19 +1,24 @@
 
 import { parseToHsl, darken, lighten } from 'polished'
 import { css } from 'styled-components'
+import { main } from '@zebbra/themes'
+
+export const getTheme = p => {
+  return p.theme.components ? p.theme : main
+}
 
 export const color = (p, d) => {
   if (!p.color) return d
-  if (!p.theme.colors[p.color]) return p.color
+  if (!getTheme(p).colors[p.color]) return p.color
 
-  return p.theme.colors[p.color]
+  return getTheme(p).colors[p.color]
 }
 
 export const size = p => {
   if (!p.size) return
-  if (!p.theme.sizes[p.size]) return p.size
+  if (!getTheme(p).sizes[p.size]) return p.size
 
-  return p.theme.sizes[p.size]
+  return getTheme(p).sizes[p.size]
 }
 
 export const hover = (color) => {

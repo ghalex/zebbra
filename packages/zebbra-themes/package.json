@@ -6,7 +6,7 @@
   "scripts": {
     "del": "del",
     "prebuild": "npm run clean",
-    "prepare": "npm build",
+    "prepare": "npm run build",
     "clean": "del lib",
     "build": "babel src --out-dir lib"
   },

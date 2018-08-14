@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components'
-import { isSize, color, px } from '@zebbra/utils'
+import { isSize, color, px, getTheme } from '@zebbra/utils'
 
 const switchOn = keyframes`
   50% {
@@ -13,12 +13,12 @@ const switchOff = keyframes`
   }
 `
 
-const options = p => p.theme.components.switch(p) || {}
+const options = p => getTheme(p).components.switch(p) || {}
 
 export const Switch = styled.div`
   display: flex;
   align-items: center;
-  font-family: ${p => p.theme.fonts.primary};
+  font-family: ${p => getTheme(p).fonts.primary};
   cursor: pointer;
 
   ${isSize}

@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "del": "del",
-    "prepare": "npm build",
+    "prepare": "npm run build",
     "prebuild": "npm run clean",
     "clean": "del lib",
     "build": "babel src --out-dir lib --ignore '**/*.stories.js, docs/**'"

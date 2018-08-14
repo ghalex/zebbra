@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { size, color, px } from '@zebbra/utils'
+import { size, color, px, getTheme } from '@zebbra/utils'
 
 const hasMargin = p => {
   if (p.noMaring) {
@@ -19,7 +19,7 @@ const hasMargin = p => {
 }
 
 export const StyledTitle = styled.div`
-  font-family: ${p => p.theme.fonts.primary};
+  font-family: ${p => getTheme(p).fonts.primary};
   font-weight: 400;
   line-height: 1.12;
   display: block;

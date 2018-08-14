@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
-import { size, color, px } from '@zebbra/utils'
+import { size, color, px, getTheme } from '@zebbra/utils'
 
 export const StyledText = styled.p`
-  font-family: ${p => p.theme.fonts.primary};
+  font-family: ${p => getTheme(p).fonts.primary};
   font-weight: 400;
   line-height: 1.12;
   margin: 0;

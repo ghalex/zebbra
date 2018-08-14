@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { color, textOnColor, isSize } from '@zebbra/utils'
+import { color, textOnColor, isSize, getTheme } from '@zebbra/utils'
 import { rgba } from 'polished'
 
 const isInverted = p => {
@@ -30,8 +30,8 @@ export const Icon = styled.i`
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  width: ${p => p.theme.components.icon(p).width};
-  height: ${p => p.theme.components.icon(p).height};
+  width: ${p => getTheme(p).components.icon(p).width};
+  height: ${p => getTheme(p).components.icon(p).height};
   line-height: 1;
 
   ${p => p.color && css`color: ${p => color(p)};`}

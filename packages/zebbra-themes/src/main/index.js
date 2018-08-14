@@ -1,5 +1,4 @@
 import { rgba } from 'polished'
-import { color } from '@zebbra/utils'
 
 const theme = {}
 
@@ -49,7 +48,7 @@ theme.components = {
     color: '#363636',
     background: 'linear-gradient(#ffffff, #f6f7f8)',
     hoverBackground: '#f6f7f8',
-    focusBoxShadow: `0 0 0 2px ${rgba(color(p, theme.colors.focus), 0.2)}`
+    focusBoxShadow: `0 0 0 2px ${rgba(theme.colors.focus, 0.2)}`
   }),
   group: p => ({
     borderRadius: 3
@@ -83,15 +82,15 @@ theme.components = {
     borderRadius: 3,
     boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.12)',
     height: '2.40em',
-    focusBorder: `1px solid ${color(p, theme.colors.focus)}`,
-    focusBoxShadow: `0 0 0 2px ${rgba(color(p, theme.colors.focus), 0.2)}`
+    focusBorder: `1px solid ${theme.colors.focus}`,
+    focusBoxShadow: `0 0 0 2px ${rgba(theme.colors.focus, 0.2)}`
   }),
   textarea: p => ({
     border: `1px solid #CCC`,
     borderRadius: 3,
     boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.12)',
-    focusBorder: `1px solid ${color(p, theme.colors.focus)}`,
-    focusBoxShadow: `0 0 0 2px ${rgba(color(p, theme.colors.focus), 0.2)}`
+    focusBorder: `1px solid ${theme.colors.focus}`,
+    focusBoxShadow: `0 0 0 2px ${rgba(theme.colors.focus, 0.2)}`
   }),
   checkbox: p => ({
     border: '1px solid gray',

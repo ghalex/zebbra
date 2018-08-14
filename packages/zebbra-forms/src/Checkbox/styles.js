@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components'
 import { darken } from 'polished'
-import { px, size, color } from '@zebbra/utils'
+import { px, size, color, getTheme } from '@zebbra/utils'
 
 const colorDark = p => p.color ? darken(0.08, color(p)) : ''
-const options = p => p.theme.components.checkbox(p) || {}
+const options = p => getTheme(p).components.checkbox(p) || {}
 
 export const Checkbox = styled.div`
   display: flex;
   align-items: center;
-  font-family: ${p => p.theme.fonts.primary};
+  font-family: ${p => getTheme(p).fonts.primary};
   cursor: pointer;
   background: transparent;
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { getTheme } from '@zebbra/utils'
 
 export const StyledField = styled.div`
   display: flex;
@@ -10,7 +11,7 @@ export const StyledField = styled.div`
     font-weight: 500;
 
     & span {
-      color: ${p => p.theme.colors.danger}
+      color: ${p => getTheme(p).colors.danger}
     }
   }
 

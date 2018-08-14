@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { px, isFluid } from '@zebbra/utils'
+import { px, isFluid, getTheme } from '@zebbra/utils'
 
-const radius = p => px(p.theme.components.group(p).borderRadius)
+const radius = p => px(getTheme(p).components.group(p).borderRadius)
 
 const Group = styled.div`
   display: inline-flex;
