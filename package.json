@@ -12,9 +12,9 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.3",
-    "babel-loader": "^7.1.1",
-    "babel-plugin-lodash": "^3.3.2",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-lodash": "^3.3.4",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-styled-components": "^1.1.7",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -22,13 +22,13 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "del-cli": "^1.1.0",
-    "lerna": "^2.11.0",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-styleguidist": "^7.0.11",
+    "lerna": "^3.0.4",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-styleguidist": "^7.2.3",
     "standard": "^11.0.1",
-    "styled-components": "^3.2.6",
-    "webpack": "^4.8.1"
+    "styled-components": "^3.4.2",
+    "webpack": "^4.16.5"
   },
   "dependencies": {}
 }
