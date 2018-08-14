@@ -1,6 +1,6 @@
 {
   "name": "@zebbra/hocs",
-  "version": "1.0.24",
+  "version": "1.0.33",
   "description": "A collection of Higher-Order Components for React",
   "main": "lib/index.js",
   "scripts": {

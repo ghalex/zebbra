@@ -1,6 +1,6 @@
 {
   "name": "@zebbra/themes",
-  "version": "1.0.24",
+  "version": "1.0.33",
   "description": "Themes to be used with Zebbra components.",
   "main": "lib/index.js",
   "scripts": {
@@ -22,7 +22,7 @@
   "author": "Ghiura Alexandru",
   "license": "ISC",
   "dependencies": {
-    "@zebbra/utils": "^1.0.24",
+    "@zebbra/utils": "^1.0.33",
     "lodash": "^4.17.10",
     "polished": "^1.3.0",
     "recompose": "^0.28.2"
