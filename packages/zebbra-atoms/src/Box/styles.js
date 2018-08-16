@@ -1,6 +1,13 @@
 import styled, { css } from 'styled-components'
-import { color, space, boxShadow, borders, borderRadius, borderColor } from 'styled-system'
-// import { isSize, textOnColor, color, px, getTheme } from '@zebbra/utils'
+import {
+  color,
+  space,
+  boxShadow,
+  borders,
+  borderRadius,
+  borderColor,
+  fontFamily
+} from 'styled-system'
 
 const stacked = p => {
   if (!p.stacked) return
@@ -31,6 +38,7 @@ export const Box = styled.div`
   }
 
   ${color}
+  ${fontFamily}
   ${space}
   ${stacked}
   ${boxShadow}

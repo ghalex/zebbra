@@ -24,20 +24,16 @@ module.exports = {
     //     content: 'readme.md'
     //   }]
     // },
-    // {
-    //   name: '2. Atoms',
-    //   content: 'packages/zebbra-atoms/readme.md',
-    //   components: 'packages/zebbra-atoms/src/[A-Z]*/index.js'
-    // },
+    {
+      name: '2. Atoms',
+      content: 'packages/zebbra-atoms/readme.md',
+      components: 'packages/zebbra-atoms/src/[A-Z]*/index.js'
+    }
     // {
     //   name: '3. Forms',
     //   content: 'packages/zebbra-forms/readme.md',
     //   components: 'packages/zebbra-forms/src/[A-Z]*/index.js'
     // }
-    {
-      name: 'Box',
-      components: 'packages/zebbra-atoms/src/Box/index.js'
-    }
   ],
   webpackConfig: {
     module: {
