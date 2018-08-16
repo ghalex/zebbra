@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components'
-import { isSize, textOnColor, color, px, getTheme } from '@zebbra/utils'
+import { color, space, boxShadow, borders, borderRadius, borderColor } from 'styled-system'
+// import { isSize, textOnColor, color, px, getTheme } from '@zebbra/utils'
 
-const isStacked = p => {
+const stacked = p => {
   if (!p.stacked) return
 
   return css`
@@ -21,51 +22,19 @@ const isStacked = p => {
   `
 }
 
-const isColor = p => {
-  if (!p.color || p.inverted) return
-
-  return css`
-    background-color: ${color};
-    color: ${p => textOnColor(color(p))};
-  `
-}
-
-const isInverted = p => {
-  if (!p.color || !p.inverted) return
-
-  return css`
-    background-color: white;
-    border-top: 2px solid ${color};
-  `
-}
-
-const hasSpace = p => {
-  if (!p.space) return
-  return css`
-    > *:not(:first-child) { margin: ${p.space} }
-  `
-}
-
-export const Box = styled.div.attrs({
-  static: 'true',
-  options: p => getTheme(p).components.box(p)
-})`
+export const Box = styled.div`
   position: relative;
-  font-family: ${p => getTheme(p).fonts.primary};
-  border: ${p => p.options.border};
-  border-radius: ${p => px(p.options.borderRadius)};
-  box-shadow: ${p => p.options.boxShadow};
-  padding: ${p => p.padding};
-  background-color: white;
   text-align: left;
 
   &:not(:last-child) {
     margin-bottom: 0.6rem;
   }
 
-  ${isSize}
-  ${isStacked}
-  ${isColor}
-  ${isInverted}
-  ${hasSpace}
+  ${color}
+  ${space}
+  ${stacked}
+  ${boxShadow}
+  ${borders}
+  ${borderRadius}
+  ${borderColor}
 `

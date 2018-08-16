@@ -6,31 +6,16 @@ import * as s from './styles'
 class Box extends React.Component {
   static displayName = 'Box'
   static defaultProps = {
-    padding: '1em',
-    size: 'normal',
-    color: 'white',
-    inverted: false,
-    space: null,
-    stacked: false
+    bg: 'white',
+    p: '1rem',
+    stacked: false,
+    boxShadow: '0 1px 3px rgba(10, 10, 10, 0.1)',
+    border: '1px solid',
+    borderColor: 'rgba(34, 36, 38, 0.15)',
+    borderRadius: '3px'
   }
 
   static propTypes = {
-    /**
-     * A box can have different colors. <br/>
-     * **Enum**: `primary`, `secondary`, `success`, `danger`, `white`, `black`, `grey`, `#FF0000`, ...
-     **/
-    color: PropTypes.string,
-    /**
-     * A box can have different sizes. <br/>
-     * **Enum**: `tiny`, `small`, `normal`, `medium`, `large`, `xlarge`, `huge`
-     **/
-    size: PropTypes.string,
-    /** **Ex:** 2px, 0.5rem. */
-    padding: PropTypes.string,
-    /** A box can have its colors inverted. */
-    inverted: PropTypes.bool,
-    /** Set space between Box children. **Ex.** '2px 0' */
-    space: PropTypes.string,
     /** A box can be stacked. */
     stacked: PropTypes.bool
   }

@@ -25,7 +25,8 @@
     "classnames": "^2.2.6",
     "lodash": "^4.17.10",
     "polished": "^1.9.3",
-    "recompose": "^0.28.2"
+    "recompose": "^0.28.2",
+    "styled-system": "^3.0.2"
   },
   "peerDependencies": {
     "react": "^16.x",
