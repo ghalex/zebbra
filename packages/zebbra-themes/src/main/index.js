@@ -7,8 +7,14 @@ theme.fonts = {
   monospace: 'monospace'
 }
 
+theme.shadows = {
+  light: '0 1px 2px rgba(10, 10, 10, 0.1)',
+  normal: '0 1px 2px rgba(0 ,0, 0, 0.15)',
+  hard: '0 1px 5px rgba(0, 0, 0, 0.22)'
+}
+
 /** All sizes are in pixels */
-theme.sizes = {
+theme.sizes = theme.fontSize = {
   tiny: 10,
   small: 14,
   normal: 16,
@@ -19,19 +25,35 @@ theme.sizes = {
 }
 
 theme.colors = {
-  primary: '#1b8ceb',
-  secondary: '#f4511e',
-  success: '#00d1b2',
-  danger: '#e91e63',
+  primary: '#1B8CEB',
+  primaryLight: '#65B3E3',
+  secondary: '#F4511E',
+  secondaryLight: '#F4754E',
+  success: '#00D1B2',
+  successLight: '#49E5CE',
+  danger: '#E91E63',
+  dangerLight: '#EC5287',
   grey: '#808080',
-  black: '#363636',
-  white: 'white',
-  focus: '#209cee',
-  primaryLight: '#65b3e3',
-  secondaryLight: '#f4754e',
-  successLight: '#49e5ce',
-  dangerLight: '#ec5287',
-  greyLight: '#cccccc'
+  greyLight: '#CCCCCC',
+  greyUltraLight: '#E0E0E0',
+  black: '#000000',
+  white: '#FFFFFF',
+  focus: '#209CEE'
+}
+
+theme.boxes = {
+  primary: {
+    borderTop: `2px solid ${theme.colors.primary}`
+  },
+  secondary: {
+    borderTop: `2px solid ${theme.colors.secondary}`
+  },
+  success: {
+    borderTop: `2px solid ${theme.colors.success}`
+  },
+  danger: {
+    borderTop: `2px solid ${theme.colors.success}`
+  }
 }
 
 theme.components = {

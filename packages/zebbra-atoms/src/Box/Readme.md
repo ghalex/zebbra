@@ -1,17 +1,10 @@
 A box to contain other elements
 
 ```jsx
-<WithTheme name='main'>
-  <Box>Some text in box</Box>
-  <Box color='primary'>Small box with some text in box</Box>
-  <Box color='success' inverted>Some text in box</Box>
-  <Box color='success' stacked>This is stacked</Box>
-</WithTheme>
-```
-
-```jsx
-<Box>Some text in box</Box>
-<Box color='red'>Small box with some text in box</Box>
-<Box color='blue' inverted>Some text in box</Box>
-<Box color='yellow' stacked>This is stacked</Box>
+<Box bg='primary' color='white' border={0}>Some text in box</Box>
+<Box bg='danger' color='white' border={0} stacked>Some text in box</Box>
+<Box variant='primary' color='primary' stacked>Small box with some text in box</Box>
+<Box variant='secondary'>Secondary text in box</Box>
+<Box variant='success'>Success text in box</Box>
+<Box variant='grey'>Grey text in box</Box>
 ```

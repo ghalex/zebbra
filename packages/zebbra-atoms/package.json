@@ -21,6 +21,7 @@
   "author": "Ghiura Alexandru <ghalex@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@zebbra/themes": "^1.0.35",
     "@zebbra/utils": "^1.0.35",
     "classnames": "^2.2.6",
     "lodash": "^4.17.10",

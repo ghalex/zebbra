@@ -1,24 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import { main } from '@zebbra/themes'
 import * as s from './styles'
 
 class Box extends React.Component {
   static displayName = 'Box'
   static defaultProps = {
-    bg: 'white',
-    p: '1rem',
+    color: null,
+    bg: null,
+    p: '1em',
     stacked: false,
     fontFamily: 'primary',
-    boxShadow: '0 1px 3px rgba(10, 10, 10, 0.1)',
-    border: '1px solid',
-    borderColor: 'rgba(34, 36, 38, 0.15)',
-    borderRadius: '3px'
+    boxShadow: 'light',
+    border: 1,
+    borderColor: 'greyUltraLight',
+    borderRadius: '3px',
+    theme: main
   }
 
   static propTypes = {
     /** A box can be stacked. */
-    stacked: PropTypes.bool
+    stacked: PropTypes.bool,
+    /** Box theme */
+    theme: PropTypes.object
   }
 
   render () {
