@@ -1,42 +1,40 @@
 import styled, { css } from 'styled-components'
-import { color, textOnColor, isSize, getTheme } from '@zebbra/utils'
 import { rgba } from 'polished'
+import { color, size, fontSize, themeGet } from 'styled-system'
 
-const isInverted = p => {
-  if (!p.inverted) return
-  return css`
-    background-color: ${p => color(p)};
-    color: ${p => textOnColor(color(p))};
-  `
-}
-
-const isCircular = p => {
+const circular = p => {
   if (!p.circular) return
   return css`
     border-radius: 999px;
   `
 }
 
-const hasShadow = p => {
+const shadow = p => {
   if (!p.shadow) return
+  let color = themeGet(`colors.${p.color}`)
+
+  if (p.inverted) {
+    color = themeGet(`colors.${p.bg}`)
+  }
   return css`
-    box-shadow: 0 0 0 0.18em ${rgba(color(p), 0.3)};
+    box-shadow: 0 0 0 0.18em ${p => rgba(color(p), 0.3)};
     margin: 0.185em;
   `
 }
 
-export const Icon = styled.i`
+export const Icon = styled.i.attrs({
+  color: p => p.inverted ? (p.bg || 'white') : p.color,
+  bg: p => p.inverted ? p.color : p.bg
+})`
   display: inline-flex !important;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  width: ${p => getTheme(p).components.icon(p).width};
-  height: ${p => getTheme(p).components.icon(p).height};
   line-height: 1;
 
-  ${p => p.color && css`color: ${p => color(p)};`}
-  ${isInverted}
-  ${isCircular}
-  ${isSize}
-  ${hasShadow}
+  ${color}
+  ${size}
+  ${fontSize}
+  ${circular}
+  ${shadow}
 `

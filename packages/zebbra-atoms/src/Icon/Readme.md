@@ -18,7 +18,7 @@ Icon with color inverted:
   <Icon name='star' color='gray' inverted />
   <Icon name='github' color='primary'inverted />
   <Icon name='gift' color='success' inverted shadow />
-  <Icon name='bug' color='danger' size='xlarge' inverted circle shadow />
+  <Icon name='bug' color='danger' fontSize={5} inverted shadow />
 </Box>
 ```
 
@@ -30,6 +30,6 @@ Round inverted icons:
   <Icon name='star' color='gray' inverted circular/>
   <Icon name='github' color='primary'inverted circular/>
   <Icon name='gift' color='success' inverted shadow circular/>
-  <Icon name='bug' color='danger' size='xlarge' inverted circular shadow />
+  <Icon name='bug' color='danger' fontSize={5} inverted circular shadow />
 </Box>
 ```

@@ -11,12 +11,15 @@ import { HGroup, VGroup } from './styles'
 class Group extends React.Component {
   static displayName = 'Group'
   static defaultProps = {
-    vertical: false
+    vertical: false,
+    borderRadius: 3
   }
 
   static propTypes = {
     /** A group can display it's children **vertical**. */
-    vertical: PropTypes.bool
+    vertical: PropTypes.bool,
+    /** A group can have different border radius */
+    borderRadius: PropTypes.oneOf([ PropTypes.number, PropTypes.string ])
   }
 
   render () {

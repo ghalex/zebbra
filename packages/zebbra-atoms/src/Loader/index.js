@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import { main } from '@zebbra/themes'
 import * as s from './styles'
 
 /**
@@ -9,8 +10,13 @@ import * as s from './styles'
 class Loader extends React.Component {
   static displayName = 'Loader'
   static defaultProps = {
-    size: 'normal'
+    size: '1.125em',
+    p: null,
+    m: 0,
+    borderSize: 3,
+    theme: main
   }
+
   static propTypes = {
     /**
      * A loader can have different colors. <br/>
