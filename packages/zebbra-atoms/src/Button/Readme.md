@@ -1,41 +1,35 @@
-A button can have multiple colors:
+A button can have multiple variants:
 
 ```jsx
-<Box variant='success'>
-  <Button border={1}>Simple</Button>
-  <Button variant='normal'>Normal</Button>
-  <Button static variant='primary'>Primary</Button>
+<Box variant='primary'>
+  <Button>Normal</Button>
+  <Button variant='primary'>Primary</Button>
   <Button variant='secondary'>Secondary</Button>
   <Button variant='success'>Success</Button>
-  <Button variant='danger' disabled>Danger</Button>
-  <Button color='white' bg='grey'>Grayscale</Button>
-  <Button color='white' bg='black'>Black</Button>
+  <Button variant='danger'>Danger</Button>
+  <Button variant='grey'>Danger</Button>
+  <Button color='white' bg='black' borderColor='black'>Black</Button>
+</Box>
+```
+
+You can create your own button:
+
+```jsx
+<Box variant='primary'>
+  <Button color='white' border={2} bg='primaryLight' borderColor='primaryDark'>Custom</Button>
+  <Button bg='yellowgreen' color='white' borderRadius={0}>Secondary</Button>
 </Box>
 ```
 
 A button can be `outlined`:
 
 ```jsx
-<Box color='success' inverted>
-  <Button outlined>Normal</Button>
-  <Button color='primary' outlined>Primary</Button>
-  <Button color='success' outlined>Success</Button>
-  <Button color='danger' outlined>Danger</Button>
-  <Button color='gray' outlined>Grayscale</Button>
-  <Button color='black' outlined>Black</Button>
-</Box>
-```
-
-A button can have it's colors `inverted`:
-
-```jsx
-<Box color='success'>
-  <Button inverted>Normal</Button>
-  <Button color='primary' inverted>Primary</Button>
-  <Button color='success' inverted>Success</Button>
-  <Button color='danger' inverted>Danger</Button>
-  <Button color='gray' inverted>Grayscale</Button>
-  <Button color='black' inverted>Black</Button>
+<Box variant='success'>
+  <Button variant='primary' outlined>Primary</Button>
+  <Button variant='success' outlined>Success</Button>
+  <Button variant='danger' outlined>Danger</Button>
+  <Button variant='grey' outlined>Grayscale</Button>
+  <Button color='white' bg='black' outlined>Black</Button>
 </Box>
 ```
 
@@ -44,11 +38,11 @@ A button can show a loading indicator:
 ```jsx
 <Box color='success' inverted>
   <Button loading>Normal</Button>
-  <Button color='primary' loading>Primary</Button>
-  <Button color='success' loading>Success</Button>
-  <Button color='danger' loading>Danger</Button>
-  <Button color='gray' loading>Grayscale</Button>
-  <Button color='black' loading>Black</Button>
+  <Button variant='primary' loading>Primary</Button>
+  <Button variant='success' loading>Success</Button>
+  <Button variant='danger' loading>Danger</Button>
+  <Button bg='gray' color='white' loading>Grayscale</Button>
+  <Button bg='black' color='white' loading>Black</Button>
 </Box>
 ```
 
@@ -56,23 +50,23 @@ A button can have different sizes:
 
 ```jsx
 <Box color='success' inverted>
-  <Button size='tiny'>Tiny</Button>
-  <Button size='small' color='primary'>Small</Button>
-  <Button size='normal' color='success'>Normal</Button>
-  <Button size='medium' color='danger'>Medium</Button>
-  <Button size='large' color='gray'>Large</Button>
-  <Button size='xlarge' color='black'>XLarge</Button>
+  <Button fontSize={0}>Tiny</Button>
+  <Button fontSize={1} variant='primary'>Small</Button>
+  <Button fontSize={2} variant='success'>Normal</Button>
+  <Button fontSize={3} variant='danger'>Medium</Button>
+  <Button fontSize={4} variant='grey'>Large</Button>
+  <Button fontSize={5} color='black'>XLarge</Button>
 </Box>
 ```
 
 A button can have an icon:
 
 ```jsx
-<Box color='success' inverted>
+<Box variant='success'>
   <Button icon='cubes'>Cubes</Button>
-  <Button color='primary' icon='star' iconPosition='right'>Primary</Button>
-  <Button color='success' icon='rss'>Success</Button>
-  <Button color='danger' icon='shopping-basket' outlined>Success</Button>
-  <Button color='grey' icon='shield' />
+  <Button variant='primary' icon='star' iconPosition='right'>Primary</Button>
+  <Button variant='success' icon='rss'>Success</Button>
+  <Button variant='danger' icon='shopping-basket' outlined>Success</Button>
+  <Button variant='grey' icon='shield' />
 </Box>
 ```

@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { fluid, disabled, loading } from '@zebbra/utils'
 import {
   color,
   space,
@@ -7,8 +8,9 @@ import {
   borders,
   borderRadius,
   borderColor,
+  fontWeight,
   fontSize,
-  variant
+  themeGet
 } from 'styled-system'
 
 const icon = p => {
@@ -32,19 +34,17 @@ const icon = p => {
 }
 
 const outlined = p => {
-  if (!p.outlined) return
+  if (!p.outlined || p.hover) return
+  let color = themeGet(`colors.${p.bg}`)
+
   return css`
-    border: 1px solid;
+    color: ${color};
+    border-color: ${color};
     background: transparent;
   `
 }
 
-const styles = variant({
-  key: 'buttons'
-})
-
 export const Button = styled.div`
-  font-weight: 400;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -62,17 +62,22 @@ export const Button = styled.div`
     margin: 0 0.25em 0 0;
   }
 
-  &:hover {
-    opacity: 0.8;
-  }
+  ${p => !p.variant && css`
+    &:hover { opacity: 0.8; }
+  `}
 
   ${icon}
   ${color}
   ${space}
   ${height}
-  ${styles}
   ${borders}
   ${borderColor}
   ${borderRadius}
+  ${outlined}
   ${boxShadow}
+  ${fluid}
+  ${disabled}
+  ${loading}
+  ${fontSize}
+  ${fontWeight}
 `

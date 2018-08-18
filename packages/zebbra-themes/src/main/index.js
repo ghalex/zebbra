@@ -1,6 +1,6 @@
 import { rgba, darken, lighten } from 'polished'
 
-const theme = {}
+const theme = { name: 'main' }
 
 theme.fonts = {
   primary: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
@@ -27,59 +27,69 @@ theme.sizes = theme.fontSize = {
 theme.colors = {
   primary: '#1B8CEB',
   primaryLight: '#65B3E3',
+  primaryDark: darken(0.1, '#1B8CEB'),
   secondary: '#F4511E',
   secondaryLight: '#F4754E',
+  secondaryDark: darken(0.1, '#F4511E'),
   success: '#00D1B2',
   successLight: '#49E5CE',
+  successDark: darken(0.1, '#00D1B2'),
   danger: '#E91E63',
   dangerLight: '#EC5287',
+  dangerDark: darken(0.1, '#E91E63'),
   grey: '#808080',
   greyLight: '#CCCCCC',
   greyUltraLight: '#E0E0E0',
-  greyGradient: '',
+  greyDark: darken(0.1, '#808080'),
   black: '#000000',
   white: '#FFFFFF',
   focus: '#209CEE'
 }
 
 theme.buttons = {
-  normal: {
-    background: 'linear-gradient(#FFFFFF, #F6F7F8)',
-    border: `1px solid ${theme.colors.greyLight}`,
-    '&:hover': {
-      background: darken(0.06, '#F6F7F8')
-    }
-  },
   primary: {
     color: 'white',
-    borderColor: theme.colors.primary,
-    background: theme.colors.primary,
-    '&:hover': {
-      background: darken(0.06, theme.colors.primary)
+    borderColor: 'primary',
+    bg: 'primary',
+    hover: {
+      bg: 'primaryDark',
+      borderColor: 'primaryDark'
     }
   },
   secondary: {
     color: 'white',
-    borderColor: theme.colors.secondary,
-    background: theme.colors.secondary,
-    '&:hover': {
-      background: darken(0.06, theme.colors.secondary)
+    borderColor: 'secondary',
+    bg: 'secondary',
+    hover: {
+      bg: 'secondaryDark',
+      borderColor: 'secondaryDark'
     }
   },
   success: {
     color: 'white',
-    borderColor: theme.colors.success,
-    background: theme.colors.success,
-    '&:hover': {
-      background: darken(0.06, theme.colors.success)
+    borderColor: 'success',
+    bg: 'success',
+    hover: {
+      bg: 'successDark',
+      borderColor: 'successDark'
     }
   },
   danger: {
     color: 'white',
-    borderColor: theme.colors.danger,
-    background: theme.colors.danger,
-    '&:hover': {
-      background: darken(0.06, theme.colors.danger)
+    borderColor: 'danger',
+    bg: 'danger',
+    hover: {
+      bg: 'dangerDark',
+      borderColor: 'dangerDark'
+    }
+  },
+  grey: {
+    color: 'white',
+    borderColor: 'grey',
+    bg: 'grey',
+    hover: {
+      bg: 'greyDark',
+      borderColor: 'greyDark'
     }
   }
 }
