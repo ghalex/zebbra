@@ -1,7 +1,7 @@
 You can group buttons:
 
 ```jsx
-<Box color='primary' inverted>
+<Box variant='primary'>
   <Group color='primary' outlined>
     <Button icon='star'>Left</Button>
     <Button>Middle</Button>
@@ -13,7 +13,7 @@ You can group buttons:
 Group buttons `vertical` and pass `size`:
 
 ```jsx
-<Box color='success' inverted>
+<Box variant='success'>
   <Group vertical size='small'>
     <Button color='success'>Left</Button>
     <Button color='gray'>Middle</Button>
@@ -26,7 +26,7 @@ Group buttons `vertical` and pass `size`:
 Group `Button` and `Button` with icon:
 
 ```jsx
-<Box color='danger' inverted>
+<Box variant='danger'>
   <Group>
     <Button color='danger'>I am star</Button>
     <Button color='#d61a5a' icon='star' />

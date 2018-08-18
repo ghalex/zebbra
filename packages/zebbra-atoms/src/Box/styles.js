@@ -8,7 +8,8 @@ import {
   borderColor,
   fontFamily,
   fontSize,
-  style
+  style,
+  compose
 } from 'styled-system'
 
 const stacked = p => {
@@ -32,12 +33,14 @@ const stacked = p => {
   `
 }
 
-const borderTop = style({
+const boxStyles = style({
   prop: 'variant',
   cssProperty: 'borderTop',
   key: 'colors',
   transformValue: n => `2px solid ${n}`
 })
+
+const boxBorder = compose(borders, borderRadius, borderColor)
 
 export const Box = styled.div`
   position: relative;
@@ -52,9 +55,8 @@ export const Box = styled.div`
   ${space}
   ${stacked}
   ${boxShadow}
-  ${borders}
-  ${borderRadius}
-  ${borderColor}
-  ${borderTop}
   ${color}
+  ${boxBorder}
+  ${boxStyles}
+  
 `

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import { main } from '@zebbra/themes'
 import * as s from './styles'
 
 /**
@@ -14,10 +15,14 @@ import * as s from './styles'
 class Icon extends React.Component {
   static displayName = 'Icon'
   static defaultProps = {
-    size: 'normal',
+    color: null,
+    bg: null,
+    fontSize: null,
+    size: '1.6em',
     inverted: false,
     circular: false,
-    shadow: false
+    shadow: false,
+    theme: main
   }
 
   static propTypes = {
@@ -29,10 +34,10 @@ class Icon extends React.Component {
      **/
     color: PropTypes.string,
     /**
-     * A icon can have different sizes. <br/>
-     * **Enum**: `tiny`, `small`, `normal`, `medium`, `large`, `xlarge`, `huge`
+     * A icon can have different background color. <br/>
+     * **Enum**: `primary`, `secondary`, `success`, `danger`, `white`, `black`, `grey`, `#FF0000`, ...
      **/
-    size: PropTypes.string,
+    bg: PropTypes.string,
     /** A icon can have it's color inverted. */
     inverted: PropTypes.bool,
     /** Icon can formatted to appear circular. */
