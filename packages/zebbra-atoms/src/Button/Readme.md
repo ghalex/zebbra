@@ -1,13 +1,15 @@
 A button can have multiple colors:
 
 ```jsx
-<Box color='success' inverted>
-  <Button>Normal</Button>
-  <Button color='primary'>Primary</Button>
-  <Button color='success'>Success</Button>
-  <Button color='danger' disabled>Danger</Button>
-  <Button color='gray'>Grayscale</Button>
-  <Button color='black'>Black</Button>
+<Box variant='success'>
+  <Button border={1}>Simple</Button>
+  <Button variant='normal'>Normal</Button>
+  <Button static variant='primary'>Primary</Button>
+  <Button variant='secondary'>Secondary</Button>
+  <Button variant='success'>Success</Button>
+  <Button variant='danger' disabled>Danger</Button>
+  <Button color='white' bg='grey'>Grayscale</Button>
+  <Button color='white' bg='black'>Black</Button>
 </Box>
 ```
 

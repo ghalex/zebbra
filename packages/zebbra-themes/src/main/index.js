@@ -1,4 +1,4 @@
-import { rgba } from 'polished'
+import { rgba, darken, lighten } from 'polished'
 
 const theme = {}
 
@@ -36,23 +36,51 @@ theme.colors = {
   grey: '#808080',
   greyLight: '#CCCCCC',
   greyUltraLight: '#E0E0E0',
+  greyGradient: '',
   black: '#000000',
   white: '#FFFFFF',
   focus: '#209CEE'
 }
 
-theme.boxes = {
+theme.buttons = {
+  normal: {
+    background: 'linear-gradient(#FFFFFF, #F6F7F8)',
+    border: `1px solid ${theme.colors.greyLight}`,
+    '&:hover': {
+      background: darken(0.06, '#F6F7F8')
+    }
+  },
   primary: {
-    borderTop: `2px solid ${theme.colors.primary}`
+    color: 'white',
+    borderColor: theme.colors.primary,
+    background: theme.colors.primary,
+    '&:hover': {
+      background: darken(0.06, theme.colors.primary)
+    }
   },
   secondary: {
-    borderTop: `2px solid ${theme.colors.secondary}`
+    color: 'white',
+    borderColor: theme.colors.secondary,
+    background: theme.colors.secondary,
+    '&:hover': {
+      background: darken(0.06, theme.colors.secondary)
+    }
   },
   success: {
-    borderTop: `2px solid ${theme.colors.success}`
+    color: 'white',
+    borderColor: theme.colors.success,
+    background: theme.colors.success,
+    '&:hover': {
+      background: darken(0.06, theme.colors.success)
+    }
   },
   danger: {
-    borderTop: `2px solid ${theme.colors.success}`
+    color: 'white',
+    borderColor: theme.colors.danger,
+    background: theme.colors.danger,
+    '&:hover': {
+      background: darken(0.06, theme.colors.danger)
+    }
   }
 }
 

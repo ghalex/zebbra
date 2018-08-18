@@ -1,22 +1,21 @@
 import styled, { css } from 'styled-components'
 import {
-  isColor,
-  isHover,
-  isFluid,
-  isOutlined,
-  isInverted,
-  isDisabled,
-  isLoading,
-  isSize,
-  getTheme,
-  px
-} from '@zebbra/utils'
+  color,
+  space,
+  height,
+  boxShadow,
+  borders,
+  borderRadius,
+  borderColor,
+  fontSize,
+  variant
+} from 'styled-system'
 
-const isWithIcon = p => {
+const icon = p => {
   return css`
     & .icon {
       margin: 0 5px 0 0;
-      ${isSize}
+      ${fontSize}
     }
     &.icon-reverse {
       & .icon {
@@ -32,46 +31,48 @@ const isWithIcon = p => {
   `
 }
 
-const options = p => getTheme(p).components.button(p) || {}
+const outlined = p => {
+  if (!p.outlined) return
+  return css`
+    border: 1px solid;
+    background: transparent;
+  `
+}
+
+const styles = variant({
+  key: 'buttons'
+})
 
 export const Button = styled.div`
-  height: ${p => options(p).height};
-  padding: ${p => options(p).padding};
-  border: ${p => options(p).border};
-  border-radius: ${p => px(options(p).borderRadius)};
-  color: ${p => options(p).color};
-  background: ${p => options(p).background};
-  font-family: ${p => getTheme(p).fonts.primary};
   font-weight: 400;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  cursor: ${p => p.static ? 'cursor' : 'pointer'};
   outline: none;
   box-sizing: border-box;
   line-height: 1.5;
   position: relative;
   user-select: none;
   text-decoration: none;
+  cursor: pointer;
 
-  ${p => !p.static && css`&:hover { background: ${options(p).hoverBackground}; }`}
-
-  ${isSize}
-  ${isFluid}
-  ${isColor}
-  ${isHover}
-  ${isOutlined}
-  ${isInverted}
-  ${isLoading}
-  ${isDisabled}
-  ${isWithIcon}
+  ${p => p.static && css`pointer-events: none;`}
 
   &:not(:last-child) {
     margin: 0 0.25em 0 0;
   }
 
-  &:focus {
-    box-shadow: ${p => options(p).focusBoxShadow};
+  &:hover {
+    opacity: 0.8;
   }
-  
+
+  ${icon}
+  ${color}
+  ${space}
+  ${height}
+  ${styles}
+  ${borders}
+  ${borderColor}
+  ${borderRadius}
+  ${boxShadow}
 `

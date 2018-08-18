@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import lodash from 'lodash'
+import { main } from '@zebbra/themes'
 import { Icon, Loader } from '../index'
 import * as s from './styles'
 
@@ -9,14 +10,22 @@ class Button extends React.Component {
   static displayName = 'Button'
   static defaultProps = {
     color: null,
-    size: 'normal',
+    bg: null,
+    border: null,
+    borderColor: null,
+    borderRadius: 3,
+    boxShadow: null,
+    p: '0 1em',
+    height: '2.4em',
+    variant: null,
     loading: false,
     disabled: false,
     outlined: false,
     fluid: false,
     icon: null,
     iconPosition: 'left',
-    static: false
+    static: false,
+    theme: main
   }
 
   static propTypes = {
