@@ -1,7 +1,16 @@
 import styled, { css } from 'styled-components'
-import { px, isSize, isColor, isHover, getTheme } from '@zebbra/utils'
+import { hover } from '@zebbra/utils'
+import {
+  fontFamily,
+  borders,
+  borderColor,
+  borderRadius,
+  maxHeight,
+  boxShadow,
+  space,
+  color
+} from 'styled-system'
 
-const options = p => getTheme(p).components.menu(p) || {}
 const scrollbar = css`
   & ::-webkit-scrollbar {
     -webkit-appearance: none;
@@ -22,7 +31,7 @@ const scrollbar = css`
   }
 
   & ::-webkit-scrollbar-thumb:window-inactive {
-    background: rgba(0,0,0,.15)
+    background: rgba(0,0,0,.15);
   }
 
   & ::-webkit-scrollbar-thumb:hover {
@@ -32,20 +41,13 @@ const scrollbar = css`
 
 export const Menu = styled.div`
   position: relative;
-  font-family: ${p => getTheme(p).fonts.primary};
-  box-shadow: ${p => options(p).boxShadow};
-  border: ${p => options(p).border};
-  border-color: ${p => options(p).borderColor};
-  border-radius: ${p => px(options(p).borderRadius)};
-  padding: 0;
-  background-color: white;
   text-align: left;
   transition: all .3s;
-  max-height: ${p => p.height > 0 ? px(p.height) : 'initial'};
   overflow-y: auto;
   box-sizing: border-box;
 
   ${p => p.fluid && css`width: 100%;`}
+
   & .menu {
     box-shadow: none;
     border: none;
@@ -53,6 +55,13 @@ export const Menu = styled.div`
   }
 
   ${scrollbar}
+  ${fontFamily}
+  ${borders}
+  ${borderColor}
+  ${borderRadius}
+  ${boxShadow}
+  ${maxHeight}
+  ${space}
 `
 
 export const MenuHeader = styled.div.attrs({
@@ -64,8 +73,8 @@ export const MenuHeader = styled.div.attrs({
   position: relative;
   cursor: initial;
 
-  ${isSize}
-  ${isColor}
+  ${color}
+  ${space}
 `
 
 export const MenuItem = styled.div.attrs({
@@ -75,35 +84,28 @@ export const MenuItem = styled.div.attrs({
   line-height: 1;
   padding: 0.8em 1.2em;
   position: relative;
-  cursor: ${p => p.static ? 'cursor' : 'pointer'};
+  cursor: ${p => (p.static ? 'cursor' : 'pointer')};
   white-space: nowrap;
-
-  & > .tag {
-    float: right;
-    margin-top: -0.3em;
-    margin-bottom: -0.3em;
-  }
 
   & > .icon {
     margin-right: 0.5em;
   }
 
-  ${p => !p.static && css`
-    &:hover {
-      background: ${p => options(p).hover};
-    }
-  `}
-
-  ${isSize}
-  ${isColor}
-  ${isHover}
+  ${color}
+  ${hover}
+  ${space}
 `
 
 export const MenuDivider = styled.div`
-  border-top: ${p => options(p).border};
-  border-color: ${p => options(p).borderColor};
   height: 0;
-  margin: .${p => p.margin || 0};
+
+  ${borders}
+  ${borderColor}
+  ${space}
+
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
 `
 
 export const MenuItems = styled.div`

@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { compact, isFunction, isString } from 'lodash'
+import { withTheme } from 'styled-components'
+import { main } from '@zebbra/themes'
 import * as s from './styles'
 
 class Menu extends React.Component {
@@ -9,13 +11,19 @@ class Menu extends React.Component {
 
   static displayName = 'Menu'
   static defaultProps = {
-    size: 'normal',
-    height: 0,
+    border: 1,
+    borderColor: 'greyUltraLight',
+    borderRadius: 3,
+    p: null,
+    m: null,
+    fontFamily: 'primary',
+    boxShadow: 'light',
+    maxHeight: null,
     fluid: false,
-    onItemClick: null
+    onItemClick: null,
+    theme: main
   }
   static propTypes = {
-    size: PropTypes.string,
     fluid: PropTypes.bool,
     /**
      * Called on item click
@@ -36,22 +44,28 @@ class Menu extends React.Component {
   render () {
     let className = cx(`menu`, this.props.className)
     let { selected } = this.state
-    let { children, size, items, ...props } = this.props
+    let { children, items, ...props } = this.props
     let menuItems = null
 
     if (children) {
       menuItems = isFunction(children) ? compact(children(selected).props.children) : compact(children)
     } else {
       menuItems = items.map(data => {
+        let itemProps = {
+          border: props.border,
+          borderColor: props.borderColor,
+          theme: props.theme
+        }
+
         if (isString(data)) {
-          return <s.MenuItem>{data}</s.MenuItem>
+          return <s.MenuItem {...itemProps}>{data}</s.MenuItem>
         }
 
         if (data.type === 'divider') {
-          return <s.MenuDivider />
+          return <s.MenuDivider {...itemProps} />
         }
 
-        return <s.MenuItem value={data.value}>{data.label}</s.MenuItem>
+        return <s.MenuItem {...itemProps} value={data.value}>{data.label}</s.MenuItem>
       })
     }
 
@@ -61,7 +75,9 @@ class Menu extends React.Component {
           menuItems,
           (item, i) => {
             let itemProps = {
-              size,
+              border: props.border,
+              borderColor: props.borderColor,
+              theme: props.theme,
               ...item.props
             }
 
@@ -92,4 +108,4 @@ Menu.Divider.displayName = 'MenuDivider'
 
 Menu.Items = s.MenuItems
 
-export default Menu
+export default withTheme(Menu)

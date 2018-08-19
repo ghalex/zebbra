@@ -50,7 +50,7 @@ A button can have different sizes:
 
 ```jsx
 <Box variant='success'>
-  <Button fontSize={0} variant='primary'>Primary Tiny</Button>
+  <Button fontSize={0} variant='primary'>Tiny</Button>
   <Button fontSize={1} variant='primary'>Small</Button>
   <Button fontSize={2} variant='success'>Normal</Button>
   <Button fontSize={3} variant='danger'>Medium</Button>

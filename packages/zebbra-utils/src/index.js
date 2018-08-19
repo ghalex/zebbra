@@ -1,5 +1,5 @@
 
-import { parseToHsl } from 'polished'
+import { parseToHsl, darken, lighten } from 'polished'
 import { css } from 'styled-components'
 
 export const textOnColor = (color) => {
@@ -10,6 +10,31 @@ export const textOnColor = (color) => {
   }
 
   return 'rgba(255, 255, 255, 1)'
+}
+
+export const hover = p => {
+  let bg = 'white'
+  let color = null
+
+  if (p.bg) {
+    if (p.theme && p.theme.colors && p.theme.colors[p.bg]) {
+      bg = p.theme.colors[p.bg]
+    } else {
+      bg = p.bg
+    }
+  }
+
+  if (parseToHsl(bg).lightness > 0.2) {
+    color = darken(0.05, bg)
+  } else {
+    color = lighten(0.2, bg)
+  }
+
+  return css`
+    &:hover {
+      background-color: ${color};
+    }
+  `
 }
 
 export const fluid = p => {

@@ -5,12 +5,12 @@ Simple usage:
   <Menu.Header><b>This is header</b></Menu.Header>
   <Menu.Divider />
   <Menu>
-    <Menu.Item><Icon name='star' />Item no.1</Menu.Item>
+    <Menu.Item bg='greyUltraLight'><Icon name='star' />Item no.1</Menu.Item>
     <Menu.Item><Icon name='bug' />Item no.2</Menu.Item>
     <Menu.Item><Icon name='search' />Item no.3</Menu.Item>
   </Menu>
-  <Menu.Header color='success'><b>Second Header</b></Menu.Header>
-  <Menu height={120}>
+  <Menu.Header color='white' bg='success'><b>Second Header</b></Menu.Header>
+  <Menu maxHeight={120}>
     <Menu.Item>Item no.1</Menu.Item>
     <Menu.Item>Item no.2</Menu.Item>
     <Menu.Item>Item no.3</Menu.Item>
