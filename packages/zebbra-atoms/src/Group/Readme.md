@@ -34,21 +34,21 @@ Group `Button` and `Button` with icon:
 </Box>
 ```
 
-Group `Tags`:
+Creat tags:
 
 ```jsx
 <Box color='success' inverted>
-  <Group>
-    <Tag color='black'>npm</Tag>
-    <Tag color='primary'>v1.0.0</Tag>
+  <Group fontSize={0}>
+    <Button variant='black'>npm</Button>
+    <Button variant='primary'>v1.0.0</Button>
   </Group>
-  <Group>
-    <Tag color='black'>build</Tag>
-    <Tag color='success'>passed</Tag>
+  <Group fontSize={0}>
+    <Button variant='black'>build</Button>
+    <Button variant='success'>passed</Button>
   </Group>
-  <Group>
-    <Tag color='primary'>javascript</Tag>
-    <Tag color='greyLight' delete />
+  <Group fontSize={0}>
+    <Button static variant='primary'>javascript</Button>
+    <Button bg='greyLight' borderColor='greyLight' color='white' icon='remove' />
   </Group>
 </Box>
 ```

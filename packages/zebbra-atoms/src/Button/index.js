@@ -20,7 +20,7 @@ class Button extends React.Component {
     p: '0 1em',
     fontWeight: 400,
     fontSize: null,
-    height: '2.4em',
+    height: '2.2em',
     variant: null,
     loading: false,
     disabled: false,
@@ -33,17 +33,6 @@ class Button extends React.Component {
   }
 
   static propTypes = {
-    /**
-     * A button can have different colors. <br/>
-     * **Enum**: `primary`, `secondary`, `success`, `danger`, `white`, `black`, `grey`, `#FF0000`, ...
-     **/
-    color: PropTypes.string,
-    /**
-     * A button can have different sizes. <br/>
-     * **Enum**: `tiny`, `small`, `normal`, `medium`, `large`, `xlarge`, `huge`
-     **/
-    size: PropTypes.string,
-    /** A button can be shown as outlined. */
     outlined: PropTypes.bool,
     /** A button can show a loading indicator. */
     loading: PropTypes.bool,
@@ -80,8 +69,8 @@ class Button extends React.Component {
       btnChildren = lodash.reverse(btnChildren)
     }
 
-    if (props.variant && props.theme.buttons[props.variant]) {
-      let { hover, ...variant } = props.theme.buttons[props.variant]
+    if (props.variant && props.theme.components.buttons[props.variant]) {
+      let { hover, ...variant } = props.theme.components.buttons[props.variant]
 
       if (this.state.hover && hover && !props.outlined) {
         variant = {...variant, ...hover}

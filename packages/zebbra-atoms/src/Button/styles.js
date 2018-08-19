@@ -25,7 +25,7 @@ const icon = p => {
       }
     }
     &.icon-only {
-      padding: 0px 0.6em;
+      padding: 0px 0.4em;
       & .icon {
         margin: 0;
       }
