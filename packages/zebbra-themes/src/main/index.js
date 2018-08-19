@@ -52,56 +52,32 @@ theme.components.buttons = {
   primary: {
     color: 'white',
     borderColor: 'primary',
-    bg: 'primary',
-    hover: {
-      bg: 'primaryDark',
-      borderColor: 'primaryDark'
-    }
+    bg: 'primary'
   },
   secondary: {
     color: 'white',
     borderColor: 'secondary',
-    bg: 'secondary',
-    hover: {
-      bg: 'secondaryDark',
-      borderColor: 'secondaryDark'
-    }
+    bg: 'secondary'
   },
   success: {
     color: 'white',
     borderColor: 'success',
-    bg: 'success',
-    hover: {
-      bg: 'successDark',
-      borderColor: 'successDark'
-    }
+    bg: 'success'
   },
   danger: {
     color: 'white',
     borderColor: 'danger',
-    bg: 'danger',
-    hover: {
-      bg: 'dangerDark',
-      borderColor: 'dangerDark'
-    }
+    bg: 'danger'
   },
   grey: {
     color: 'white',
     borderColor: 'grey',
-    bg: 'grey',
-    hover: {
-      bg: 'greyDark',
-      borderColor: 'greyDark'
-    }
+    bg: 'grey'
   },
   black: {
     color: 'white',
     borderColor: 'black',
-    bg: 'black',
-    hover: {
-      bg: 'blackLight',
-      borderColor: 'blackLight'
-    }
+    bg: 'black'
   }
 }
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import { main } from '@zebbra/themes'
 import { Button, Group } from '../index'
 import { StyledYesNo } from './styles'
 
@@ -14,14 +15,18 @@ class YesNo extends React.Component {
 
   static displayName = 'YesNo'
   static defaultProps = {
+    display: 'inline-block',
     left: false,
-    padding: '0'
+    p: 0,
+    m: 0,
+    theme: main
   }
 
   static propTypes = {
     /** A yesno can be displayed to the left */
     left: PropTypes.bool,
-    padding: PropTypes.string,
+    /** Padding */
+    p: PropTypes.string,
     /** Called when user chooses yes */
     onYes: PropTypes.func,
     /** Called when user chooses no */

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { fluid, disabled, loading } from '@zebbra/utils'
+import { fluid, hover, disabled, loading } from '@zebbra/utils'
 import {
   color,
   space,
@@ -9,6 +9,7 @@ import {
   borderRadius,
   borderColor,
   fontWeight,
+  backgroundImage,
   fontSize,
   themeGet
 } from 'styled-system'
@@ -62,14 +63,11 @@ export const Button = styled.div`
     margin: 0 0.25em 0 0;
   }
 
-  ${p => !p.variant && css`
-    &:hover { opacity: 0.8; }
-  `}
-
   ${icon}
   ${color}
   ${space}
   ${height}
+  ${backgroundImage}
   ${borders}
   ${borderColor}
   ${borderRadius}
@@ -80,4 +78,5 @@ export const Button = styled.div`
   ${loading}
   ${fontSize}
   ${fontWeight}
+  ${hover}
 `

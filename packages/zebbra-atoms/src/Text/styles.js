@@ -1,18 +1,19 @@
 import styled, { css } from 'styled-components'
-import { size, color, px, getTheme } from '@zebbra/utils'
+import { fontFamily, fontSize, space, color, textAlign, display } from 'styled-system'
 
 export const StyledText = styled.p`
-  font-family: ${p => getTheme(p).fonts.primary};
   font-weight: 400;
   line-height: 1.12;
   margin: 0;
-  display: ${p => p.inline ? 'inline-block' : 'block'};
   box-sizing: border-box;
   text-decoration: none;
-  font-size: ${p => px(size(p))};
-  color: ${p => color(p)};
-  text-align: ${p => p.textAlign};
-  padding: ${p => p.padding};
+
+  ${fontFamily}
+  ${fontSize}
+  ${space}
+  ${color}
+  ${textAlign}
+  ${display}
 
   ${p => p.thin && css`font-weight: 200`};
   ${p => p.strong && css`font-weight: 800`};

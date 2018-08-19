@@ -1,17 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import { main } from '@zebbra/themes'
 import { StyledText } from './styles'
 
 class Text extends React.Component {
   static displayName = 'Text'
   static defaultProps = {
-    size: 'normal',
+    as: 'p',
+    p: 0,
+    m: 0,
+    color: null,
+    bg: null,
+    dislay: 'block',
+    textAlign: 'left',
     thin: false,
     strong: false,
-    padding: '0',
-    inline: false,
-    textAlign: 'left'
+    theme: main
   }
   static propTypes = {
     /**
@@ -19,11 +24,6 @@ class Text extends React.Component {
      * **Enum**: `primary`, `secondary`, `success`, `danger`, `white`, `black`, `grey`, `#FF0000`, ...
      **/
     color: PropTypes.string,
-    /**
-     * A text can have different sizes. <br/>
-     * **Enum**: `tiny`, `small`, `normal`, `medium`, `large`, `xlarge`, `huge`
-     **/
-    size: PropTypes.string,
     /** A text can have its font as thin */
     thin: PropTypes.bool,
     /** A text can have its font as strong */
@@ -31,15 +31,15 @@ class Text extends React.Component {
     /** A text can be aligned. */
     textAlign: PropTypes.string,
     /** Set custom padding to text. **Ex.** 5px 0 0 5px */
-    padding: PropTypes.string
+    p: PropTypes.string
   }
 
   render () {
     const { as, children, ...props } = this.props
     const className = cx(`text`, this.props.className)
-
+    const Component = StyledText.withComponent(as)
     return (
-      <StyledText {...props} className={className}>{children}</StyledText>
+      <Component {...props} className={className}>{children}</Component>
     )
   }
 }

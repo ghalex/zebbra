@@ -1,7 +1,7 @@
 A Title can be have different `sizes` and be `strong` or `thin`:
 
 ```jsx
-<Box color='danger' inverted>
+<Box variant='danger'>
   <Title>Title Normal</Title>
   <Title thin>Thin Title Normal</Title>
   <Title strong>Strong Title Normal</Title>
@@ -11,13 +11,13 @@ A Title can be have different `sizes` and be `strong` or `thin`:
 A Title can be render as Subtitle and be centered:
 
 ```jsx
-<Box color='success' inverted>
+<Box variant='success'>
   <Title>Super Title</Title>
-  <Title subtitle thin size='small' color='gray'>This is a Super subtitle</Title>
+  <Title subtitle mt={0} color='gray'>This is a super subtitle</Title>
 </Box>
-<Box color='success' inverted>
+<Box variant='success'>
   <Title strong color='success' textAlign='center'>Super Centered Title</Title>
-  <Title subtitle size='small' color='successLight' textAlign='center'>This is a Super subtitle</Title>
+  <Title subtitle color='successLight' textAlign='center'>This is a super subtitle</Title>
 </Box>
 ```
 

@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components'
+import { display, space } from 'styled-system'
 
 const fadeIn = keyframes`
   from { opacity: 0; }
@@ -6,9 +7,7 @@ const fadeIn = keyframes`
 `
 
 export const StyledYesNo = styled.div`
-  display: inline-block;
   box-sizeing: border-box;
-  padding: ${p => p.padding};
 
   .btnNo,
   .btnYes {
@@ -18,4 +17,7 @@ export const StyledYesNo = styled.div`
   &:not(:last-child) {
     margin: 0 0.25em 0 0;
   }
+
+  ${display}
+  ${space}
 `

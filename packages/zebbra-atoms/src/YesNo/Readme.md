@@ -1,22 +1,20 @@
 Use a **YesNo** container to ask a user to choose `Yes` or `No`. You can combine colors between **YesNo** container and buttons.
 
 ```jsx
-<Box color='success' inverted>
-  <YesNo color='primary' onYes={() => console.log('yess')} padding='5px'>
-    <Button color='primary'>
+<Box variant='success'>
+  <YesNo variant='primary' onYes={() => console.log('yess')} p='5px'>
+    <Button variant='primary'>
       <Icon name='check-circle' />
       Accept
     </Button>
   </YesNo>
-  <br />
-  <YesNo color='success' outlined onYes={() => console.log('yess')} padding='5px'>
-    <Button color='success' outlined>
+  <YesNo variant='success' outlined onYes={() => console.log('yess')} p='5px'>
+    <Button variant='success' outlined>
       Like Zebbra ?
     </Button>
   </YesNo>
-  <br />
-  <YesNo size='small' color='danger' outlined left padding='5px'>
-    <Button size='small' color='danger'>
+  <YesNo variant='danger' outlined left p='5px'>
+    <Button variant='danger'>
       <Icon name='trash' />
       Delete
     </Button>

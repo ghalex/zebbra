@@ -1,32 +1,32 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import { main } from '@zebbra/themes'
 import { StyledTitle } from './styles'
 
 class Title extends React.Component {
   static displayName = 'Title'
   static defaultProps = {
     as: 'h3',
-    size: 'normal',
+    p: 0,
+    mb: 3,
+    color: null,
+    bg: null,
+    fontSize: 4,
+    dislay: 'block',
+    textAlign: 'left',
     thin: false,
     strong: false,
-    textAlign: 'left',
-    margin: undefined,
-    noMargin: false
+    theme: main
   }
   static propTypes = {
     /** Render title as `h2`, `h3`, `h4` */
     as: PropTypes.string,
     /**
-     * A title can have different colors. <br/>
+     * A title an have different colors. <br/>
      * **Enum**: `primary`, `secondary`, `success`, `danger`, `white`, `black`, `grey`, `#FF0000`, ...
      **/
     color: PropTypes.string,
-    /**
-     * A title can have different sizes. <br/>
-     * **Enum**: `tiny`, `small`, `normal`, `medium`, `large`, `xlarge`, `huge`
-     **/
-    size: PropTypes.string,
     /** A title can have its font as thin */
     thin: PropTypes.bool,
     /** A title can have its font as strong */
@@ -34,12 +34,16 @@ class Title extends React.Component {
     /** A title can be aligned. */
     textAlign: PropTypes.string,
     /** Set custom margin to title */
-    margin: PropTypes.string
+    m: PropTypes.string
   }
   render () {
-    const { as, children, ...props } = this.props
-    const className = cx(`title`, this.props.className)
-    const Component = StyledTitle.withComponent(as)
+    let { as, children, ...props } = this.props
+    let className = cx(`title`, this.props.className)
+    let Component = StyledTitle.withComponent(as)
+
+    if (props.subtitle) {
+      props = {...props, ...{ mt: '-20px', thin: true, fontSize: props.fontSize - 1 }}
+    }
 
     return (
       <Component {...props} className={className}>{children}</Component>
