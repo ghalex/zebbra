@@ -12,6 +12,16 @@ A button can have multiple variants:
 </Box>
 ```
 
+```jsx
+<WithTheme name='github'>
+  <Box variant='primary'>
+    <Button>Normal</Button>
+    <Button variant='primary'>Primary</Button>
+    <Button variant='secondary'>Secondary</Button>
+  </Box>
+</WithTheme>
+```
+
 You can create your own button:
 
 ```jsx

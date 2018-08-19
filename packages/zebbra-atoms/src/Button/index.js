@@ -2,13 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import lodash from 'lodash'
+import { compose } from 'recompose'
 import { main } from '@zebbra/themes'
+import { withVariant } from '@zebbra/hocs'
 import { withTheme } from 'styled-components'
 import { Icon, Loader } from '../index'
 import * as s from './styles'
 
 class Button extends React.Component {
-  state = { hover: false }
   static displayName = 'Button'
   static defaultProps = {
     color: null,
@@ -69,23 +70,11 @@ class Button extends React.Component {
       btnChildren = lodash.reverse(btnChildren)
     }
 
-    if (props.variant && props.theme.components.buttons[props.variant]) {
-      let { hover, ...variant } = props.theme.components.buttons[props.variant]
-
-      if (this.state.hover && hover && !props.outlined) {
-        variant = {...variant, ...hover}
-      }
-
-      props = {...props, ...variant}
-    }
-
     return (
       <Component
         {...props}
-        hover={this.state.hover}
-        className={className}
-        onMouseEnter={() => this.setState({hover: true})}
-        onMouseLeave={() => this.setState({hover: false})}>
+        hover={this.props.isHover}
+        className={className}>
         {btnChildren}
         {props.loading && (
           <div className='loader-container'>
@@ -97,4 +86,7 @@ class Button extends React.Component {
   }
 }
 
-export default withTheme(Button)
+export default compose(
+  withTheme,
+  withVariant('buttons', main)
+)(Button)

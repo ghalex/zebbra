@@ -81,4 +81,12 @@ theme.components.buttons = {
   }
 }
 
+theme.components.checkboxes = {
+  primary: {
+    color: 'white',
+    borderColor: 'red',
+    bg: 'primary'
+  }
+}
+
 export default theme

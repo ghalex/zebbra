@@ -1,50 +1,48 @@
 import styled, { css } from 'styled-components'
-import { darken } from 'polished'
-import { px, size, color, getTheme } from '@zebbra/utils'
-
-const colorDark = p => p.color ? darken(0.08, color(p)) : ''
-const options = p => getTheme(p).components.checkbox(p) || {}
+import {
+  fontSize,
+  fontFamily,
+  borders,
+  borderColor,
+  borderRadius,
+  boxShadow,
+  color,
+  space
+} from 'styled-system'
 
 export const Checkbox = styled.div`
   display: flex;
   align-items: center;
-  font-family: ${p => getTheme(p).fonts.primary};
   cursor: pointer;
   background: transparent;
+  box-sizing: border-box;
 
-  & > div {
-    border: ${p => options(p).border};
-    border-color: ${p => color(p)};
-    border-radius: ${p => px(options(p).borderRadius)};
-    box-shadow: ${p => options(p).boxShadow};
-    font-size: ${p => px(size(p) * 0.825)};
-    height: 1.165em;
-    width: 1.165em;
-    display: inline-flex;
-    align-items: center;
+  ${fontFamily}
+  ${space}
+`
 
-    ${p => p.hasChildren && css`
-      margin-right: 0.5em;
-    `}
+export const CheckboxIcon = styled.div`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 
-    ${p => p.checked && css`
-      background-color: ${p => color(p)};
-    `}
-  }
+  ${p => p.hasChildren && css`margin-right: 0.5em;`}
 
-  & .icon {
-    font-size: ${p => px(size(p) * 0.825)};
-    width: 1.15em;
-    height: 1.15em;
-  }
+  ${color}
+  ${fontSize}
+  ${borders}
+  ${borderColor}
+  ${borderRadius}
+  ${boxShadow}
 
-  & > div:hover,
-  & .icon:hover {
-    border-color: ${colorDark};
-    background-color: ${colorDark};
-  }
+  ${p => !p.checked && css`
+    & .icon {
+      opacity: 0.2;
+    }
+  `}
+`
 
-  & label {
-    margin-left: 0.25em;
-  }
+export const CheckboxLabel = styled.div`
+  margin-left: 0.5em;
 `

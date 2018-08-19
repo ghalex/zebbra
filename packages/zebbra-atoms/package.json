@@ -23,10 +23,10 @@
   "dependencies": {
     "@zebbra/themes": "^1.0.35",
     "@zebbra/utils": "^1.0.35",
+    "@zebbra/hocs": "^1.0.33",
     "classnames": "^2.2.6",
     "lodash": "^4.17.10",
     "polished": "^1.9.3",
-    "recompose": "^0.28.2",
     "styled-system": "^3.0.2"
   },
   "peerDependencies": {

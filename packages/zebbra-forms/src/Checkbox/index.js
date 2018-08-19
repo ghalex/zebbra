@@ -1,6 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import { main } from '@zebbra/themes'
+import { compose } from 'recompose'
+import { withVariant } from '@zebbra/hocs'
+import { withTheme } from 'styled-components'
 import { Icon } from '@zebbra/atoms'
 import * as s from './styles'
 
@@ -12,9 +16,17 @@ class Checkbox extends React.Component {
 
   static displayName = 'Checkbox'
   static defaultProps = {
-    color: null,
-    size: 'normal',
-    checked: false
+    p: 0,
+    mt: 2,
+    mb: 2,
+    border: 1,
+    borderRadius: 3,
+    fontFamily: 'primary',
+    fontSize: 0,
+    color: 'grey',
+    bg: null,
+    checked: false,
+    theme: main
   }
 
   static propTypes = {
@@ -23,11 +35,6 @@ class Checkbox extends React.Component {
      * **Enum**: `primary`, `secondary`, `success`, `danger`, `white`, `black`, `grey`, `#FF0000`, ...
      **/
     color: PropTypes.string,
-    /**
-     * A checkbox can have different sizes. <br/>
-     * **Enum**: `tiny`, `small`, `normal`, `medium`, `large`, `xlarge`, `huge`
-     **/
-    size: PropTypes.string,
     /** Is true if checkbox is checked. */
     checked: PropTypes.bool,
     /**
@@ -40,9 +47,9 @@ class Checkbox extends React.Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    if (nextProps.checked !== this.state.checked) {
-      this.setState({ checked: nextProps.checked })
-    }
+    // if (nextProps.checked !== this.state.checked) {
+    //   this.setState({ checked: nextProps.checked })
+    // }
   }
 
   handleClick = (evt) => {
@@ -57,19 +64,29 @@ class Checkbox extends React.Component {
   }
 
   render () {
-    const { children, ...props } = this.props
+    const { children, color, ...props } = this.props
     const { checked } = this.state
     const className = cx(`checkbox`, {checked: checked}, props.className)
-
+    console.log('checked', checked)
     return (
-      <s.Checkbox {...props} checked={checked} hasChildren={!!children} className={className}>
-        <div onClick={this.handleClick}>
-          {checked && <Icon size={props.size} name='check' color={props.color} inverted={checked} />}
-        </div>
-        {children && <label>{children}</label>}
+      <s.Checkbox
+        {...props}
+        checked={checked}
+        hasChildren={!!children}
+        className={className}
+        onClick={this.handleClick}>
+        <s.CheckboxIcon
+          {...props}
+          checked={checked}>
+          <Icon name='check' color={color} fontSize={props.fontSize} />
+        </s.CheckboxIcon>
+        {children && <s.CheckboxLabel>{children}</s.CheckboxLabel>}
       </s.Checkbox>
     )
   }
 }
 
-export default Checkbox
+export default compose(
+  withTheme,
+  withVariant('checkboxes', main)
+)(Checkbox)

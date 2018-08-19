@@ -21,12 +21,15 @@
   "author": "Ghiura Alexandru <ghalex@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@zebbra/themes": "^1.0.35",
     "@zebbra/atoms": "^1.0.36",
+    "@zebbra/hocs": "^1.0.33",
     "@zebbra/utils": "^1.0.35",
     "classnames": "^2.2.6",
     "lodash": "^4.17.10",
     "moment": "^2.6.0",
     "polished": "^1.9.3",
+    "styled-system": "^3.0.2",
     "recompose": "^0.28.2"
   },
   "peerDependencies": {

@@ -54,6 +54,7 @@ export const Menu = styled.div`
     border-radius: 0;
   }
 
+  ${color}
   ${scrollbar}
   ${fontFamily}
   ${borders}

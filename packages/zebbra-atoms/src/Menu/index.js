@@ -16,6 +16,7 @@ class Menu extends React.Component {
     borderRadius: 3,
     p: null,
     m: null,
+    bg: 'white',
     fontFamily: 'primary',
     boxShadow: 'light',
     maxHeight: null,
