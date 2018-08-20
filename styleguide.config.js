@@ -1,5 +1,6 @@
 const path = require('path')
 const { version } = require('./lerna.json')
+const { createConfig, babel, postcss } = require('webpack-blocks')
 const { styles, theme } = require('./styleguide.styles')
 
 module.exports = {
@@ -16,41 +17,22 @@ module.exports = {
       ]
     }
   },
+
   sections: [
-    // {
-    //   name: '1. Introduction',
-    //   sections: [{
-    //     name: '',
-    //     content: 'readme.md'
-    //   }]
-    // },
-    // {
-    //   name: '2. Atoms',
-    //   content: 'packages/zebbra-atoms/readme.md',
-    //   components: 'packages/zebbra-atoms/src/[A-Z]*/index.js'
-    // }
     {
-      name: '3. Forms',
-      content: 'packages/zebbra-forms/readme.md',
-      components: 'packages/zebbra-forms/src/Checkbox/index.js'
+      name: 'Introduction',
+      sections: [{
+        name: '',
+        content: 'README.md'
+      }]
+    },
+    {
+      name: 'Components',
+      content: 'src/components/README.md',
+      components: 'src/components/[A-Z]*/index.js'
     }
   ],
-  webpackConfig: {
-    module: {
-      rules: [
-        {
-          test: /\.js?$/,
-          exclude: /node_modules/,
-          loader: 'babel-loader'
-        }
-      ]
-    },
-    resolve: {
-      alias: {
-        'styled-components': path.resolve('./', 'node_modules', 'styled-components')
-      }
-    }
-  },
+  webpackConfig: createConfig([babel(), postcss()]),
   styleguideComponents: {
     Wrapper: path.join(__dirname, 'docs/components/Wrapper'),
     Logo: path.join(__dirname, 'docs/components/Logo')

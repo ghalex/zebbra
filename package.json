@@ -11,6 +11,14 @@
     "outdated": "lerna exec --no-bail -- npm outdated",
     "up": "lerna exec --no-bail -- npm up"
   },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.10",
+    "polished": "^1.9.3",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "styled-system": "^3.0.2"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
@@ -25,12 +33,10 @@
     "babel-preset-react": "^6.24.1",
     "del-cli": "^1.1.0",
     "lerna": "^3.1.1",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
     "react-styleguidist": "^7.2.3",
     "standard": "^11.0.1",
     "styled-components": "^3.4.2",
-    "webpack": "^4.16.5"
-  },
-  "dependencies": {}
+    "webpack": "^4.16.5",
+    "webpack-blocks": "^1.0.0"
+  }
 }
