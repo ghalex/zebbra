@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import lodash from 'lodash'
 import { compose } from 'recompose'
-import { main } from './../../themes'
-import { withVariant } from './../../hocs'
+import { main } from 'zebbra/themes'
+import { withVariant } from 'zebbra/hocs'
+import { Icon, Loader } from 'zebbra/components'
 import { withTheme } from 'styled-components'
-import { Icon, Loader } from '../index'
 import * as s from './styles'
 
 class Button extends React.Component {

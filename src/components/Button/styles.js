@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { fluid, hover, disabled, loading } from '@zebbra/utils'
+import { fluid, hover, disabled, loading } from 'zebbra/utils'
 import {
   color,
   space,

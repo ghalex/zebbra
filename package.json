@@ -13,10 +13,12 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "jwt-decode": "^2.2.0",
     "lodash": "^4.17.10",
     "polished": "^1.9.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "recompose": "^0.28.2",
     "styled-system": "^3.0.2"
   },
   "devDependencies": {

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { main } from './../../themes'
+import { main } from 'zebbra/themes'
 import * as s from './styles'
 
 class Box extends React.Component {
