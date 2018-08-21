@@ -9,6 +9,7 @@ theme.fonts = {
 
 theme.shadows = {
   light: '0 1px 2px rgba(10, 10, 10, 0.1)',
+  lightInset: '0 1px 2px rgba(10, 10, 10, 0.1) inset',
   normal: '0 1px 2px rgba(0 ,0, 0, 0.15)',
   hard: '0 1px 5px rgba(0, 0, 0, 0.22)'
 }
@@ -35,7 +36,7 @@ theme.colors = {
   successLight: '#49E5CE',
   successDark: darken(0.1, '#00D1B2'),
   danger: '#E91E63',
-  dangerLight: '#EC5287',
+  dangerLight: lighten(0.1, '#E91E63'),
   dangerDark: darken(0.1, '#E91E63'),
   grey: '#808080',
   greyLight: '#CCCCCC',
@@ -84,9 +85,33 @@ theme.components.buttons = {
 theme.components.checkboxes = {
   primary: {
     color: 'white',
-    borderColor: 'red',
+    borderColor: 'primaryDark',
     bg: 'primary'
+  },
+  secondary: {
+    color: 'white',
+    borderColor: 'secondaryDark',
+    bg: 'secondary'
+  },
+  success: {
+    color: 'white',
+    borderColor: 'successDark',
+    bg: 'success'
+  },
+  danger: {
+    color: 'white',
+    borderColor: 'dangerDark',
+    bg: 'danger'
   }
 }
 
+theme.components.inputs = {
+  primary: {
+    color: 'white',
+    bg: 'primary',
+    borderColor: 'primary',
+    fontWeight: 300,
+    placeholderColor: 'rgba(255,255,255, 0.4)'
+  }
+}
 export default theme

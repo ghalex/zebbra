@@ -45,7 +45,7 @@ const filter = (item) => {
       return (
         <Menu.Item key={i} data={data} color={active ? 'primary' : null}>
           <Text inline>{data.name}</Text>
-          <Tag size='small' color={data.n > 5 ? 'danger' : '#CCC'}>{data.n}</Tag>
+          <Button color={data.n > 5 ? 'danger' : '#CCC'}>{data.n}</Button>
         </Menu.Item>
       )
     })
@@ -53,7 +53,7 @@ const filter = (item) => {
     return (
       <Menu>
         <Menu.Header>
-          <Input size='small' icon='search' type='text' value={state.search} onChange={(e, value) => setState({search: value})} />
+          <Input icon='search' type='text' fluid value={state.search} onChange={(e, value) => setState({search: value})} />
         </Menu.Header>
         <Menu.Divider />
         <Menu height={180}>

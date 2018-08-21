@@ -21,10 +21,12 @@ class Checkbox extends React.Component {
     mb: 2,
     border: 1,
     borderRadius: 3,
+    borderColor: 'grey',
     fontFamily: 'primary',
     fontSize: 0,
     color: 'grey',
     bg: null,
+    variant: null,
     checked: false,
     theme: main
   }
@@ -35,6 +37,11 @@ class Checkbox extends React.Component {
      * **Enum**: `primary`, `secondary`, `success`, `danger`, `white`, `black`, `grey`, `#FF0000`, ...
      **/
     color: PropTypes.string,
+    /**
+     * A checkbox can have different colors. <br/>
+     * **Enum**: `primary`, `secondary`, `success`, `danger`, `white`, `black`, `grey`, `#FF0000`, ...
+     **/
+    borderColor: PropTypes.string,
     /** Is true if checkbox is checked. */
     checked: PropTypes.bool,
     /**
@@ -47,9 +54,9 @@ class Checkbox extends React.Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    // if (nextProps.checked !== this.state.checked) {
-    //   this.setState({ checked: nextProps.checked })
-    // }
+    if (nextProps.checked !== this.state.checked) {
+      this.setState({ checked: nextProps.checked })
+    }
   }
 
   handleClick = (evt) => {
@@ -64,23 +71,23 @@ class Checkbox extends React.Component {
   }
 
   render () {
-    const { children, color, ...props } = this.props
+    const props = { ...this.props, ...this.props.variantProps }
     const { checked } = this.state
     const className = cx(`checkbox`, {checked: checked}, props.className)
-    console.log('checked', checked)
+
     return (
       <s.Checkbox
         {...props}
         checked={checked}
-        hasChildren={!!children}
+        hasChildren={!!props.children}
         className={className}
         onClick={this.handleClick}>
         <s.CheckboxIcon
           {...props}
           checked={checked}>
-          <Icon name='check' color={color} fontSize={props.fontSize} />
+          <Icon name='check' color={props.color} fontSize={props.fontSize} />
         </s.CheckboxIcon>
-        {children && <s.CheckboxLabel>{children}</s.CheckboxLabel>}
+        {props.children && <s.CheckboxLabel>{props.children}</s.CheckboxLabel>}
       </s.Checkbox>
     )
   }

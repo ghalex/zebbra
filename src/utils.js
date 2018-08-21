@@ -14,25 +14,29 @@ export const textOnColor = (color) => {
 
 export const hover = p => {
   let bg = 'white'
-  let color = null
+  let bgHover = null
+  let colorHover = null
 
   if (p.bg) {
     if (p.theme && p.theme.colors && p.theme.colors[p.bg]) {
       bg = p.theme.colors[p.bg]
+      colorHover = p.theme.colors[p.color]
     } else {
       bg = p.bg
+      colorHover = p.color
     }
   }
 
   if (parseToHsl(bg).lightness > 0.2) {
-    color = darken(0.05, bg)
+    bgHover = darken(0.05, bg)
   } else {
-    color = lighten(0.2, bg)
+    bgHover = lighten(0.2, bg)
   }
 
   return css`
     &:hover {
-      background-color: ${color};
+      color: ${colorHover};
+      background-color: ${bgHover};
     }
   `
 }

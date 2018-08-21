@@ -35,7 +35,7 @@ const icon = p => {
 }
 
 const outlined = p => {
-  if (!p.outlined || p.hover) return
+  if (!p.outlined) return
   let color = themeGet(`colors.${p.bg}`)
 
   return css`

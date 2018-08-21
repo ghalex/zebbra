@@ -52,7 +52,7 @@ class Button extends React.Component {
   }
 
   render () {
-    let { icon, children, iconPosition, ...props } = this.props
+    let { icon, children, iconPosition, variantProps, ...props } = this.props
     let Component = props.href ? s.Button.withComponent('a') : s.Button
     let className = cx(
       'button',
@@ -73,7 +73,7 @@ class Button extends React.Component {
     return (
       <Component
         {...props}
-        hover={this.props.isHover}
+        {...variantProps}
         className={className}>
         {btnChildren}
         {props.loading && (
