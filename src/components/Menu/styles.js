@@ -88,6 +88,11 @@ export const MenuItem = styled.div.attrs({
   cursor: ${p => (p.static ? 'cursor' : 'pointer')};
   white-space: nowrap;
 
+  & > .tag {
+    float: right;
+    margin-top: -0.3em;
+  }
+
   & > .icon {
     margin-right: 0.5em;
   }

@@ -2,16 +2,6 @@
 import { parseToHsl, darken, lighten } from 'polished'
 import { css } from 'styled-components'
 
-export const textOnColor = (color) => {
-  if (!color) return 'rgba(0, 0, 0, 0.8)'
-
-  if (parseToHsl(color).lightness > 0.55) {
-    return 'rgba(0, 0, 0, 0.8)'
-  }
-
-  return 'rgba(255, 255, 255, 1)'
-}
-
 export const hover = p => {
   let bg = 'white'
   let bgHover = null
@@ -80,4 +70,18 @@ export const disabled = p => {
     pointer-events: none;
     opacity: 0.7;
   `
+}
+
+export const removeMarginProps = props => {
+  const { m, mt, mb, ml, mr, mx, my, ...rest } = props
+  return rest
+}
+
+export const removePaddingProps = props => {
+  const { p, pt, pb, pl, pr, px, py, ...rest } = props
+  return rest
+}
+
+export const removeSpaceProps = props => {
+  return removePaddingProps(removeMarginProps(props))
 }

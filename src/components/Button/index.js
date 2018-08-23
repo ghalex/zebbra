@@ -56,7 +56,7 @@ class Button extends React.Component {
     let Component = props.href ? s.Button.withComponent('a') : s.Button
     let className = cx(
       'button',
-      {'icon-only': !this.props.children},
+      {'icon-only': (this.props.children === null || this.props.children === undefined)},
       {'icon-reverse': iconPosition === 'right'},
       this.props.className
     )
