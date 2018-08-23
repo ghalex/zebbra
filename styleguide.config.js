@@ -40,9 +40,8 @@ module.exports = {
   styleguideDir: './docs',
   getComponentPathLine: (componentPath) => {
     const dirname = path.dirname(componentPath, '.js')
-    const pack = dirname.split('/')[1].split('-')[1]
     const name = dirname.split('/').slice(-1)[0]
 
-    return 'import { ' + name + ' } from \'@zebbra/' + pack + '\''
+    return `import { ${name} } from 'zebbra/components'`
   }
 }

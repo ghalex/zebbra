@@ -1,4 +1,15 @@
 import styled, { css, keyframes } from 'styled-components'
+import {
+  style,
+  bgColor,
+  borderRadius,
+  space,
+  borders,
+  borderColor,
+  fontFamily,
+  fontSize,
+  boxShadow
+} from 'styled-system'
 
 const switchOn = keyframes`
   50% {
@@ -12,47 +23,73 @@ const switchOff = keyframes`
   }
 `
 
+const bgChecked = style({
+  prop: 'bgChecked',
+  cssProperty: 'backgroundColor',
+  key: 'colors'
+})
+
+const bgThumb = style({
+  prop: 'bgThumb',
+  cssProperty: 'backgroundColor',
+  key: 'colors'
+})
+
 export const Switch = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
 
-  & > div {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    transition: background 0.1s 0.1s ease;
-  }
+  ${space}
+  ${fontFamily}
+  ${fontSize}
+`
 
-  & > div:not(:last-child) {
-    margin-right: 0.5em;
-  }
+export const SwitchThumb = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.1s 0.1s ease;
+  width: ${p => p.size};
 
-  & > div span {
+  & > span {
     position: relative;
     cursor: pointer;
     width: 100%;
     transition: background 0.1s 0.1s ease;
+    height: ${p => p.thumbSize};
   }
 
-  & > div span::before {
+  & > span::before {
     content: '';
     display: block;
     cursor: pointer;
     position: absolute;
     left: 0;
-    border-radius: ${p => p.square ? '4px' : '50px'};
+    width: ${p => p.thumbSize};
+    height: ${p => p.thumbSize};
     transition: all 0.2s ease;
     animation: ${switchOn} .3s ease-out;
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
-    background: #fcfff4;
+
 
     ${p => !p.checked && css`
+      left: ${p => 'calc(100% - ' + p.thumbSize + ')'};
       animation: ${switchOff} .3s ease-out;
     `}
+
+    ${bgThumb}
+    ${borderRadius}
+    ${boxShadow}
   }
 
-  & > div span:hover::before {
-    opacity: 0.9;
-  }
+  ${space}
+  ${p => (p.checked ? bgChecked : bgColor)}
+  ${borders}
+  ${borderColor}
+  ${borderRadius}
+`
+
+export const SwitchLabel = styled.label`
+  display: inline-block;
+  margin-left: 0.5em;
 `

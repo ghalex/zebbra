@@ -9,9 +9,15 @@ import {
   borderColor,
   borderRadius,
   boxShadow,
-  themeGet,
-  height
+  height,
+  style
 } from 'styled-system'
+
+const placeholderColor = style({
+  prop: 'placeholderColor',
+  cssProperty: 'color',
+  key: 'colors'
+})
 
 export const InputContainer = styled.div`
   display: flex;
@@ -41,7 +47,7 @@ export const Input = styled.input`
   }
 
   &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    ${p => p.placeholderColor && css`color: ${themeGet('colors.' + p.placeholderColor, p.placeholderColor)}`}
+    ${placeholderColor}
   }
 
   ${p => p.hasIcon && css`padding-left: 2.20em;`}

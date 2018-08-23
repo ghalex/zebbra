@@ -1,14 +1,14 @@
 Use a **YesNo** container to ask a user to choose `Yes` or `No`. You can combine colors between **YesNo** container and buttons.
 
 ```jsx
-<Box variant='success'>
-  <YesNo variant='primary' onYes={() => console.log('yess')} p='5px'>
+<ChildrenProps p={2}>
+  <YesNo variant='primary' onYes={() => console.log('yess')}>
     <Button variant='primary'>
       <Icon name='check-circle' />
       Accept
     </Button>
   </YesNo>
-  <YesNo variant='success' outlined onYes={() => console.log('yess')} p='5px'>
+  <YesNo variant='success' outlined onYes={() => console.log('yess')}>
     <Button variant='success' outlined>
       Like Zebbra ?
     </Button>
@@ -19,5 +19,5 @@ Use a **YesNo** container to ask a user to choose `Yes` or `No`. You can combine
       Delete
     </Button>
   </YesNo>
-</Box>
+</ChildrenProps>
 ```

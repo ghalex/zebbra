@@ -1,16 +1,16 @@
 {
   "name": "zebbra",
-  "version": "1.0.0",
+  "version": "1.0.38",
+  "main": "lib/index.js",
   "scripts": {
-    "boot": "lerna bootstrap",
-    "build": "lerna run build",
-    "clean": "lerna run clean",
-    "publish": "lerna publish",
+    "build": "babel src --out-dir lib",
+    "clean": "del lib",
     "docs": "npx styleguidist server",
-    "docs-build": "npx styleguidist build",
-    "outdated": "lerna exec --no-bail -- npm outdated",
-    "up": "lerna exec --no-bail -- npm up"
+    "docs-build": "npx styleguidist build"
   },
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "classnames": "^2.2.6",
     "jwt-decode": "^2.2.0",

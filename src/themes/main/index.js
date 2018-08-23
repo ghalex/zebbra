@@ -36,14 +36,14 @@ theme.colors = {
   successLight: '#49E5CE',
   successDark: darken(0.1, '#00D1B2'),
   danger: '#E91E63',
-  dangerLight: lighten(0.1, '#E91E63'),
+  dangerLight: lighten(0.2, '#E91E63'),
   dangerDark: darken(0.1, '#E91E63'),
   grey: '#808080',
   greyLight: '#CCCCCC',
   greyUltraLight: '#E0E0E0',
   greyDark: darken(0.1, '#808080'),
   black: '#000000',
-  blackLight: lighten(0.1, '#000000'),
+  blackLight: lighten(0.2, '#000000'),
   white: '#FFFFFF',
   focus: '#209CEE'
 }

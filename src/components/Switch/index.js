@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import { removeMarginProps, removePaddingProps } from 'zebbra/utils'
+import { main } from 'zebbra/themes'
 import * as s from './styles'
 
 /**
@@ -12,17 +14,24 @@ class Switch extends React.Component {
   static displayName = 'Switch'
   static defaultProps = {
     color: null,
+    bg: 'grey',
+    bgChecked: 'blackLight',
+    bgThumb: 'white',
+    size: '3em',
+    border: null,
+    borderColor: null,
+    thumbSize: '1.5em',
+    boxShadow: 'hard',
+    p: 1,
+    m: 0,
+    borderRadius: 12,
+    fontFamily: 'primary',
+    fontSize: 1,
     checked: false,
-    square: false,
-    padding: null
+    theme: main
   }
 
   static propTypes = {
-    /**
-     * A checkbox can have different colors. <br/>
-     * **Enum**: `primary`, `secondary`, `success`, `danger`, `white`, `black`, `grey`, `#FF0000`, ...
-     **/
-    color: PropTypes.string,
     /** Is true if checkbox is checked. */
     checked: PropTypes.bool,
     /**
@@ -55,12 +64,12 @@ class Switch extends React.Component {
   render () {
     const { children, ...props } = this.props
     const { checked } = this.state
-    const className = cx(`checkbox`, props.className)
-
+    const className = cx(`switch`, props.className)
+    console.log(checked)
     return (
-      <s.Switch {...props} checked={checked} className={className}>
-        <div onClick={this.handleClick}><span /></div>
-        {children && <label>{children}</label>}
+      <s.Switch {...removePaddingProps(props)} checked={checked} className={className}>
+        <s.SwitchThumb {...removeMarginProps(props)} checked={checked} onClick={this.handleClick}><span /></s.SwitchThumb>
+        {children && <s.SwitchLabel>{children}</s.SwitchLabel>}
       </s.Switch>
     )
   }

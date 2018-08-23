@@ -1,18 +1,20 @@
 A **Switch** can have different colors:
 
 ```jsx
-<Box space='8px 0'>
-  <Switch color='success'>Do you like Zebbra ?</Switch>
-  <Switch color='primary'>On/Off</Switch>
-  <Switch color='primary' padding={0}>No padding</Switch>
-</Box>
+<ChildrenProps my={2}>
+  <Switch>Do you like Zebbra ?</Switch>
+  <Switch bgChecked='success' fontSize={0}>Small Switch</Switch>
+  <Switch bg='grey' bgChecked='primary'>Primary Checked</Switch>
+  <Switch borderRadius={0} p='2px'>Small padding</Switch>
+  <Switch border={2} borderColor='primary' bg='white' bgChecked='greyLight' bgThumb='primary' >Custom</Switch>
+</ChildrenProps>
 ```
 
 With different sizes:
 
 ```jsx
-<Box space='8px 0'>
-  <Switch size='medium' color='danger'>Big/Small</Switch>
-  <Switch size='large' color='primary' square>Big Square</Switch>
-</Box>
+<ChildrenProps my={2}>
+  <Switch fontSize={4}>Big/Small</Switch>
+  <Switch fontSize={2}>Big Square</Switch>
+</ChildrenProps>
 ```
