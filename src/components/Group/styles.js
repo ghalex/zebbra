@@ -34,7 +34,7 @@ const Group = styled.div`
   ${space}
 `
 
-export const HGroup = Group.extend`
+export const HGroup = styled(Group)`
   flex-direction: row;
 
   ${first} {
@@ -58,7 +58,7 @@ export const HGroup = Group.extend`
   & > *:not(:first-child) { margin-left: -1px; }
 `
 
-export const VGroup = Group.extend`
+export const VGroup = styled(Group)`
   flex-direction: column;
 
   ${first} {

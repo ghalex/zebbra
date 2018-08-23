@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-const { name, version } = require('../../lerna.json')
+const { name, version } = require('../../package.json')
 
 const capitalize = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1)

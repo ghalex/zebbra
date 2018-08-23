@@ -59,7 +59,6 @@ class Dropdown extends React.Component {
   }
 
   handleTrigger = () => {
-    console.log('trigger')
     this.toggle()
   }
 

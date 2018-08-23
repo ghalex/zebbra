@@ -8,8 +8,8 @@ class Text extends React.Component {
   static displayName = 'Text'
   static defaultProps = {
     as: 'p',
-    p: 0,
-    m: 0,
+    p: null,
+    m: null,
     color: null,
     bg: null,
     dislay: 'block',
