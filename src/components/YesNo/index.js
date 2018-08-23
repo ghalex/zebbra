@@ -17,8 +17,8 @@ class YesNo extends React.Component {
   static defaultProps = {
     display: 'inline-block',
     left: false,
-    p: 0,
-    m: 0,
+    p: null,
+    m: null,
     theme: main
   }
 

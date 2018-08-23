@@ -6,7 +6,6 @@ import { compose } from 'recompose'
 import { main } from 'zebbra/themes'
 import { withVariant } from 'zebbra/hocs'
 import { Icon, Loader } from 'zebbra/components'
-import { withTheme } from 'styled-components'
 import * as s from './styles'
 
 class Button extends React.Component {
@@ -54,7 +53,8 @@ class Button extends React.Component {
   }
 
   render () {
-    let { icon, children, iconPosition, variantProps, ...props } = this.props
+    let props = { ...this.props, ...this.props.variantProps }
+    let { icon, children, iconPosition, ...rest } = props
     let Component = props.href ? s.Button.withComponent('a') : s.Button
     let className = cx(
       'button',
@@ -74,8 +74,7 @@ class Button extends React.Component {
 
     return (
       <Component
-        {...props}
-        {...variantProps}
+        {...rest}
         className={className}>
         {btnChildren}
         {props.loading && (
@@ -89,6 +88,5 @@ class Button extends React.Component {
 }
 
 export default compose(
-  withTheme,
   withVariant('buttons', main)
 )(Button)

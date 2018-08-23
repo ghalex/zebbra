@@ -65,7 +65,7 @@ class Switch extends React.Component {
     const { children, ...props } = this.props
     const { checked } = this.state
     const className = cx(`switch`, props.className)
-    console.log(checked)
+
     return (
       <s.Switch {...removePaddingProps(props)} checked={checked} className={className}>
         <s.SwitchThumb {...removeMarginProps(props)} checked={checked} onClick={this.handleClick}><span /></s.SwitchThumb>

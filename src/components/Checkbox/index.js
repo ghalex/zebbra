@@ -5,7 +5,6 @@ import { compose } from 'recompose'
 import { main } from 'zebbra/themes'
 import { Icon } from 'zebbra/components'
 import { withVariant } from 'zebbra/hocs'
-import { withTheme } from 'styled-components'
 import * as s from './styles'
 
 /**
@@ -93,6 +92,5 @@ class Checkbox extends React.Component {
 }
 
 export default compose(
-  withTheme,
   withVariant('checkboxes', main)
 )(Checkbox)

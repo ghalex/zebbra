@@ -1,5 +1,5 @@
 const path = require('path')
-const { version } = require('./lerna.json')
+const { version } = require('./package.json')
 const { createConfig, babel, postcss } = require('webpack-blocks')
 const { styles, theme } = require('./styleguide.styles')
 
