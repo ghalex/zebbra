@@ -1,7 +1,7 @@
 A button can have multiple variants:
 
 ```jsx
-<Box variant='primary'>
+<ChildrenProps mr={1} mb={1}>
   <Button>Normal</Button>
   <Button variant='primary'>Primary</Button>
   <Button variant='secondary'>Secondary</Button>
@@ -9,60 +9,61 @@ A button can have multiple variants:
   <Button variant='danger'>Danger</Button>
   <Button variant='grey'>Danger</Button>
   <Button color='white' bg='black' borderColor='black'>Black</Button>
-</Box>
+</ChildrenProps>
+
 ```
 
 You can create your own button:
 
 ```jsx
-<Box variant='primary'>
+<ChildrenProps mr={1} mb={1}>
   <Button color='white' border={2} bg='primaryLight' borderColor='primaryDark'>Custom</Button>
   <Button bg='yellowgreen' color='white' borderRadius={0}>Secondary</Button>
-</Box>
+</ChildrenProps>
 ```
 
 A button can be `outlined`:
 
 ```jsx
-<Box variant='success'>
+<ChildrenProps mr={1} mb={1}>
   <Button variant='primary' outlined>Primary</Button>
   <Button variant='success' outlined>Success</Button>
   <Button variant='danger' outlined>Danger</Button>
   <Button variant='grey' outlined>Grayscale</Button>
   <Button color='white' bg='black' outlined>Black</Button>
-</Box>
+</ChildrenProps>
 ```
 
 A button can show a loading indicator:
 
 ```jsx
-<Box color='success' inverted>
+<ChildrenProps mr={1} mb={1}>
   <Button loading>Normal</Button>
   <Button variant='primary' loading>Primary</Button>
   <Button variant='success' loading>Success</Button>
   <Button variant='danger' loading>Danger</Button>
   <Button bg='gray' color='white' loading>Grayscale</Button>
   <Button bg='black' color='white' loading>Black</Button>
-</Box>
+</ChildrenProps>
 ```
 
 A button can have different sizes:
 
 ```jsx
-<Box variant='success'>
+<ChildrenProps mr={1} mb={1}>
   <Button fontSize={0} variant='primary'>Tiny</Button>
   <Button fontSize={1} variant='primary'>Small</Button>
   <Button fontSize={2} variant='success'>Normal</Button>
   <Button fontSize={3} variant='danger'>Medium</Button>
   <Button fontSize={4} variant='grey'>Large</Button>
   <Button fontSize={5} variant='black' outlined>XLarge</Button>
-</Box>
+</ChildrenProps>
 ```
 
 A button can have an icon:
 
 ```jsx
-<Box variant='success'>
+<ChildrenProps mr={1} mb={1}>
   <Button variant='grey' outlined icon='cubes'>Cubes</Button>
   <Button variant='primary' icon='star' iconPosition='right'>Primary</Button>
   <Button variant='success' icon='rss'>Success</Button>
@@ -70,5 +71,5 @@ A button can have an icon:
   <Button variant='grey' icon='shield' />
   <Button variant='grey' icon='shield' fontSize={0} />
   <Button variant='grey' icon='remove' fontSize={0} />
-</Box>
+</ChildrenProps>
 ```

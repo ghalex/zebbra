@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components'
-import { size, space, fontSize, color } from 'styled-system'
+import { size, space, fontSize, color, fontFamily } from 'styled-system'
 
 const rotate360 = keyframes`
   from { transform: rotate(0deg); }
@@ -11,6 +11,7 @@ export const Loader = styled.div`
   align-items: center;
   
   ${color}
+  ${fontFamily}
   ${p => p.vertical && css`flex-direction: column;`}
 `
 
@@ -44,6 +45,7 @@ export const LoaderCircle = styled.div`
   ${size}
   ${space}
   ${color}
+  ${fontSize}
 `
 
 export const LoaderShadow = styled.div`
@@ -58,4 +60,5 @@ export const LoaderShadow = styled.div`
 
   ${size}
   ${space}
+  ${fontSize}
 `

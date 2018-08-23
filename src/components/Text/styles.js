@@ -3,7 +3,7 @@ import { fontFamily, fontSize, space, color, textAlign, display } from 'styled-s
 
 export const StyledText = styled.p`
   font-weight: 400;
-  line-height: 1.12;
+  line-height: 1.5;
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;

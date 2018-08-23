@@ -9,13 +9,15 @@ class Box extends React.Component {
   static defaultProps = {
     color: null,
     bg: null,
+    m: 0,
     p: '1em',
-    stacked: false,
-    fontFamily: 'primary',
     boxShadow: 'light',
     border: 1,
     borderColor: 'greyUltraLight',
     borderRadius: '3px',
+    stacked: false,
+    fontFamily: 'primary',
+    fontSize: null,
     theme: main
   }
 
@@ -28,8 +30,12 @@ class Box extends React.Component {
 
   render () {
     const className = cx(`box`, this.props.className)
+    const { children, childrenProps, ...props } = this.props
+
     return (
-      <s.Box {...this.props} className={className} />
+      <s.Box {...props} className={className}>
+        {children}
+      </s.Box>
     )
   }
 }

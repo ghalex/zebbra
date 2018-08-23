@@ -12,6 +12,7 @@ class Title extends React.Component {
     mb: 3,
     color: null,
     bg: null,
+    fontFamily: 'primary',
     fontSize: 4,
     dislay: 'block',
     textAlign: 'left',
@@ -42,7 +43,7 @@ class Title extends React.Component {
     let Component = StyledTitle.withComponent(as)
 
     if (props.subtitle) {
-      props = {...props, ...{ mt: '-20px', thin: true, fontSize: props.fontSize - 1 }}
+      props = {...props, ...{ mt: '-1.35em', thin: true, fontSize: props.fontSize - 1 }}
     }
 
     return (

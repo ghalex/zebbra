@@ -18,9 +18,4 @@ export const Input = styled.div`
 
   & > input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   }
-
-
-  &:not(:last-child) {
-    margin-bottom: 0.75rem;
-  }
 `

@@ -30,7 +30,7 @@ export const Icon = styled.i.attrs({
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  line-height: 1;
+  line-height: 1.5;
 
   ${color}
   ${size}

@@ -8,6 +8,7 @@ import {
   borders,
   borderRadius,
   borderColor,
+  fontFamily,
   fontWeight,
   backgroundImage,
   fontSize,
@@ -59,10 +60,6 @@ export const Button = styled.div`
 
   ${p => p.static && css`pointer-events: none;`}
 
-  &:not(:last-child) {
-    margin: 0 0.25em 0 0;
-  }
-
   ${icon}
   ${color}
   ${space}
@@ -76,6 +73,7 @@ export const Button = styled.div`
   ${fluid}
   ${disabled}
   ${loading}
+  ${fontFamily}
   ${fontSize}
   ${fontWeight}
   ${hover}

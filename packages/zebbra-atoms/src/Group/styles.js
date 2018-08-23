@@ -13,10 +13,6 @@ const Group = styled.div`
     border-radius: 0;
   }
 
-  &:not(:last-child) {
-    margin-right: 0.5em;
-  }
-
   ${p => p.fluid && css`width: 100%`}
   ${borderRadius}
 `

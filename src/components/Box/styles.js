@@ -46,10 +46,6 @@ export const Box = styled.div`
   position: relative;
   text-align: left;
 
-  &:not(:last-child) {
-    margin-bottom: 0.6rem;
-  }
-
   ${fontFamily}
   ${fontSize}
   ${space}

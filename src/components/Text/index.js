@@ -16,6 +16,7 @@ class Text extends React.Component {
     textAlign: 'left',
     thin: false,
     strong: false,
+    fontFamily: 'primary',
     theme: main
   }
   static propTypes = {

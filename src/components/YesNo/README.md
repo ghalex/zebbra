@@ -13,7 +13,7 @@ Use a **YesNo** container to ask a user to choose `Yes` or `No`. You can combine
       Like Zebbra ?
     </Button>
   </YesNo>
-  <YesNo variant='danger' outlined left p='5px'>
+  <YesNo variant='danger' noBorders outlined left p='5px'>
     <Button variant='danger'>
       <Icon name='trash' />
       Delete

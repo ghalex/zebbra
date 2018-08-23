@@ -16,16 +16,13 @@ import {
 export const InputContainer = styled.div`
   display: flex;
   position: relative;
+  box-sizing: border-box;
 
   & > .icon {
     position: absolute;
     top: 50%;
     left: 5px;
     transform: translateY(-50%);
-  }
-
-  &:not(:last-child) {
-    margin-bottom: 0.75rem;
   }
 
   ${space}
@@ -38,6 +35,7 @@ export const Input = styled.input`
   transition: all .3s;
   box-sizing: border-box;
   padding: 0 0.55em;
+  line-height: 1.5;
 
   &:focus {
   }
@@ -54,6 +52,7 @@ export const Input = styled.input`
   ${borderRadius}
   ${boxShadow}
   ${fontSize}
-  ${height}
   ${fontWeight}
+  ${height}
+  ${fluid}
 `

@@ -90,7 +90,6 @@ export const MenuItem = styled.div.attrs({
 
   & > .tag {
     float: right;
-    margin-top: -0.3em;
   }
 
   & > .icon {

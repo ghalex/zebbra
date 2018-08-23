@@ -11,6 +11,8 @@ class Loader extends React.Component {
   static displayName = 'Loader'
   static defaultProps = {
     size: '1.125em',
+    fontFamily: 'primary',
+    fontSize: 2,
     p: null,
     m: 0,
     borderSize: 3,

@@ -57,7 +57,7 @@ class YesNo extends React.Component {
 
   render () {
     const className = cx(`yesno`, this.props.className)
-    const { left, children, ...props } = this.props
+    const { left, children, noBorders, ...props } = this.props
     const { isOpen } = this.state
 
     const MainButton = React.cloneElement(React.Children.only(children), {
@@ -66,7 +66,7 @@ class YesNo extends React.Component {
 
     return (
       <StyledYesNo {...props} className={className}>
-        <Group>
+        <Group noBorders={noBorders}>
           {!left && MainButton}
           {isOpen && <Button icon='check' className='btnYes' isIcon onClick={this.handleYes} {...props} />}
           {isOpen && <Button icon='times' className='btnNo' isIcon onClick={this.handleNo} {...props} />}

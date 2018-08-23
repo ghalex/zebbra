@@ -14,10 +14,6 @@ export const StyledYesNo = styled.div`
     animation: ${fadeIn} 0.15s linear;
   }
 
-  &:not(:last-child) {
-    margin: 0 0.25em 0 0;
-  }
-
   ${display}
   ${space}
 `

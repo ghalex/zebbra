@@ -7,7 +7,7 @@ initialState = {
 
 <Dropdown
   color='primary'
-  bg='greyUltraLight'
+  bg='#efefef'
   m={10}
   closeOnChange
   fluid

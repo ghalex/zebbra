@@ -59,10 +59,6 @@ export const Button = styled.div`
 
   ${p => p.static && css`pointer-events: none;`}
 
-  &:not(:last-child) {
-    margin: 0 0.25em 0 0;
-  }
-
   ${icon}
   ${color}
   ${space}

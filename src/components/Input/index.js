@@ -15,16 +15,18 @@ import * as s from './styles'
 class Input extends React.Component {
   static displayName = 'Input'
   static defaultProps = {
-    border: 1,
-    borderRadius: 3,
-    borderColor: 'greyLight',
-    boxShadow: 'lightInset',
-    placeholderColor: null,
-    height: '2.4em',
-    fontSize: 1,
-    fontWeight: 300,
     color: 'grey',
     bg: null,
+    p: null,
+    m: 0,
+    border: 1,
+    borderColor: 'greyLight',
+    borderRadius: 3,
+    boxShadow: 'lightInset',
+    fontSize: 2,
+    fontWeight: 300,
+    placeholderColor: null,
+    height: '2.2em',
     variant: null,
     fluid: false,
     type: 'text',
@@ -83,7 +85,11 @@ class Input extends React.Component {
       }
     }
     return (
-      <s.InputContainer fluid={props.fluid} className={className}>
+      <s.InputContainer
+        {...props}
+        height={props.height}
+        fluid={props.fluid}
+        className={className}>
         {InputIcon}
         <s.Input
           {...props}

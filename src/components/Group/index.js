@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { compact } from 'lodash'
-import { HGroup, VGroup } from './styles'
+import { compact, filter, isBoolean } from 'lodash'
+import { removeSpaceProps } from 'zebbra/utils'
+import { VGroup, HGroup } from './styles'
 
 /**
  * Group is used to group other elements. <br/>
@@ -12,6 +13,7 @@ class Group extends React.Component {
   static displayName = 'Group'
   static defaultProps = {
     vertical: false,
+    noBorders: false,
     borderRadius: 3
   }
 
@@ -26,11 +28,23 @@ class Group extends React.Component {
     const className = cx('group', this.props.className)
     const { vertical, children, fluid, ...props } = this.props
     const StyledGroup = vertical ? VGroup : HGroup
+    const filterChildren = filter(compact(children), e => !isBoolean(e))
 
     const items = React.Children.map(
-      compact(children),
-      c => {
-        return React.cloneElement(c, {...props})
+      filterChildren,
+      (c, index) => {
+        let itemClassName = cx(
+          {'child': index !== 0 && index !== filterChildren.length - 1},
+          {'first': index === 0},
+          {'last': index === filterChildren.length - 1}
+        )
+
+        let itemProps = {...removeSpaceProps(props)}
+        if (filterChildren.length > 1) {
+          itemProps.className = itemClassName
+        }
+
+        return React.cloneElement(c, itemProps)
       }
     )
 
