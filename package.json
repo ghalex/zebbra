@@ -1,6 +1,6 @@
 {
   "name": "zebbra",
-  "version": "1.0.39",
+  "version": "1.0.40",
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src --out-dir lib",
@@ -9,7 +9,10 @@
     "docs-build": "npx styleguidist build"
   },
   "files": [
-    "lib"
+    "lib",
+    "components.js",
+    "hocs.js",
+    "themes.js"
   ],
   "dependencies": {
     "classnames": "^2.2.6",
