@@ -9,6 +9,7 @@ import {
   fontFamily,
   fontSize,
   style,
+  textAlign,
   compose
 } from 'styled-system'
 
@@ -44,7 +45,6 @@ const boxBorder = compose(borders, borderRadius, borderColor)
 
 export const Box = styled.div`
   position: relative;
-  text-align: left;
 
   ${fontFamily}
   ${fontSize}
@@ -54,5 +54,6 @@ export const Box = styled.div`
   ${color}
   ${boxBorder}
   ${boxStyles}
+  ${textAlign}
   
 `
