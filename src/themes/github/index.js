@@ -12,4 +12,6 @@ const github = defaults({
   }
 }, main)
 
+github.radii = [ 0, 3, 6 ]
+
 export default github

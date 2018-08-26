@@ -17,7 +17,7 @@ class Button extends React.Component {
     m: 0,
     border: 1,
     borderColor: 'greyLight',
-    borderRadius: 3,
+    borderRadius: 0,
     boxShadow: null,
     fontFamily: 'primary',
     fontWeight: 400,

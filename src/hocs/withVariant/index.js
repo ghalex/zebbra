@@ -1,26 +1,47 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { setDisplayName, wrapDisplayName } from 'recompose'
 
-const withVariant = (key, defaultTheme) => BaseComponent => {
+const CHANNEL = '__styled-components__'
+
+const withVariant = (key, fallbackTheme) => BaseComponent => {
   class WithVariant extends React.Component {
-    render () {
-      let { variant, theme } = this.props
-      let props = {...this.props}
+    static contextTypes = {
+      [CHANNEL]: PropTypes.func
+    }
 
-      if (!theme) {
-        theme = defaultTheme
+    state = { theme: undefined }
+
+    componentWillMount () {
+      const subscribe = this.context[CHANNEL]
+      if (subscribe) {
+        this.unsubscribe = subscribe(theme => { this.setState({ theme }) })
       }
+    }
 
+    componentWillUnmount () {
+      if (typeof this.unsubscribe === 'function') this.unsubscribe()
+    }
+
+    render () {
+      let { variant, theme, ...rest } = this.props
+      theme = this.state.theme || this.props.theme || fallbackTheme
+
+      if (this.state.theme) {
+        console.log('result theme', theme)
+        console.log('ctx theme', this.state.theme)
+      }
       if (variant && theme && theme.components[key] && theme.components[key][variant]) {
         let variantProps = theme.components[key][variant]
-        props.variantProps = variantProps
+        rest.variantProps = variantProps
       }
 
       return (
         <BaseComponent
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
-          {...props}
+          theme={theme}
+          {...rest}
         />
       )
     }

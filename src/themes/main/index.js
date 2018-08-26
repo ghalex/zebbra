@@ -14,6 +14,8 @@ theme.shadows = {
   hard: '0 1px 5px rgba(0, 0, 0, 0.22)'
 }
 
+theme.radii = [ 3, 6, 9 ]
+
 /** All sizes are in pixels */
 theme.sizes = theme.fontSize = {
   tiny: 10,

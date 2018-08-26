@@ -14,7 +14,7 @@ class Box extends React.Component {
     boxShadow: 'light',
     border: 1,
     borderColor: 'greyUltraLight',
-    borderRadius: '3px',
+    borderRadius: 0,
     stacked: false,
     textAlign: 'left',
     fontFamily: 'primary',

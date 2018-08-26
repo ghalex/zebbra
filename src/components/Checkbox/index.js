@@ -18,7 +18,7 @@ class Checkbox extends React.Component {
     p: 0,
     m: 0,
     border: 1,
-    borderRadius: 3,
+    borderRadius: 0,
     borderColor: 'grey',
     fontFamily: 'primary',
     fontSize: 0,

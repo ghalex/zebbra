@@ -12,7 +12,7 @@ class Menu extends React.Component {
   static defaultProps = {
     border: 1,
     borderColor: 'greyUltraLight',
-    borderRadius: 3,
+    borderRadius: 0,
     p: null,
     m: null,
     bg: 'white',

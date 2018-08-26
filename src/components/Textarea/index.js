@@ -15,7 +15,7 @@ class Textarea extends React.Component {
     m: 0,
     border: 1,
     borderColor: 'greyLight',
-    borderRadius: 3,
+    borderRadius: 0,
     boxShadow: 'lightInset',
     fontSize: 2,
     fontWeight: 300,

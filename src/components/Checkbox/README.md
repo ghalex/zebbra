@@ -12,6 +12,16 @@ A **Checkbox** can have different colors and can have a content as label:
 </ChildrenProps>
 ```
 
+Different theme:
+
+```jsx
+<ChildrenProps my={1}>
+  <WithTheme name='github'>
+    <Checkbox variant='primary'>Click <a href='#'>me</a> now</Checkbox>
+  </WithTheme>
+</ChildrenProps>
+```
+
 
 A **Checkbox** can have different variants defined in theme:
 

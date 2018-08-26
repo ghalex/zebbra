@@ -14,7 +14,7 @@ class Group extends React.Component {
   static defaultProps = {
     vertical: false,
     noBorders: false,
-    borderRadius: 3
+    borderRadius: 0
   }
 
   static propTypes = {
