@@ -39,6 +39,7 @@ const boxStyles = style({
 })
 
 export const Box = styled.div`
+  display: flex;
   position: relative;
 
   ${fontFamily}
