@@ -1,6 +1,18 @@
 
 import { parseToHsl, darken, lighten } from 'polished'
 import { css } from 'styled-components'
+import {
+  alignItems,
+  alignContent,
+  justifyContent,
+  flexWrap,
+  flexBasis,
+  flexDirection,
+  justifySelf,
+  alignSelf,
+  flex,
+  compose
+} from 'styled-system'
 
 export const hover = p => {
   let bg = 'white'
@@ -71,6 +83,18 @@ export const disabled = p => {
     opacity: 0.7;
   `
 }
+
+export const flexbox = compose(
+  alignItems,
+  alignContent,
+  justifyContent,
+  flexWrap,
+  flexBasis,
+  flexDirection,
+  justifySelf,
+  alignSelf,
+  flex
+)
 
 export const removeMarginProps = props => {
   const { m, mt, mb, ml, mr, mx, my, ...rest } = props

@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { flexbox } from 'utils'
 import {
   color,
   space,
@@ -55,5 +56,5 @@ export const Box = styled.div`
   ${boxBorder}
   ${boxStyles}
   ${textAlign}
-  
+  ${flexbox}
 `

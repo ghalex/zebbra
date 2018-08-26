@@ -1,8 +1,9 @@
 {
   "name": "zebbra",
-  "version": "1.0.41",
+  "version": "1.0.42",
   "main": "lib/index.js",
   "scripts": {
+    "prepublish": "npm run build",
     "build": "babel src --out-dir lib",
     "clean": "del lib",
     "docs": "npx styleguidist server",
