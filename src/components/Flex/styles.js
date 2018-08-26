@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { space } from 'styled-system'
-import { flexbox, color } from 'zebbra/utils'
+import { space, color } from 'styled-system'
+import { flexbox } from 'zebbra/utils'
 
 export const StyledFlex = styled.div`
   display: flex;
