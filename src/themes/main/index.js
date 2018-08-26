@@ -45,7 +45,9 @@ theme.colors = {
   black: '#000000',
   blackLight: lighten(0.2, '#000000'),
   white: '#FFFFFF',
-  focus: '#209CEE'
+  focus: '#209CEE',
+  google: '#cf4332',
+  facebook: '#3A579B'
 }
 
 theme.components = {}
@@ -110,6 +112,27 @@ theme.components.inputs = {
     color: 'white',
     bg: 'primary',
     borderColor: 'primary',
+    fontWeight: 300,
+    placeholderColor: 'rgba(255,255,255, 0.4)'
+  },
+  secondary: {
+    color: 'white',
+    bg: 'secondary',
+    borderColor: 'secondary',
+    fontWeight: 300,
+    placeholderColor: 'rgba(255,255,255, 0.4)'
+  },
+  success: {
+    color: 'white',
+    bg: 'success',
+    borderColor: 'success',
+    fontWeight: 300,
+    placeholderColor: 'rgba(255,255,255, 0.4)'
+  },
+  danger: {
+    color: 'white',
+    bg: 'danger',
+    borderColor: 'danger',
     fontWeight: 300,
     placeholderColor: 'rgba(255,255,255, 0.4)'
   }
