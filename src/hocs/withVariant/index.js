@@ -27,10 +27,6 @@ const withVariant = (key, fallbackTheme) => BaseComponent => {
       let { variant, theme, ...rest } = this.props
       theme = this.state.theme || this.props.theme || fallbackTheme
 
-      if (this.state.theme) {
-        console.log('result theme', theme)
-        console.log('ctx theme', this.state.theme)
-      }
       if (variant && theme && theme.components[key] && theme.components[key][variant]) {
         let variantProps = theme.components[key][variant]
         rest.variantProps = variantProps
