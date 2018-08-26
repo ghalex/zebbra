@@ -1,11 +1,8 @@
 import styled, { css } from 'styled-components'
-import { hover } from 'zebbra/utils'
+import { hover, borders } from 'zebbra/utils'
 import {
   fontSize,
   fontFamily,
-  borders,
-  borderColor,
-  borderRadius,
   boxShadow,
   color,
   space
@@ -33,8 +30,6 @@ export const CheckboxIcon = styled.div`
   ${color}
   ${fontSize}
   ${borders}
-  ${borderColor}
-  ${borderRadius}
   ${boxShadow}
   ${hover}
 

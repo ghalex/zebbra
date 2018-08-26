@@ -2,6 +2,7 @@
 import { parseToHsl, darken, lighten } from 'polished'
 import { css } from 'styled-components'
 import {
+  borders as borderSize,
   alignItems,
   alignContent,
   justifyContent,
@@ -11,6 +12,8 @@ import {
   justifySelf,
   alignSelf,
   flex,
+  borderRadius,
+  borderColor,
   compose
 } from 'styled-system'
 
@@ -94,6 +97,12 @@ export const flexbox = compose(
   justifySelf,
   alignSelf,
   flex
+)
+
+export const borders = compose(
+  borderSize,
+  borderRadius,
+  borderColor
 )
 
 export const removeMarginProps = props => {

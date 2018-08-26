@@ -1,17 +1,13 @@
 import styled, { css } from 'styled-components'
-import { flexbox } from 'utils'
+import { flexbox, borders } from 'zebbra/utils'
 import {
   color,
   space,
   boxShadow,
-  borders,
-  borderRadius,
-  borderColor,
   fontFamily,
   fontSize,
   style,
-  textAlign,
-  compose
+  textAlign
 } from 'styled-system'
 
 const stacked = p => {
@@ -42,8 +38,6 @@ const boxStyles = style({
   transformValue: n => `2px solid ${n}`
 })
 
-const boxBorder = compose(borders, borderRadius, borderColor)
-
 export const Box = styled.div`
   position: relative;
 
@@ -53,7 +47,7 @@ export const Box = styled.div`
   ${stacked}
   ${boxShadow}
   ${color}
-  ${boxBorder}
+  ${borders}
   ${boxStyles}
   ${textAlign}
   ${flexbox}

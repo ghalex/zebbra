@@ -1,13 +1,10 @@
 import styled, { css } from 'styled-components'
-import { fluid, hover, disabled, loading } from 'zebbra/utils'
+import { fluid, hover, disabled, loading, borders } from 'zebbra/utils'
 import {
   color,
   space,
   height,
   boxShadow,
-  borders,
-  borderRadius,
-  borderColor,
   fontFamily,
   fontWeight,
   backgroundImage,
@@ -66,8 +63,6 @@ export const Button = styled.div`
   ${height}
   ${backgroundImage}
   ${borders}
-  ${borderColor}
-  ${borderRadius}
   ${outlined}
   ${boxShadow}
   ${fluid}

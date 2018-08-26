@@ -1,11 +1,10 @@
 import styled, { css, keyframes } from 'styled-components'
+import { borders } from 'zebbra/utils'
 import {
   style,
   bgColor,
   borderRadius,
   space,
-  borders,
-  borderColor,
   fontFamily,
   fontSize,
   boxShadow
@@ -85,8 +84,6 @@ export const SwitchThumb = styled.div`
   ${space}
   ${p => (p.checked ? bgChecked : bgColor)}
   ${borders}
-  ${borderColor}
-  ${borderRadius}
 `
 
 export const SwitchLabel = styled.label`

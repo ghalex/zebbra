@@ -1,10 +1,7 @@
 import styled, { css } from 'styled-components'
-import { hover } from 'zebbra/utils'
+import { hover, borders } from 'zebbra/utils'
 import {
   fontFamily,
-  borders,
-  borderColor,
-  borderRadius,
   maxHeight,
   boxShadow,
   space,
@@ -58,8 +55,6 @@ export const Menu = styled.div`
   ${scrollbar}
   ${fontFamily}
   ${borders}
-  ${borderColor}
-  ${borderRadius}
   ${boxShadow}
   ${maxHeight}
   ${space}
@@ -105,7 +100,6 @@ export const MenuDivider = styled.div`
   height: 0;
 
   ${borders}
-  ${borderColor}
   ${space}
 
   border-left: none;

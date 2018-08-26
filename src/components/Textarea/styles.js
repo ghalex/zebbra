@@ -1,10 +1,8 @@
 import styled from 'styled-components'
+import { borders } from 'zebbra/utils'
 import {
   color,
   space,
-  borders,
-  borderColor,
-  borderRadius,
   boxShadow,
   fontFamily,
   fontSize,
@@ -39,8 +37,6 @@ export const StyledTextarea = styled.textarea`
   ${color}
   ${space}
   ${borders}
-  ${borderColor}
-  ${borderRadius}
   ${boxShadow}
   ${fontFamily}
   ${fontSize}
