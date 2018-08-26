@@ -81,6 +81,16 @@ theme.components.buttons = {
     color: 'white',
     borderColor: 'black',
     bg: 'black'
+  },
+  google: {
+    color: 'white',
+    borderColor: 'google',
+    bg: 'google'
+  },
+  facebook: {
+    color: 'white',
+    borderColor: 'facebook',
+    bg: 'facebook'
   }
 }
 
