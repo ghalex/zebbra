@@ -149,4 +149,8 @@ theme.components.inputs = {
     placeholderColor: 'rgba(255,255,255, 0.4)'
   }
 }
+
+theme.components.menus = {}
+theme.components.switces = {}
+
 export default theme

@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import lodash from 'lodash'
-import { compose } from 'recompose'
 import { main } from 'zebbra/themes'
 import { withVariant } from 'zebbra/hocs'
 import { Icon, Loader } from 'zebbra/components'
@@ -53,14 +52,13 @@ class Button extends React.Component {
   }
 
   render () {
-    let props = { ...this.props, ...this.props.variantProps }
-    let { icon, children, iconPosition, ...rest } = props
-    let Component = props.href ? s.Button.withComponent('a') : s.Button
+    let { icon, children, iconPosition, ...rest } = this.props
+    let Component = rest.href ? s.Button.withComponent('a') : s.Button
     let className = cx(
       'button',
-      {'icon-only': (this.props.children === null || this.props.children === undefined)},
+      {'icon-only': (children === null || children === undefined)},
       {'icon-reverse': iconPosition === 'right'},
-      this.props.className
+      rest.className
     )
 
     let btnChildren = [
@@ -77,9 +75,9 @@ class Button extends React.Component {
         {...rest}
         className={className}>
         {btnChildren}
-        {props.loading && (
+        {rest.loading && (
           <div className='loader-container'>
-            <Loader size={props.size} color={props.color || 'black'} />
+            <Loader size={rest.size} color={rest.color || 'black'} />
           </div>
         )}
       </Component>
@@ -87,6 +85,4 @@ class Button extends React.Component {
   }
 }
 
-export default compose(
-  withVariant('buttons', main)
-)(Button)
+export default withVariant('buttons', main)(Button)

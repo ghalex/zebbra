@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { compose } from 'recompose'
+import { withVariant } from 'zebbra/hocs'
 import { main } from 'zebbra/themes'
 import { Icon } from 'zebbra/components'
-import { withVariant } from 'zebbra/hocs'
 import * as s from './styles'
 
 /**
@@ -69,7 +69,7 @@ class Checkbox extends React.Component {
   }
 
   render () {
-    const props = { ...this.props, ...this.props.variantProps }
+    const props = this.props
     const { checked } = this.state
     const className = cx(`checkbox`, {checked: checked}, props.className)
 
@@ -91,6 +91,4 @@ class Checkbox extends React.Component {
   }
 }
 
-export default compose(
-  withVariant('checkboxes', main)
-)(Checkbox)
+export default withVariant('checkboxes', main)(Checkbox)

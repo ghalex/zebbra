@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { compact, isFunction, isString } from 'lodash'
+import { withVariant } from 'zebbra/hocs'
 import { main } from 'zebbra/themes'
 import * as s from './styles'
 
@@ -108,4 +109,4 @@ Menu.Divider.displayName = 'MenuDivider'
 
 Menu.Items = s.MenuItems
 
-export default Menu
+export default withVariant('menus', main)(Menu)

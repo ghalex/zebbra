@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import { compose } from 'recompose'
+import { withVariant } from 'zebbra/hocs'
 import { removeMarginProps, removePaddingProps } from 'zebbra/utils'
 import { main } from 'zebbra/themes'
 import * as s from './styles'
@@ -75,4 +77,6 @@ class Switch extends React.Component {
   }
 }
 
-export default Switch
+export default compose(
+  withVariant('switches', main)
+)(Switch)

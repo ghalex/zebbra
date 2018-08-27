@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import { withVariant } from 'zebbra/hocs'
 import { main } from 'zebbra/themes'
 import { StyledTitle } from './styles'
 
@@ -52,4 +53,4 @@ class Title extends React.Component {
   }
 }
 
-export default Title
+export default withVariant('inputs', main)(Title)
