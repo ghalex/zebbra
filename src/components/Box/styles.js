@@ -9,7 +9,9 @@ import {
   style,
   textAlign,
   maxWidth,
-  maxHeight
+  minWidth,
+  maxHeight,
+  minHeight
 } from 'styled-system'
 
 const stacked = p => {
@@ -61,5 +63,7 @@ export const StyledBox = styled.div`
   ${textAlign}
   ${flexbox}
   ${maxWidth}
+  ${minWidth}
   ${maxHeight}
+  ${minHeight}
 `
