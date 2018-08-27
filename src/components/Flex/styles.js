@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { space, color } from 'styled-system'
+import { space, color, width, height } from 'styled-system'
 import { flexbox } from 'zebbra/utils'
 
 export const StyledFlex = styled.div`
@@ -9,4 +9,6 @@ export const StyledFlex = styled.div`
   ${space}
   ${color}
   ${flexbox}
+  ${width}
+  ${height}
 `

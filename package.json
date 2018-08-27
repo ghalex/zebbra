@@ -1,6 +1,6 @@
 {
   "name": "zebbra",
-  "version": "1.0.51",
+  "version": "1.0.52",
   "main": "lib/index.js",
   "scripts": {
     "prepublish": "npm run build",
