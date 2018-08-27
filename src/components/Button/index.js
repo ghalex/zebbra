@@ -2,10 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import lodash from 'lodash'
-import { main } from 'zebbra/themes'
-import { withVariant } from 'zebbra/hocs'
 import { Icon, Loader } from 'zebbra/components'
-import * as s from './styles'
+import { main } from 'zebbra/themes'
+import { compose } from 'recompose'
+import { withFallbackTheme, withVariant } from 'zebbra/hocs'
+import { StyledButton } from './styles'
 
 class Button extends React.Component {
   static displayName = 'Button'
@@ -29,8 +30,7 @@ class Button extends React.Component {
     fluid: false,
     icon: null,
     iconPosition: 'left',
-    static: false,
-    theme: main
+    static: false
   }
 
   static propTypes = {
@@ -51,9 +51,19 @@ class Button extends React.Component {
     href: PropTypes.string
   }
 
+  renderLoading () {
+    if (!this.props.loading) return null
+
+    return (
+      <div className='loader-container'>
+        <Loader size={this.props.size} color={this.props.color || 'black'} />
+      </div>
+    )
+  }
+
   render () {
     let { icon, iconPosition, children, ...rest } = this.props
-    let Component = rest.href ? s.Button.withComponent('a') : s.Button
+    let EnhancedButton = rest.href ? StyledButton.withComponent('a') : StyledButton
     let className = cx(
       'button',
       {'icon-only': (children === null || children === undefined)},
@@ -71,18 +81,15 @@ class Button extends React.Component {
     }
 
     return (
-      <Component
-        {...rest}
-        className={className}>
+      <EnhancedButton {...rest} className={className}>
         {btnChildren}
-        {rest.loading && (
-          <div className='loader-container'>
-            <Loader size={rest.size} color={rest.color || 'black'} />
-          </div>
-        )}
-      </Component>
+        {this.renderLoading()}
+      </EnhancedButton>
     )
   }
 }
 
-export default withVariant('buttons', main)(Button)
+export default compose(
+  withFallbackTheme(main),
+  withVariant('button')
+)(Button)

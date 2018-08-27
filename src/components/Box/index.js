@@ -2,13 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { main } from 'zebbra/themes'
-import * as s from './styles'
+import { compose } from 'recompose'
+import { withFallbackTheme, withVariant } from 'zebbra/hocs'
+import { StyledBox } from './styles'
 
 class Box extends React.Component {
   static displayName = 'Box'
   static defaultProps = {
     color: null,
-    bg: null,
+    bg: 'white',
     m: 0,
     p: '1em',
     boxShadow: 'light',
@@ -19,8 +21,7 @@ class Box extends React.Component {
     textAlign: 'left',
     fontFamily: 'primary',
     fontSize: null,
-    flexDirection: 'column',
-    theme: main
+    flexDirection: 'column'
   }
 
   static propTypes = {
@@ -35,11 +36,14 @@ class Box extends React.Component {
     const { children, childrenProps, ...props } = this.props
 
     return (
-      <s.Box {...props} className={className}>
+      <StyledBox {...props} className={className}>
         {children}
-      </s.Box>
+      </StyledBox>
     )
   }
 }
 
-export default Box
+export default compose(
+  withFallbackTheme(main),
+  withVariant('box')
+)(Box)

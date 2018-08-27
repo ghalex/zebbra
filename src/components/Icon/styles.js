@@ -22,7 +22,7 @@ const shadow = p => {
   `
 }
 
-export const Icon = styled.i.attrs({
+export const StyledIcon = styled.i.attrs({
   color: p => p.inverted ? (p.bg || 'white') : p.color,
   bg: p => p.inverted ? p.color : p.bg
 })`

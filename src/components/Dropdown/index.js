@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import { main } from 'zebbra/themes'
+import { compose } from 'recompose'
+import { withFallbackTheme, withVariant } from 'zebbra/hocs'
 import { isFunction, isString } from 'lodash'
 import { Icon, Button, Menu } from 'zebbra/components'
 import { removeSpaceProps } from 'zebbra/utils'
-import { main } from 'zebbra/themes'
 import * as s from './styles'
 
 class Dropdown extends React.Component {
@@ -18,8 +20,7 @@ class Dropdown extends React.Component {
     closeOnChange: false,
     fluid: false,
     label: 'Please select',
-    direction: 'left',
-    theme: main
+    direction: 'left'
   }
 
   static propTypes = {
@@ -94,7 +95,7 @@ class Dropdown extends React.Component {
 
   render () {
     let className = cx(`dropdown`, this.props.className)
-    let { value, children, trigger, direction, fluid, items, ...props } = this.props
+    let { value, children, trigger, direction, fluid, items, ...rest } = this.props
     let { open } = this.state
 
     if (!trigger) {
@@ -112,7 +113,7 @@ class Dropdown extends React.Component {
     }
 
     return (
-      <s.Container {...props} fluid={fluid} className={className}>
+      <s.Container {...rest} fluid={fluid} className={className}>
         <s.TriggerContainer fluid={fluid} onClick={(e) => e.stopPropagation()} className='trigger-container'>
           {dropdownTrigger}
         </s.TriggerContainer>
@@ -128,4 +129,7 @@ class Dropdown extends React.Component {
   }
 }
 
-export default Dropdown
+export default compose(
+  withFallbackTheme(main),
+  withVariant('dropdown')
+)(Dropdown)

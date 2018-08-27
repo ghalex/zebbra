@@ -10,6 +10,12 @@ Simple usage:
 </div>
 ```
 
+```jsx
+<WithTheme name='github'>
+  <Icon color='primary' name='star' />
+</WithTheme>
+```
+
 Icon with color inverted:
 
 ```jsx

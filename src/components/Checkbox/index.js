@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { compose } from 'recompose'
-import { withVariant } from 'zebbra/hocs'
 import { main } from 'zebbra/themes'
+import { compose } from 'recompose'
+import { withFallbackTheme, withVariant } from 'zebbra/hocs'
 import { Icon } from 'zebbra/components'
 import * as s from './styles'
 
@@ -25,8 +25,7 @@ class Checkbox extends React.Component {
     color: 'grey',
     bg: null,
     variant: null,
-    checked: false,
-    theme: main
+    checked: false
   }
 
   static propTypes = {
@@ -91,4 +90,7 @@ class Checkbox extends React.Component {
   }
 }
 
-export default withVariant('checkboxes', main)(Checkbox)
+export default compose(
+  withFallbackTheme(main),
+  withVariant('checkbox')
+)(Checkbox)

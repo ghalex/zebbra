@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { main } from 'zebbra/themes'
+import { compose } from 'recompose'
+import { withFallbackTheme } from 'zebbra/hocs'
 import { StyledField } from './styles'
 
 /**
@@ -13,8 +15,7 @@ class Field extends React.Component {
     fontFamily: 'primary',
     alignItems: 'normal',
     label: null,
-    required: false,
-    theme: main
+    required: false
   }
 
   static propTypes = {
@@ -28,10 +29,10 @@ class Field extends React.Component {
 
   render () {
     const className = cx(`field`, this.props.className)
-    const { label, required, children, ...props } = this.props
+    const { label, required, children, ...rest } = this.props
 
     return (
-      <StyledField {...props} className={className}>
+      <StyledField {...rest} className={className}>
         {label && (
           <label>
             {label}
@@ -46,4 +47,6 @@ class Field extends React.Component {
   }
 }
 
-export default Field
+export default compose(
+  withFallbackTheme(main)
+)(Field)

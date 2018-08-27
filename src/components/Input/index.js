@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { compose } from 'recompose'
 import { main } from 'zebbra/themes'
+import { compose } from 'recompose'
+import { withFallbackTheme, withVariant } from 'zebbra/hocs'
 import { Icon } from 'zebbra/components'
-import { withVariant } from 'zebbra/hocs'
 import { isString } from 'lodash'
 import * as s from './styles'
 
@@ -32,8 +32,7 @@ class Input extends React.Component {
     placeholder: '',
     icon: null,
     onEnter: null,
-    onChange: null,
-    theme: main
+    onChange: null
   }
   static propTypes = {
     /** `onChange(event: SyntheticEvent, data: object)` */
@@ -101,5 +100,6 @@ class Input extends React.Component {
 }
 
 export default compose(
-  withVariant('inputs', main)
+  withFallbackTheme(main),
+  withVariant('input')
 )(Input)

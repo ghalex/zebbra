@@ -87,7 +87,7 @@ const toggle = (item, value) => {
     </Group>
   )}>
   <Menu>
-    <Menu.Header>
+    <Menu.Header name='header'>
       <Input icon='search' type='text' value={state.search} onChange={(e, value) => setState({search: value})} />
     </Menu.Header>
     <Menu maxHeight={170}>

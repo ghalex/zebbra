@@ -53,7 +53,33 @@ theme.colors = {
 }
 
 theme.components = {}
-theme.components.buttons = {
+theme.components.box = {
+  primary: {
+    borderTop: '2px solid',
+    borderTopColor: 'primary'
+  },
+  secondary: {
+    borderTop: '2px solid',
+    borderTopColor: 'secondary'
+  },
+  success: {
+    borderTop: '2px solid',
+    borderTopColor: 'success'
+  },
+  danger: {
+    borderTop: '2px solid',
+    borderTopColor: 'danger'
+  },
+  grey: {
+    borderTop: '2px solid',
+    borderTopColor: 'grey'
+  },
+  black: {
+    borderTop: '2px solid',
+    borderTopColor: 'black'
+  }
+}
+theme.components.button = {
   primary: {
     color: 'white',
     borderColor: 'primary',
@@ -95,8 +121,7 @@ theme.components.buttons = {
     bg: 'facebook'
   }
 }
-
-theme.components.checkboxes = {
+theme.components.checkbox = {
   primary: {
     color: 'white',
     borderColor: 'primaryDark',
@@ -118,8 +143,10 @@ theme.components.checkboxes = {
     bg: 'danger'
   }
 }
-
-theme.components.inputs = {
+theme.components.datepicker = {}
+theme.components.dropdown = {}
+theme.components.icon = {}
+theme.components.input = {
   primary: {
     color: 'white',
     bg: 'primary',
@@ -149,8 +176,12 @@ theme.components.inputs = {
     placeholderColor: 'rgba(255,255,255, 0.4)'
   }
 }
-
-theme.components.menus = {}
-theme.components.switches = {}
+theme.components.loader = {}
+theme.components.menu = {}
+theme.components.switch = {}
+theme.components.text = {}
+theme.components.textarea = {}
+theme.components.title = {}
+theme.components.yesno = {}
 
 export default theme

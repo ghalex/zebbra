@@ -1,9 +1,8 @@
 import React from 'react'
-import { withTheme } from 'styled-components'
-import { compose } from 'recompose'
+import { compose, defaultProps } from 'recompose'
 import setWrappedDisplayName from '../setWrappedDisplayName'
 
-const withVariant = (key) => BaseComponent => {
+const withThemeVariant = (key) => BaseComponent => {
   class WithVariant extends React.Component {
     render () {
       let { variant, theme } = this.props
@@ -12,16 +11,21 @@ const withVariant = (key) => BaseComponent => {
       if (variant && theme && theme.components[key] && theme.components[key][variant]) {
         variantProps = theme.components[key][variant]
       }
-
+      console.log(BaseComponent.defaultProps)
       return (
-        <BaseComponent {...this.props} {...variantProps} />
+        <BaseComponent
+          onMouseEnter={this.handleMouseEnter}
+          onMouseLeave={this.handleMouseLeave}
+          {...this.props}
+          {...variantProps}
+        />
       )
     }
   }
 
   return compose(
-    setWrappedDisplayName('withVariant')
+    setWrappedDisplayName('withThemeVariant')
   )(WithVariant)
 }
 
-export default withVariant
+export default withThemeVariant

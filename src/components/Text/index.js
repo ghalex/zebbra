@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { main } from 'zebbra/themes'
+import { compose } from 'recompose'
+import { withFallbackTheme, withVariant } from 'zebbra/hocs'
 import { StyledText } from './styles'
 
 class Text extends React.Component {
@@ -16,8 +18,7 @@ class Text extends React.Component {
     textAlign: 'left',
     thin: false,
     strong: false,
-    fontFamily: 'primary',
-    theme: main
+    fontFamily: 'primary'
   }
   static propTypes = {
     /**
@@ -30,19 +31,20 @@ class Text extends React.Component {
     /** A text can have its font as strong */
     strong: PropTypes.bool,
     /** A text can be aligned. */
-    textAlign: PropTypes.string,
-    /** Set custom padding to text. **Ex.** 5px 0 0 5px */
-    p: PropTypes.string
+    textAlign: PropTypes.string
   }
 
   render () {
-    const { as, children, ...props } = this.props
+    const { as, children, ...rest } = this.props
     const className = cx(`text`, this.props.className)
     const Component = StyledText.withComponent(as)
     return (
-      <Component {...props} className={className}>{children}</Component>
+      <Component {...rest} className={className}>{children}</Component>
     )
   }
 }
 
-export default Text
+export default compose(
+  withFallbackTheme(main),
+  withVariant('text')
+)(Text)

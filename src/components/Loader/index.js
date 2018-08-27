@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { main } from 'zebbra/themes'
+import { compose } from 'recompose'
+import { withFallbackTheme, withVariant } from 'zebbra/hocs'
 import * as s from './styles'
 
 /**
@@ -15,8 +17,7 @@ class Loader extends React.Component {
     fontSize: 2,
     p: null,
     m: 0,
-    borderSize: 3,
-    theme: main
+    borderSize: 3
   }
 
   static propTypes = {
@@ -38,12 +39,13 @@ class Loader extends React.Component {
 
   render () {
     const className = cx(`loader`, this.props.className)
-    const { children, ...props } = this.props
+    const { children, ...rest } = this.props
+
     return (
-      <s.Loader {...props} className={className}>
-        <s.LoaderContainer {...props} >
-          <s.LoaderShadow {...props} />
-          <s.LoaderCircle {...props} />
+      <s.Loader {...rest} className={className}>
+        <s.LoaderContainer {...rest} >
+          <s.LoaderShadow {...rest} />
+          <s.LoaderCircle {...rest} />
         </s.LoaderContainer>
         {children && <div>{children}</div>}
       </s.Loader>
@@ -51,4 +53,7 @@ class Loader extends React.Component {
   }
 }
 
-export default Loader
+export default compose(
+  withFallbackTheme(main),
+  withVariant('loader')
+)(Loader)

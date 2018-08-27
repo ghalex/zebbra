@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { compose } from 'recompose'
-import { withVariant } from 'zebbra/hocs'
-import { removeMarginProps, removePaddingProps } from 'zebbra/utils'
 import { main } from 'zebbra/themes'
+import { compose } from 'recompose'
+import { withFallbackTheme, withVariant } from 'zebbra/hocs'
+import { removeMarginProps, removePaddingProps } from 'zebbra/utils'
 import * as s from './styles'
 
 /**
@@ -29,8 +29,7 @@ class Switch extends React.Component {
     borderRadius: 12,
     fontFamily: 'primary',
     fontSize: 1,
-    checked: false,
-    theme: main
+    checked: false
   }
 
   static propTypes = {
@@ -64,13 +63,13 @@ class Switch extends React.Component {
   }
 
   render () {
-    const { children, ...props } = this.props
+    const { children, ...rest } = this.props
     const { checked } = this.state
-    const className = cx(`switch`, props.className)
+    const className = cx(`switch`, rest.className)
 
     return (
-      <s.Switch {...removePaddingProps(props)} checked={checked} className={className}>
-        <s.SwitchThumb {...removeMarginProps(props)} checked={checked} onClick={this.handleClick}><span /></s.SwitchThumb>
+      <s.Switch {...removePaddingProps(rest)} checked={checked} className={className}>
+        <s.SwitchThumb {...removeMarginProps(rest)} checked={checked} onClick={this.handleClick}><span /></s.SwitchThumb>
         {children && <s.SwitchLabel>{children}</s.SwitchLabel>}
       </s.Switch>
     )
@@ -78,5 +77,6 @@ class Switch extends React.Component {
 }
 
 export default compose(
-  withVariant('switches', main)
+  withFallbackTheme(main),
+  withVariant('switch')
 )(Switch)

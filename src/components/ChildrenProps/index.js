@@ -10,6 +10,8 @@ class ChildrenProps extends React.Component {
   render () {
     const { children, ...props } = this.props
 
+    if (!children) return null
+
     const newChildren = React.Children.map(
       children,
       c => {

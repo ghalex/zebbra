@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { withVariant } from 'zebbra/hocs'
 import { main } from 'zebbra/themes'
+import { compose } from 'recompose'
+import { withFallbackTheme, withVariant } from 'zebbra/hocs'
 import { StyledTitle } from './styles'
 
 class Title extends React.Component {
@@ -18,8 +19,7 @@ class Title extends React.Component {
     dislay: 'block',
     textAlign: 'left',
     thin: false,
-    strong: false,
-    theme: main
+    strong: false
   }
   static propTypes = {
     /** Render title as `h2`, `h3`, `h4` */
@@ -53,4 +53,7 @@ class Title extends React.Component {
   }
 }
 
-export default withVariant('inputs', main)(Title)
+export default compose(
+  withFallbackTheme(main),
+  withVariant('title')
+)(Title)

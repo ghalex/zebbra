@@ -4,6 +4,9 @@ import cx from 'classnames'
 import { reverse } from 'lodash'
 import { Group, Button } from 'zebbra/components'
 import { removeSpaceProps } from 'zebbra/utils'
+import { main } from 'zebbra/themes'
+import { compose } from 'recompose'
+import { withFallbackTheme, withVariant } from 'zebbra/hocs'
 import { Dropdown } from '../'
 import * as s from './styles'
 
@@ -73,13 +76,13 @@ class DatePicker extends React.Component {
 
   render () {
     let className = cx(`date-pick`, this.props.className)
-    let { startYear, hideMonths, hideIcon, fontSize, noBorders, children, ...props } = this.props
-    let childProps = removeSpaceProps(props)
+    let { startYear, hideMonths, hideIcon, fontSize, noBorders, children, ...rest } = this.props
+    let childProps = removeSpaceProps(rest)
     let years = this.generateYears()
     let { month, year } = this.state
 
     return (
-      <s.DatePick {...props} className={className}>
+      <s.DatePick {...rest} className={className}>
         <Group fontSize={fontSize} noBorders={noBorders}>
           {!hideIcon &&
             <Button {...childProps} icon='calendar-times-o' static />}
@@ -106,4 +109,7 @@ class DatePicker extends React.Component {
   }
 }
 
-export default DatePicker
+export default compose(
+  withFallbackTheme(main),
+  withVariant('datepicker')
+)(DatePicker)

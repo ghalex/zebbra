@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { main } from 'zebbra/themes'
-import * as s from './styles'
+import { compose } from 'recompose'
+import { withFallbackTheme, withVariant } from 'zebbra/hocs'
+import { StyledIcon } from './styles'
 
 /**
  * Icon component uses **FontAwesome** icons.
@@ -21,8 +23,7 @@ class Icon extends React.Component {
     size: '1.6em',
     inverted: false,
     circular: false,
-    shadow: false,
-    theme: main
+    shadow: false
   }
 
   static propTypes = {
@@ -49,9 +50,12 @@ class Icon extends React.Component {
   render () {
     const className = cx(`icon`, `fa fa-${this.props.name}`, this.props.className)
     return (
-      <s.Icon {...this.props} className={className} />
+      <StyledIcon {...this.props} className={className} />
     )
   }
 }
 
-export default Icon
+export default compose(
+  withFallbackTheme(main),
+  withVariant('icon')
+)(Icon)

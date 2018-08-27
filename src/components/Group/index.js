@@ -1,6 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import { main } from 'zebbra/themes'
+import { compose } from 'recompose'
+import { withFallbackTheme } from 'zebbra/hocs'
 import { compact, filter, isBoolean } from 'lodash'
 import { removeSpaceProps } from 'zebbra/utils'
 import { VGroup, HGroup } from './styles'
@@ -19,14 +22,12 @@ class Group extends React.Component {
 
   static propTypes = {
     /** A group can display it's children **vertical**. */
-    vertical: PropTypes.bool,
-    /** A group can have different border radius */
-    borderRadius: PropTypes.oneOf([ PropTypes.number, PropTypes.string ])
+    vertical: PropTypes.bool
   }
 
   render () {
     const className = cx('group', this.props.className)
-    const { vertical, children, fluid, ...props } = this.props
+    const { vertical, children, fluid, ...rest } = this.props
     const StyledGroup = vertical ? VGroup : HGroup
     const filterChildren = filter(compact(children), e => !isBoolean(e))
 
@@ -39,7 +40,7 @@ class Group extends React.Component {
           {'last': index === filterChildren.length - 1}
         )
 
-        let itemProps = {...removeSpaceProps(props)}
+        let itemProps = {...removeSpaceProps(rest)}
         if (filterChildren.length > 1) {
           itemProps.className = itemClassName
         }
@@ -49,11 +50,13 @@ class Group extends React.Component {
     )
 
     return (
-      <StyledGroup {...props} fluid={fluid} className={className}>
+      <StyledGroup {...rest} fluid={fluid} className={className}>
         {items}
       </StyledGroup>
     )
   }
 }
 
-export default Group
+export default compose(
+  withFallbackTheme(main)
+)(Group)

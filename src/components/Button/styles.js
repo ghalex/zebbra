@@ -43,7 +43,7 @@ const outlined = p => {
   `
 }
 
-export const Button = styled.div`
+export const StyledButton = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: center;

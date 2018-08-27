@@ -2,14 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { main } from 'zebbra/themes'
+import { compose } from 'recompose'
+import { withFallbackTheme } from 'zebbra/hocs'
 import { StyledFlex } from './styles'
 
 class Flex extends React.Component {
   static displayName = 'Flex'
   static defaultProps = {
     p: null,
-    m: null,
-    theme: main
+    m: null
   }
   static propTypes = {
     p: PropTypes.string,
@@ -17,13 +18,15 @@ class Flex extends React.Component {
   }
 
   render () {
-    const { children, ...props } = this.props
+    const { children, ...rest } = this.props
     const className = cx(`flex`, this.props.className)
 
     return (
-      <StyledFlex {...props} className={className}>{children}</StyledFlex>
+      <StyledFlex {...rest} className={className}>{children}</StyledFlex>
     )
   }
 }
 
-export default Flex
+export default compose(
+  withFallbackTheme(main)
+)(Flex)

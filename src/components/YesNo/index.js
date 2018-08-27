@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { main } from 'zebbra/themes'
+import { compose } from 'recompose'
+import { withFallbackTheme, withVariant } from 'zebbra/hocs'
 import { Button, Group } from '../index'
 import { StyledYesNo } from './styles'
 
@@ -18,15 +20,12 @@ class YesNo extends React.Component {
     display: 'inline-block',
     left: false,
     p: null,
-    m: null,
-    theme: main
+    m: null
   }
 
   static propTypes = {
     /** A yesno can be displayed to the left */
     left: PropTypes.bool,
-    /** Padding */
-    p: PropTypes.string,
     /** Called when user chooses yes */
     onYes: PropTypes.func,
     /** Called when user chooses no */
@@ -77,4 +76,7 @@ class YesNo extends React.Component {
   }
 }
 
-export default YesNo
+export default compose(
+  withFallbackTheme(main),
+  withVariant('yesno')
+)(YesNo)

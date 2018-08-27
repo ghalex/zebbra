@@ -7,7 +7,9 @@ import {
   fontFamily,
   fontSize,
   style,
-  textAlign
+  textAlign,
+  maxWidth,
+  maxHeight
 } from 'styled-system'
 
 const stacked = p => {
@@ -31,14 +33,19 @@ const stacked = p => {
   `
 }
 
-const boxStyles = style({
-  prop: 'variant',
-  cssProperty: 'borderTop',
-  key: 'colors',
-  transformValue: n => `2px solid ${n}`
+const borderTopColor = style({
+  prop: 'borderTopColor',
+  cssProperty: 'borderTopColor',
+  key: 'colors'
 })
 
-export const Box = styled.div`
+const borderBottomColor = style({
+  prop: 'borderBottomColor',
+  cssProperty: 'borderBottomColor',
+  key: 'colors'
+})
+
+export const StyledBox = styled.div`
   display: flex;
   position: relative;
 
@@ -49,7 +56,10 @@ export const Box = styled.div`
   ${boxShadow}
   ${color}
   ${borders}
-  ${boxStyles}
+  ${borderTopColor}
+  ${borderBottomColor}
   ${textAlign}
   ${flexbox}
+  ${maxWidth}
+  ${maxHeight}
 `

@@ -2,8 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { compact, isFunction, isString } from 'lodash'
-import { withVariant } from 'zebbra/hocs'
 import { main } from 'zebbra/themes'
+import { compose } from 'recompose'
+import { withFallbackTheme, withVariant } from 'zebbra/hocs'
 import * as s from './styles'
 
 class Menu extends React.Component {
@@ -21,8 +22,7 @@ class Menu extends React.Component {
     boxShadow: 'light',
     maxHeight: null,
     fluid: false,
-    onItemClick: null,
-    theme: main
+    onItemClick: null
   }
   static propTypes = {
     fluid: PropTypes.bool,
@@ -45,7 +45,7 @@ class Menu extends React.Component {
   render () {
     let className = cx(`menu`, this.props.className)
     let { selected } = this.state
-    let { children, items, ...props } = this.props
+    let { children, items, ...rest } = this.props
     let menuItems = null
 
     if (children) {
@@ -53,9 +53,9 @@ class Menu extends React.Component {
     } else {
       menuItems = items.map(data => {
         let itemProps = {
-          border: props.border,
-          borderColor: props.borderColor,
-          theme: props.theme
+          border: rest.border,
+          borderColor: rest.borderColor,
+          theme: rest.theme
         }
 
         if (isString(data)) {
@@ -71,14 +71,14 @@ class Menu extends React.Component {
     }
 
     return (
-      <s.Menu {...props} className={className}>
+      <s.Menu {...rest} className={className}>
         {React.Children.map(
           menuItems,
           (item, i) => {
             let itemProps = {
-              border: props.border,
-              borderColor: props.borderColor,
-              theme: props.theme,
+              border: rest.border,
+              borderColor: rest.borderColor,
+              theme: rest.theme,
               ...item.props
             }
 
@@ -98,15 +98,20 @@ class Menu extends React.Component {
   }
 }
 
-Menu.Item = s.MenuItem
-Menu.Item.displayName = 'MenuItem'
+const HocMenu = compose(
+  withFallbackTheme(main),
+  withVariant('menu')
+)(Menu)
 
-Menu.Header = s.MenuHeader
-Menu.Header.displayName = 'MenuHeader'
+HocMenu.Item = s.MenuItem
+HocMenu.Item.displayName = 'MenuItem'
 
-Menu.Divider = s.MenuDivider
-Menu.Divider.displayName = 'MenuDivider'
+HocMenu.Header = s.MenuHeader
+HocMenu.Header.displayName = 'MenuHeader'
 
-Menu.Items = s.MenuItems
+HocMenu.Divider = s.MenuDivider
+HocMenu.Divider.displayName = 'MenuDivider'
 
-export default withVariant('menus', main)(Menu)
+HocMenu.Items = s.MenuItems
+
+export default HocMenu
