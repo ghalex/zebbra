@@ -151,6 +151,6 @@ theme.components.inputs = {
 }
 
 theme.components.menus = {}
-theme.components.switces = {}
+theme.components.switches = {}
 
 export default theme

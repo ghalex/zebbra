@@ -52,7 +52,7 @@ class Button extends React.Component {
   }
 
   render () {
-    let { icon, children, iconPosition, ...rest } = this.props
+    let { icon, iconPosition, children, ...rest } = this.props
     let Component = rest.href ? s.Button.withComponent('a') : s.Button
     let className = cx(
       'button',
