@@ -19,7 +19,7 @@ class Box extends React.Component {
     textAlign: 'left',
     fontFamily: 'primary',
     fontSize: null,
-    flexDirection: 'row',
+    flexDirection: 'column',
     theme: main
   }
 
