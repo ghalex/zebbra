@@ -33,11 +33,9 @@ export const CheckboxIcon = styled.div`
   ${boxShadow}
   ${hover}
 
-  ${p => !p.checked && css`
-    & .icon {
-      opacity: 0.2;
-    }
-  `}
+  & .icon {
+    opacity: ${p => p.opacity};
+  }
 `
 
 export const CheckboxLabel = styled.div`

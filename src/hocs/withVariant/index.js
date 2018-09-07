@@ -1,5 +1,4 @@
 import React from 'react'
-import { withTheme } from 'styled-components'
 import { compose } from 'recompose'
 import setWrappedDisplayName from '../setWrappedDisplayName'
 

@@ -23,6 +23,7 @@ class Checkbox extends React.Component {
     fontFamily: 'primary',
     fontSize: 0,
     color: 'grey',
+    opacity: 0,
     bg: null,
     variant: null,
     checked: false
@@ -68,9 +69,18 @@ class Checkbox extends React.Component {
   }
 
   render () {
-    const props = this.props
-    const { checked } = this.state
-    const className = cx(`checkbox`, {checked: checked}, props.className)
+    let props = this.props
+    let { checked } = this.state
+    let className = cx(`checkbox`, {checked: checked}, props.className)
+    let checkedProps = {}
+
+    if (checked) {
+      checkedProps = { opacity: 1 }
+      if (props.checked) {
+        checkedProps = { ...checkedProps, ...props.checked }
+      }
+      props = { ...props, ...checkedProps }
+    }
 
     return (
       <s.Checkbox

@@ -1,6 +1,6 @@
 import React from 'react'
 import { compose } from 'recompose'
-import { withTheme } from 'styled-components'
+import withTheme from '../withTheme'
 import setWrappedDisplayName from '../setWrappedDisplayName'
 
 const withFallbackTheme = (fallbackTheme) => BaseComponent => {
