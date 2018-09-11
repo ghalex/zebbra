@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { compose } from 'recompose'
 import setWrappedDisplayName from '../setWrappedDisplayName'
 
-export const CHANNEL = '__styled-components__'
+export const CHANNEL = '__styled-components__next__'
 
 const withTheme = BaseComponent => {
   class WithTheme extends React.Component {

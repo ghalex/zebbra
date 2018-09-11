@@ -1,6 +1,6 @@
 import React from 'react'
 import { compose } from 'recompose'
-import withTheme from '../withTheme'
+import { ThemeConsumer } from 'styled-components'
 import setWrappedDisplayName from '../setWrappedDisplayName'
 
 const withFallbackTheme = (fallbackTheme) => BaseComponent => {
@@ -9,14 +9,15 @@ const withFallbackTheme = (fallbackTheme) => BaseComponent => {
       let { theme, ...rest } = this.props
 
       return (
-        <BaseComponent {...rest} theme={theme || fallbackTheme} />
+        <ThemeConsumer>
+          {comsumerTheme => <BaseComponent {...rest} theme={theme || comsumerTheme || fallbackTheme} />}
+        </ThemeConsumer>
       )
     }
   }
 
   return compose(
-    setWrappedDisplayName('withFallbackTheme'),
-    withTheme
+    setWrappedDisplayName('withFallbackTheme')
   )(WithFallbackTheme)
 }
 

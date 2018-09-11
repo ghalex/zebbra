@@ -11,7 +11,6 @@ class Title extends React.Component {
   static defaultProps = {
     as: 'h3',
     p: 0,
-    mb: 3,
     color: null,
     bg: null,
     fontFamily: 'primary',
@@ -44,7 +43,7 @@ class Title extends React.Component {
     let Component = StyledTitle.withComponent(as)
 
     if (props.subtitle) {
-      props = {...props, ...{ mt: '-1.35em', thin: true, fontSize: props.fontSize - 1 }}
+      props = {...props, ...{ mt: '-0.6em', thin: true, fontSize: props.fontSize - 1 }}
     }
 
     return (
