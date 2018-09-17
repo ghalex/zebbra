@@ -76,8 +76,8 @@ class Checkbox extends React.Component {
 
     if (checked) {
       checkedProps = { opacity: 1 }
-      if (props.checked) {
-        checkedProps = { ...checkedProps, ...props.checked }
+      if (props.checkedProps) {
+        checkedProps = { ...checkedProps, ...props.checkedProps }
       }
       props = { ...props, ...checkedProps }
     }
