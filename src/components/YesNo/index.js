@@ -56,7 +56,7 @@ class YesNo extends React.Component {
 
   render () {
     const className = cx(`yesno`, this.props.className)
-    const { left, children, noBorders, ...props } = this.props
+    const { left, children, noBorders, onYes, onNo, ...props } = this.props
     const { isOpen } = this.state
 
     const MainButton = React.cloneElement(React.Children.only(children), {
