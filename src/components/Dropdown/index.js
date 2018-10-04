@@ -95,7 +95,7 @@ class Dropdown extends React.Component {
 
   render () {
     let className = cx(`dropdown`, this.props.className)
-    let { value, children, trigger, direction, fluid, items, ...rest } = this.props
+    let { value, children, trigger, direction, fluid, items, onItemClick, ...rest } = this.props
     let { open } = this.state
 
     if (!trigger) {
@@ -103,7 +103,7 @@ class Dropdown extends React.Component {
     }
 
     let dropdownTrigger = trigger(value, this.handleTrigger)
-    let dropdownMenuProps = {onItemClick: this.handleItemClick, fluid: fluid}
+    let dropdownMenuProps = { onItemClick: this.handleItemClick, fluid: fluid }
     let dropdownMenu = null
 
     if (children) {
