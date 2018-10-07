@@ -176,12 +176,21 @@ theme.components.input = {
     placeholderColor: 'rgba(255,255,255, 0.4)'
   }
 }
+theme.components.text = {
+  caps: {
+    textTransform: 'uppercase'
+  }
+}
+theme.components.title = {
+  caps: {
+    textTransform: 'uppercase'
+  }
+}
+
 theme.components.loader = {}
 theme.components.menu = {}
 theme.components.switch = {}
-theme.components.text = {}
 theme.components.textarea = {}
-theme.components.title = {}
 theme.components.yesno = {}
 
 export default theme
