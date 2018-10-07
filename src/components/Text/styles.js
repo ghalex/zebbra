@@ -6,7 +6,6 @@ import {
   space,
   color,
   textAlign,
-  textTransform,
   display
 } from 'styled-system'
 
@@ -23,9 +22,9 @@ export const StyledText = styled.p`
   ${space}
   ${color}
   ${textAlign}
-  ${textTransform}
   ${display}
 
   ${p => p.thin && css`font-weight: 200`};
   ${p => p.strong && css`font-weight: 800`};
+  ${p => p.textTransform && css`text-transform: ${p.textTransform}`}
 `
