@@ -1,19 +1,25 @@
 A loader can have multiple colors and sizes:
 
 ```jsx
+import { ChildrenProps } from "..";
+
 <ChildrenProps mr={2}>
   <Loader />
-  <Loader color='danger' />
-  <Loader color='#FFF000' fontSize={24} />
-</ChildrenProps>
+  <Loader color="danger" />
+  <Loader color="#FFF000" fontSize={24} />
+</ChildrenProps>;
 ```
 
 ```jsx
-  <Loader color='blue'>Loading...</Loader>
+<Loader color="blue">Loading...</Loader>
 ```
 
 ```jsx
-<Box bg='success' borderColor='success'>
-  <Loader color='white' vertical>Loading...</Loader>
-</Box>
+import { Box } from "..";
+
+<Box bg="success" borderColor="success">
+  <Loader color="white" vertical>
+    Loading...
+  </Loader>
+</Box>;
 ```
