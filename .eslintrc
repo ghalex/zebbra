@@ -1,0 +1,19 @@
+{
+  "extends": ["standard", "plugin:react/recommended"],
+  "plugins": ["react"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalDecorators": true
+    }
+  },
+  "rules": {
+    "space-before-function-paren": ["error", "never"],
+    "react/prop-types": [0]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

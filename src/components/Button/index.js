@@ -51,30 +51,29 @@ class Button extends React.Component {
     href: PropTypes.string
   }
 
-  renderLoading () {
+  renderLoading() {
     if (!this.props.loading) return null
 
     return (
-      <div className='loader-container'>
+      <div className="loader-container">
         <Loader size={this.props.size} color={this.props.color || 'black'} />
       </div>
     )
   }
 
-  render () {
+  render() {
     let { icon, iconPosition, children, ...rest } = this.props
-    let EnhancedButton = rest.href ? StyledButton.withComponent('a') : StyledButton
+    let EnhancedButton = rest.href
+      ? StyledButton.withComponent('a')
+      : StyledButton
     let className = cx(
       'button',
-      {'icon-only': (children === null || children === undefined)},
-      {'icon-reverse': iconPosition === 'right'},
+      { 'icon-only': children === null || children === undefined },
+      { 'icon-reverse': iconPosition === 'right' },
       rest.className
     )
 
-    let btnChildren = [
-      icon && <Icon key={0} name={icon} />,
-      children
-    ]
+    let btnChildren = [icon && <Icon key={0} name={icon} />, children]
 
     if (iconPosition === 'right') {
       btnChildren = lodash.reverse(btnChildren)
